@@ -1,0 +1,11 @@
+.github
+.prettierrc
+coverage
+test
+src
+doc
+deno_build
+report
+dist
+jest.config.js
+vite.config.ts
