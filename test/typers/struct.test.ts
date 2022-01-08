@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   createContext,
   eval,
@@ -24,7 +23,6 @@ function testStruct(struct: StructMaker, name: string) {
   test(name + " encode", () => {
     typer.encode(ctx, data);
     expect(ctx.i).toBe(7);
-    console.log(ctx.bytes);
   });
 
   test(name + " decode", () => {
