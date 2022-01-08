@@ -10,7 +10,7 @@ import {
   use,
   utf8js
 } from "../src";
-import { text } from "./fixture/text";
+import { text } from "./fixtures/text";
 
 const personTyper = struct({
   name: string(utf8js, uint8),

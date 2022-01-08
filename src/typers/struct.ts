@@ -1,5 +1,5 @@
 import { Typer, Struct, TyperStruct } from "../types";
-import { createStructTyper } from "../util";
+import { createStructTyper } from "../utils";
 
 export function struct<T extends Struct>(
   definition: TyperStruct<T>

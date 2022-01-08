@@ -4,15 +4,15 @@ export default async (): Promise<Config.InitialOptions> => {
   return {
     verbose: true,
     preset: "ts-jest",
-    setupFiles: ["./test/fixture/text.ts"],
-    coverageReporters: ["html-spa", "json"],
+    setupFiles: ["./test/fixtures/text.ts"],
+    coverageReporters: ["html-spa", "json", "json-summary"],
     reporters: [
       "default",
       [
         "jest-stare",
         {
           resultDir: "report",
-          reportTitle: "Test Report",
+          reportTitle: "Report",
           coverageLink: "../coverage"
         }
       ]

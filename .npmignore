@@ -3,9 +3,11 @@
 coverage
 test
 src
+repo
 doc
 deno_build
 report
 dist
+assets
 jest.config.js
 vite.config.ts

@@ -1,5 +1,5 @@
 import { createContext, utf8, utf8js } from "../../src";
-import { text } from "../fixture/text";
+import { text } from "../fixtures/text";
 
 const ctx = createContext(20000);
 

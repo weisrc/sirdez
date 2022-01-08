@@ -1,5 +1,5 @@
 import { AsyncTyper, AsyncTyperStruct, Struct } from "../types";
-import { createStructTyper } from "../util";
+import { createStructTyper } from "../utils";
 
 export function asyncStruct<T extends Struct>(
   definition: AsyncTyperStruct<T>

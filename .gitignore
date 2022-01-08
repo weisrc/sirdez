@@ -1,7 +1,7 @@
-coverage/
-build/
-dist/
-doc/
-report/
-deno_build/
-node_modules/
+coverage
+build
+dist
+doc
+report
+deno_build
+node_modules
