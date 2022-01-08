@@ -9,5 +9,6 @@ deno_build
 report
 dist
 assets
+scripts
 jest.config.js
 vite.config.ts

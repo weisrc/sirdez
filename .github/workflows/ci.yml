@@ -24,8 +24,10 @@ jobs:
         id: test
         continue-on-error: true
         run: npm run coverage
-      - name: Add report and coverage
-        run: git add -f report coverage
+      - name: Generate badges and, add report and coverage
+        run: |
+          npm run badges
+          git add -f report coverage
       - name: Build and doc
         if: steps.test.outcome == 'success'
         run: |
