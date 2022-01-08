@@ -25,7 +25,7 @@ import { total } from "../coverage/coverage-summary.json";
 const reportPercent = numPassedTests / numTotalTests;
 
 function percentToColor(percent: number) {
-  return `hsl(${(percent * 120).toFixed()}, 100%, 50%)`;
+  return `hsl(${(percent * 120).toFixed()}, 100%, 40%)`;
 }
 
 const report: Badge = {
