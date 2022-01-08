@@ -1,28 +1,41 @@
-<div align="center">
+[![Byts][logo-img]][logo-url]
 
-![icon][icon]
+# **Super byte [SerDes][serdes] for TypeScript**
 
-# Byts
+**A easy-to-use performant binary serialization and deserialization tree-shakable library**
 
-**Fast binary serialization for TypeScript. Your good egg for bytes.**
+[![ci][ci-img]][ci-url]
+[![npm][npm-img]][npm-url]
+[![coverage][coverage-img]][coverage-url]
+[![report][report-img]][report-url]
 
-</div>
+## Deep Dive
 
-<br>
+```ts
+import { use, utf8, string, uint8, struct, TypeOf } from "byts";
 
-[![ci][ci-badge]][ci-url]
-[![npm][npm-badge]][npm-url]
-[![coverage][coverage-badge]][coverage-url]
-[![report][report-badge]][report-url]
+const person = struct({
+  name: string,
+  age: uint8
+});
+
+const { encode, decode } = use(person);
+
+const bob: TypeOf<typeof person>
+
+console.log({encoded: encode})
+```
 
 <!-- urls -->
 
-[icon]: https://weisrc.github.io/byts/assets/icons/8.png
-[ci-badge]: https://github.com/weisrc/byts/actions/workflows/ci.yml/badge.svg
+[serdes]: https://en.wikipedia.org/wiki/SerDes
+[logo-img]: https://see.fontimg.com/api/renderfont4/rxaL/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/Qnl0cw/cube.png
+[logo-url]: https://weisrc.github.io/byts
+[ci-img]: https://github.com/weisrc/byts/actions/workflows/ci.yml/badge.svg
 [ci-url]: https://github.com/weisrc/byts/actions/workflows/ci.yml
-[npm-badge]: https://img.shields.io/npm/v/byts?color=cb3837&label=npm&logo=npm
+[npm-img]: https://img.shields.io/npm/v/byts?color=cb3837&label=npm&logo=npm
 [npm-url]: https://www.npmjs.com/package/byts
-[coverage-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/coverage/badge.json
+[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/coverage/badge.json
 [coverage-url]: https://weisrc.github.io/byts/coverage
-[report-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/report/badge.json
+[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/report/badge.json
 [report-url]: https://weisrc.github.io/byts/report

@@ -1,8 +1,10 @@
-import { Struct, AsyncTyper, AsyncTyperStruct } from "../types";
+import {
+  AsyncStructMaker,
+  AsyncTupleMaker,
+  TypeOf
+} from "../../types";
 
-export function asyncStructNoEval<T extends Struct>(
-  definition: AsyncTyperStruct<T>
-): AsyncTyper<T> {
+export const struct: AsyncStructMaker = (definition) => {
   const obj = definition instanceof Array ? () => [] : () => ({});
   return {
     async encode(ctx, data) {
@@ -11,17 +13,14 @@ export function asyncStructNoEval<T extends Struct>(
       }
     },
     async decode(ctx) {
-      const data = obj() as T;
+      const data = obj() as TypeOf<typeof this>;
       for (const key in definition) {
         data[key] = await definition[key].decode(ctx);
       }
       return data;
     }
   };
-}
+};
 
-export function asyncTupleNoEval<T extends unknown[]>(
-  ...definition: AsyncTyperStruct<T>
-): AsyncTyper<T> {
-  return asyncStructNoEval(definition);
-}
+export const tuple: AsyncTupleMaker = (...defintion) =>
+  struct(defintion);

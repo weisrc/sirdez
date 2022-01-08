@@ -1,8 +1,4 @@
-export interface Context {
-  i: number;
-  view: DataView;
-  bytes: Uint8Array;
-}
+import { Context } from ".";
 
 export interface Typer<T> {
   encode(ctx: Context, data: T): void;
@@ -28,19 +24,3 @@ export interface AsyncConverter<T> {
   encode(data: T): Promise<Uint8Array>;
   decode(array: Uint8Array): Promise<T>;
 }
-
-export type TypeOf<T extends Typer<unknown>> = T extends Typer<
-  infer X
->
-  ? X
-  : never;
-
-export type Struct = Record<string | number, unknown> | unknown[];
-
-export type TyperStruct<T extends Struct> = {
-  [k in keyof T]: Typer<T[k]>;
-};
-
-export type AsyncTyperStruct<T extends Struct> = {
-  [k in keyof T]: AsyncTyper<T[k]> | Typer<T[k]>;
-};

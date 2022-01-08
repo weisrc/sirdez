@@ -5,7 +5,7 @@ export default async (): Promise<Config.InitialOptions> => {
     verbose: true,
     preset: "ts-jest",
     setupFiles: ["./test/fixtures/text.ts"],
-    coverageReporters: ["html-spa", "json", "json-summary"],
+    coverageReporters: ["html-spa", "json", "json-summary", "text"],
     reporters: [
       "default",
       [
@@ -17,13 +17,5 @@ export default async (): Promise<Config.InitialOptions> => {
         }
       ]
     ]
-    // coverageThreshold: {
-    //   global: {
-    //     branches: 100,
-    //     functions: 100,
-    //     lines: 100,
-    //     statements: 100
-    //   }
-    // }
   };
 };

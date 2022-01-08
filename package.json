@@ -12,7 +12,7 @@
     "format": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
     "verify": "npm run format && npm run lint && npm run coverage",
     "doc": "typedoc --out doc src",
-    "clean": "rm -rf build report coverage"
+    "clean": "rm -rf dist deno_build build report coverage"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

@@ -1,14 +1,22 @@
-import { Typer, Struct, TyperStruct } from "../types";
-import { createStructTyper } from "../utils";
+import { StructMaker, TupleMaker, TypeOf } from "..";
 
-export function struct<T extends Struct>(
-  definition: TyperStruct<T>
-): Typer<T> {
-  return createStructTyper(definition, false);
-}
+export const struct: StructMaker = (definition) => {
+  const obj = definition instanceof Array ? () => [] : () => ({});
+  return {
+    encode(ctx, data) {
+      for (const key in definition) {
+        definition[key].encode(ctx, data[key]);
+      }
+    },
+    decode(ctx) {
+      const data = obj() as TypeOf<typeof this>;
+      for (const key in definition) {
+        data[key] = definition[key].decode(ctx);
+      }
+      return data;
+    }
+  };
+};
 
-export function tuple<T extends unknown[]>(
-  ...definition: TyperStruct<T>
-): Typer<T> {
-  return struct(definition);
-}
+export const tuple: TupleMaker = (...definition) =>
+  struct(definition);

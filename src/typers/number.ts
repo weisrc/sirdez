@@ -1,4 +1,4 @@
-import { Typer } from "../types";
+import { NumberMaker, Typer } from "../types";
 
 export const uint8: Typer<number> = {
   encode(ctx, data) {
@@ -113,3 +113,21 @@ export const float64: Typer<number> = {
     return data;
   }
 };
+
+const mappings = {
+  Uint1: uint8,
+  Uint2: uint16,
+  Uint4: uint32,
+  Int1: int8,
+  Int2: int16,
+  Int4: int32,
+  Float4: float32,
+  Float8: float64,
+  BigUint8: bigUint64,
+  BigInt8: bigInt64
+} as const;
+
+export const number: NumberMaker = (kind, size) =>
+  mappings[
+    `${kind}${size}` as keyof typeof mappings
+  ] as ReturnType<NumberMaker>;

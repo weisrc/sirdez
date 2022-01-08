@@ -1,20 +1,19 @@
+/* eslint-disable no-console */
 import {
   createContext,
+  eval,
   string,
   struct,
+  StructMaker,
   tuple,
+  TupleMaker,
   TypeOf,
   uint8,
   utf8
 } from "../../src";
 
-const ctx = createContext();
-
-beforeEach(() => {
-  ctx.i = 0;
-});
-
-{
+function testStruct(struct: StructMaker, name: string) {
+  const ctx = createContext();
   const data = { name: "Alice", age: 100 };
 
   const typer = struct({
@@ -22,28 +21,38 @@ beforeEach(() => {
     age: uint8
   });
 
-  test("struct encode", () => {
+  test(name + " encode", () => {
     typer.encode(ctx, data);
     expect(ctx.i).toBe(7);
+    console.log(ctx.bytes);
   });
 
-  test("struct decode", () => {
+  test(name + " decode", () => {
+    ctx.i = 0;
     expect(typer.decode(ctx)).toEqual(data);
     expect(ctx.i).toBe(7);
   });
 }
 
-{
+function testTuple(tuple: TupleMaker, name: string) {
+  const ctx = createContext();
   const typer = tuple(string(utf8, uint8), uint8);
   const data: TypeOf<typeof typer> = ["Alice", 123];
 
-  test("tuple encode", () => {
+  test(name + " encode", () => {
     typer.encode(ctx, data);
     expect(ctx.i).toBe(7);
   });
 
-  test("tuple decode", () => {
+  test(name + " decode", () => {
+    ctx.i = 0;
     expect(typer.decode(ctx)).toEqual(data);
     expect(ctx.i).toBe(7);
   });
 }
+
+testStruct(struct, "struct");
+testTuple(tuple, "tuple");
+
+testStruct(eval.struct, "eval.struct");
+testTuple(eval.tuple, "eval.tuple");
