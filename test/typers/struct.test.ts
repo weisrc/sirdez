@@ -1,6 +1,6 @@
 import {
   createContext,
-  eval,
+  codegen,
   string,
   struct,
   StructMaker,
@@ -52,5 +52,5 @@ function testTuple(tuple: TupleMaker, name: string) {
 testStruct(struct, "struct");
 testTuple(tuple, "tuple");
 
-testStruct(eval.struct, "eval.struct");
-testTuple(eval.tuple, "eval.tuple");
+testStruct(codegen.struct, "eval.struct");
+testTuple(codegen.tuple, "eval.tuple");

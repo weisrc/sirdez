@@ -115,16 +115,16 @@ export const float64: Typer<number> = {
 };
 
 const mappings = {
-  Uint1: uint8,
-  Uint2: uint16,
-  Uint4: uint32,
-  Int1: int8,
-  Int2: int16,
-  Int4: int32,
-  Float4: float32,
-  Float8: float64,
-  BigUint8: bigUint64,
-  BigInt8: bigInt64
+  uint8,
+  uint16,
+  uint32,
+  int8,
+  int16,
+  int32,
+  float32,
+  float64,
+  bigUint64,
+  bigInt64
 } as const;
 
 export const number: NumberMaker = (kind, size) =>

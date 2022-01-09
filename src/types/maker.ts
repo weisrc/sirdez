@@ -7,14 +7,14 @@ import {
   AsyncTyperStruct
 } from ".";
 
-type IntKind = "Uint" | "Int";
-type IntSize = 1 | 2 | 4;
+type IntKind = "uint" | "int";
+type IntSize = 8 | 16 | 32;
 
-type FloatKind = "Float";
-type FloatSize = 4 | 8;
+type FloatKind = "float";
+type FloatSize = 32 | 64;
 
-type BigIntKind = "BigInt" | "BigUint";
-type BigIntSize = 8;
+type BigIntKind = "bigInt" | "bigUint";
+type BigIntSize = 64;
 
 type Kind = IntKind | FloatKind | BigIntKind;
 type Size = IntSize | FloatSize | BigIntSize;

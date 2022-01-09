@@ -5,5 +5,5 @@ export * from "./record";
 export * from "./string";
 export * from "./struct";
 export * from "./bytes";
-export * as eval from "./eval";
+export * as codegen from "./codegen";
 export * as async from "./async";
