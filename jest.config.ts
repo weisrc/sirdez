@@ -4,15 +4,17 @@ export default async (): Promise<Config.InitialOptions> => {
   return {
     verbose: true,
     preset: "ts-jest",
-    coverageReporters: ["html-spa", "json", "json-summary", "text"],
+    coverageDirectory: "coverage",
+    coverageReporters: ["text", "json-summary", "json", "lcov"],
     reporters: [
       "default",
       [
-        "jest-stare",
+        "jest-html-reporters",
         {
-          resultDir: "report",
-          reportTitle: "Report",
-          coverageLink: "../coverage"
+          hideIcon: true,
+          publicPath: "report",
+          filename: "index.html",
+          pageTitle: "Sir Dez' Report"
         }
       ]
     ]
