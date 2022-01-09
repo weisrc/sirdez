@@ -81,13 +81,13 @@ const sirdez = await import(
 ##### In code (statically)
 
 ```ts
-import * as sirdez from "https://deno.land/x/sirdez";
+import * as sirdez from "https://deno.land/x/sirdez/mod.ts";
 ```
 
 ##### In code (dynamically)
 
 ```ts
-const sirdez = await import("https://deno.land/x/sirdez");
+const sirdez = await import("https://deno.land/x/sirdez/mod.ts");
 ```
 
 </details>
@@ -144,6 +144,6 @@ const bob: Person = {
 [deno-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
 [deno-url]: https://www.npmjs.com/package/sirdez
 [coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json
-[coverage-url]: https://weisrc.github.io/sirdez/coverage
+[coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
 [report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
