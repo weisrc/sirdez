@@ -56,20 +56,20 @@ const sirdez = require("sirdez");
 ##### In HTML with UMD
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.umd.js"></script>
 ```
 
 ##### In an ES module script (statically)
 
 ```js
-import * as sirdez from "https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js";
+import * as sirdez from "https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js";
 ```
 
 ##### In an ES module script (dynamically)
 
 ```js
 const sirdez = await import(
-  "https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js"
+  "https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js"
 );
 ```
 
