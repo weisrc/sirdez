@@ -1,7 +1,7 @@
 import {
   numPassedTests,
   numTotalTests
-} from "../report/jest-results.json";
+} from "../report/results.json";
 import { writeFileSync } from "fs";
 
 interface Badge {
