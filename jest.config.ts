@@ -6,7 +6,7 @@ export default async (): Promise<Config.InitialOptions> => {
     preset: "ts-jest",
     coverageDirectory: "coverage",
     coverageReporters: ["text", "json-summary", "json", "lcov"],
-    testResultsProcessor: "./scripts/jestJsonReporter.js",
+    testResultsProcessor: "./scripts/jestJsonReporter.ts",
     reporters: [
       "default",
       [
