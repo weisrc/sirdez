@@ -1,8 +1,8 @@
 [![Byts][logo-img]][logo-url]
 
-# **Super byte [SerDes][serdes] for TypeScript**
+# **Super Byte [SerDes][serdes] for TypeScript**
 
-**A easy-to-use performant binary serialization and deserialization tree-shakable library**
+**An easy-to-use performant binary serialization and deserialization tree-shakable library**
 
 [![ci][ci-img]][ci-url]
 [![npm][npm-img]][npm-url]

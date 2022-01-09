@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
-    "module": "CommonJS",
-    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "lib": ["WebWorker"],
     "moduleResolution": "Node",
     "declaration": true,
     "strict": true,
@@ -17,5 +17,15 @@
     "outDir": "build"
   },
   "include": ["src"],
-  "exclude": ["deno_build"]
+  "exclude": ["deno_build"],
+  "ts-node": {
+    // "compilerOptions": {
+    //   "module": "CommonJS",
+    //   "resolveJsonModule": true
+    // },
+    "moduleTypes": {
+      "jest.config.ts": "cjs",
+      "scripts/badges.ts": "cjs"
+    }
+  }
 }

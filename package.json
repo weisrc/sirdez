@@ -2,6 +2,7 @@
   "name": "byts",
   "version": "0.0.0",
   "main": "build/index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && denoify",

@@ -22,27 +22,28 @@ interface Badge {
 
 import { total } from "../coverage/coverage-summary.json";
 
-const reportPercent = numPassedTests / numTotalTests;
-
 function percentToColor(percent: number) {
   return `hsl(${(percent * 120).toFixed()}, 100%, 40%)`;
 }
 
-const report: Badge = {
+function createBadge(path: string, badge: Badge) {
+  writeFileSync(path + "/badge.json", JSON.stringify(badge));
+}
+
+const reportPercent = numPassedTests / numTotalTests;
+
+createBadge("report", {
   schemaVersion: 1,
   label: "report",
   namedLogo: "jest",
   message: (reportPercent * 100).toFixed(2) + "%",
   color: percentToColor(reportPercent)
-};
+});
 
-const coverage: Badge = {
+createBadge("coverage", {
   schemaVersion: 1,
   label: "coverage",
   namedLogo: "jest",
   message: total.lines.pct + "%",
   color: percentToColor(total.lines.pct / 100)
-};
-
-writeFileSync("report/badge.json", JSON.stringify(report));
-writeFileSync("coverage/badge.json", JSON.stringify(coverage));
+});
