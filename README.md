@@ -116,7 +116,7 @@ console.log("🎉 Congratulations! 🎉");
 #### Using TypeScript utilities
 
 ```ts
-type Person = TypeOf<typeof personTyper>;
+type Person = sirdez.TypeOf<typeof personTyper>;
 
 const bob: Person = {
   name: "Bob",
