@@ -7,7 +7,6 @@ repo
 doc
 deno_build
 report
-dist
 scripts
 jest.config.js
 vite.config.ts
