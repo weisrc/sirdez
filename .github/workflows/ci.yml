@@ -33,8 +33,10 @@ jobs:
           npm run doc
           git add -f build deno_build doc
       - name: Push
+        env:
+          MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "${{ github.event.head_commit.message }}"
+          git commit -m "$MESSAGE"
           git push origin main:ci -f
