@@ -1,26 +1,27 @@
 import {
   array,
+  async,
   optional,
   string,
-  struct,
   TypeOf,
   uint16,
   uint32,
   uint8,
-  use,
   utf8js
-} from "../src";
-import { text } from "./fixtures/text";
+} from "../../../src";
+import { text } from "../../fixtures/text";
+import { asyncBoolean } from "./asyncBoolean";
 
-const personTyper = struct({
+const personTyper = async.struct({
   name: string(utf8js, uint8),
   age: uint8,
   address: optional(string(utf8js, uint8)),
   friends: array(string(utf8js, uint8), uint8),
-  resume: string(utf8js, uint32)
+  resume: string(utf8js, uint32),
+  cool: asyncBoolean
 });
 
-const peopleTyper = array(personTyper, uint16);
+const peopleTyper = async.array(personTyper, uint16);
 
 const names = [
   "alice",
@@ -44,18 +45,22 @@ const randomPerson = (): Person => ({
   age: Math.floor(Math.random() * 100),
   address: Math.random() > 0.5 ? "some address here" : undefined,
   friends: new Array(100).fill(0).map(randomName),
-  resume: text.slice(0, 500)
+  resume: text.slice(0, 500),
+  cool: Boolean(Math.round(Math.random()))
 });
 
-const { encode, decode } = use(peopleTyper);
+const { encode, decode } = async.use(peopleTyper);
 
-test("use will grow", () => {
+test("use will grow", async () => {
   const data = new Array(100).fill(0).map(randomPerson);
-  expect(decode(encode(data))).toEqual(data);
+  expect(await decode(await encode(data))).toEqual(data);
 });
 
 test("use will throw other errors", () => {
-  expect(() =>
-    decode(encode(["not a person" as unknown as Person]))
-  ).toThrow(TypeError);
+  expect(
+    async () =>
+      await decode(
+        await encode(["not a person" as unknown as Person])
+      )
+  ).rejects.toThrow(TypeError);
 });

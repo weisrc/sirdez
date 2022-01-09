@@ -52,5 +52,5 @@ function testTuple(tuple: TupleMaker, name: string) {
 testStruct(struct, "struct");
 testTuple(tuple, "tuple");
 
-testStruct(codegen.struct, "eval.struct");
-testTuple(codegen.tuple, "eval.tuple");
+testStruct(codegen.struct, "codegen.struct");
+testTuple(codegen.tuple, "codegen.tuple");

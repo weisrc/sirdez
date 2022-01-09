@@ -1,12 +1,11 @@
-/* eslint no-constant-condition: ["error", { "checkLoops": false }] */
+import { contextFromArray, createContext } from "../../context";
+import { AsyncConverter, AsyncTyper } from "../../types";
 
-import { contextFromArray, createContext } from "./context";
-import { AsyncConverter, AsyncTyper } from "./types";
-
-export function asyncUse<T>(type: AsyncTyper<T>): AsyncConverter<T> {
+export function use<T>(type: AsyncTyper<T>): AsyncConverter<T> {
   let size = 64;
   return {
     async encode(data) {
+      // eslint-disable-next-line no-constant-condition
       while (true) {
         const ctx = createContext(size);
         const limit = ctx.bytes.length - 8;

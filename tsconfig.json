@@ -16,7 +16,7 @@
     "noImplicitReturns": true,
     "outDir": "build"
   },
-  "include": ["src"],
+  "include": ["src", "test/fixtures"],
   "exclude": ["deno_build"],
   "ts-node": {
     // "compilerOptions": {

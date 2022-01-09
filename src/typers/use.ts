@@ -1,13 +1,12 @@
-/* eslint no-constant-condition: ["error", { "checkLoops": false }] */
-
-import { growContext } from ".";
-import { contextFromArray, createContext } from "./context";
-import { Converter, Typer } from "./types";
+import { growContext } from "..";
+import { contextFromArray, createContext } from "../context";
+import { Converter, Typer } from "../types";
 
 export function use<T>(type: Typer<T>): Converter<T> {
   const ctx = createContext(1024);
   return {
     encode(data) {
+      // eslint-disable-next-line no-constant-condition
       while (true) {
         const limit = ctx.bytes.length - 8;
         try {
