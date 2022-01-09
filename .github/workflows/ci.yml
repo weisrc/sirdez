@@ -33,7 +33,7 @@ jobs:
         run: |
           npm run build
           npm run doc
-          git add -f build doc
+          git add -f build deno_build doc
       - name: Push
         run: |
           git config --global user.name "github-actions[bot]"
