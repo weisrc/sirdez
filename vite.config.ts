@@ -2,11 +2,11 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	build: {
-		lib: {
-			entry: resolve(__dirname, "src/index.ts"),
-			name: "byts",
-			fileName: (format) => `byts.${format}.js`
-		}
-	}
+  build: {
+    lib: {
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "sirdez",
+      fileName: (format) => `sirdez.${format}.js`
+    }
+  }
 });

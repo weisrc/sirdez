@@ -1,19 +1,27 @@
-[![Byts][logo-img]][logo-url]
+<div markdown="1" align="center">
 
-# **Super Byte [_SerDes_][serdes] for TypeScript**
+[![Sir Dez][logo-img]][logo-url]
 
-**An easy-to-use performant binary serialization and deserialization tree-shakable library in TypeScript for Node, Deno and Browsers.**
+# **Glorious [_SerDes_][serdes] for TypeScript**
+
+The **library** you can rely on,  
+For **binary** **serialization** and **deserialization**,  
+In **Node**, **Deno**, and the **Web** environment,  
+Which is **simple** and yet **performant**.
 
 [![ci][ci-img]][ci-url]
 [![npm][npm-img]][npm-url]
+[![deno][deno-img]][deno-url]
 [![coverage][coverage-img]][coverage-url]
 [![report][report-img]][report-url]
 
-## Deep Dive
+</div>
+
+## Getting Started
 
 ### Installation
 
-<details>
+<details markdodwn="1">
   <summary>Node (Webpack, Babel, React, Svelte, Vue, Svelte...)</summary>
 
 ##### In the terminal with NPM
@@ -42,8 +50,8 @@ const sirdez = require("sirdez");
 
 </details>
 
-<details>
-<summary>Browser (without bundlers)</summary>
+<details markdodwn="1">
+<summary>Web (without bundlers)</summary>
 
 ##### In HTML with UMD
 
@@ -67,7 +75,7 @@ const sirdez = await import(
 
 </details>
 
-<details>
+<details markdodwn="1">
 <summary>Deno</summary>
 
 ##### In code (statically)
@@ -84,7 +92,7 @@ const sirdez = await import("https://deno.land/x/sirdez");
 
 </details>
 
-### Ignition
+### Usage
 
 #### Simple snippet of code
 
@@ -110,7 +118,7 @@ const decoded = decode(encoded);
 console.log("decoded", decoded);
 
 // celebrate
-console.log("🎉 Congratulations! 🎉");
+console.log("🍷Cheers!🍺");
 ```
 
 #### Using TypeScript utilities
@@ -127,12 +135,14 @@ const bob: Person = {
 <!-- urls -->
 
 [serdes]: https://en.wikipedia.org/wiki/SerDes
-[logo-img]: https://see.fontimg.com/api/renderfont4/rxaL/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/Qnl0cw/cube.png
+[logo-img]: https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U2lyIERleg/x.png
 [logo-url]: https://weisrc.github.io/sirdez
 [ci-img]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg
 [ci-url]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml
 [npm-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
 [npm-url]: https://www.npmjs.com/package/sirdez
+[deno-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
+[deno-url]: https://www.npmjs.com/package/sirdez
 [coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage
 [report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json
