@@ -19,25 +19,25 @@
 ##### In the terminal with NPM
 
 ```sh
-npm i byts
+npm i sirdez
 ```
 
 ##### Or with Yarn
 
 ```sh
-yarn add byts
+yarn add sirdez
 ```
 
 ##### In the code with ES Modules
 
 ```ts
-import * as byts from "byts";
+import * as sirdez from "sirdez";
 ```
 
 ##### or with CommonJS
 
 ```ts
-const byts = require("byts");
+const sirdez = require("sirdez");
 ```
 
 </details>
@@ -48,20 +48,20 @@ const byts = require("byts");
 ##### In HTML with UMD
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/byts@latest/dist/byts.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js"></script>
 ```
 
 ##### In an ES module script (statically)
 
 ```js
-import * as byts from "https://cdn.jsdelivr.net/npm/byts@latest/dist/byts.umd.js";
+import * as sirdez from "https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js";
 ```
 
 ##### In an ES module script (dynamically)
 
 ```js
-const byts = await import(
-  "https://cdn.jsdelivr.net/npm/byts@latest/dist/byts.umd.js"
+const sirdez = await import(
+  "https://cdn.jsdelivr.net/npm/sirdez@latest/dist/sirdez.umd.js"
 );
 ```
 
@@ -73,13 +73,13 @@ const byts = await import(
 ##### In code (statically)
 
 ```ts
-import * as byts from "https://deno.land/x/byts";
+import * as sirdez from "https://deno.land/x/sirdez";
 ```
 
 ##### In code (dynamically)
 
 ```ts
-const byts = await import("https://deno.land/x/byts");
+const sirdez = await import("https://deno.land/x/sirdez");
 ```
 
 </details>
@@ -90,13 +90,13 @@ const byts = await import("https://deno.land/x/byts");
 
 ```js
 // create person typer
-const personTyper = byts.struct({
-  name: byts.string,
-  age: byts.uint8
+const personTyper = sirdez.struct({
+  name: sirdez.string,
+  age: sirdez.uint8
 });
 
 // use person typer
-const { encode, decode } = byts.use(personTyper);
+const { encode, decode } = sirdez.use(personTyper);
 
 // encode
 const encoded = encode({
@@ -128,12 +128,12 @@ const bob: Person = {
 
 [serdes]: https://en.wikipedia.org/wiki/SerDes
 [logo-img]: https://see.fontimg.com/api/renderfont4/rxaL/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/Qnl0cw/cube.png
-[logo-url]: https://weisrc.github.io/byts
-[ci-img]: https://github.com/weisrc/byts/actions/workflows/ci.yml/badge.svg
-[ci-url]: https://github.com/weisrc/byts/actions/workflows/ci.yml
-[npm-img]: https://img.shields.io/npm/v/byts?color=cb3837&label=npm&logo=npm
-[npm-url]: https://www.npmjs.com/package/byts
-[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/coverage/badge.json
-[coverage-url]: https://weisrc.github.io/byts/coverage
-[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/byts/report/badge.json
-[report-url]: https://weisrc.github.io/byts/report
+[logo-url]: https://weisrc.github.io/sirdez
+[ci-img]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg
+[ci-url]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml
+[npm-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
+[npm-url]: https://www.npmjs.com/package/sirdez
+[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json
+[coverage-url]: https://weisrc.github.io/sirdez/coverage
+[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json
+[report-url]: https://weisrc.github.io/sirdez/report
