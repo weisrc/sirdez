@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+import { writeFileSync } from "fs";
+// @ts-ignore
+import { total } from "../coverage/coverage-summary.json";
 import {
   numPassedTests,
   numTotalTests
+  // @ts-ignore
 } from "../report/results.json";
-import { writeFileSync } from "fs";
 
 interface Badge {
   schemaVersion: 1;
@@ -19,8 +24,6 @@ interface Badge {
   style?: "flat";
   cacheSeconds?: number;
 }
-
-import { total } from "../coverage/coverage-summary.json";
 
 function percentToColor(percent: number) {
   return `hsl(${(percent * 120).toFixed()}, 100%, 40%)`;
