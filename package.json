@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "build/index.js",
   "scripts": {
-    "lint": "eslint --fix .",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "run-s format lint",
     "test": "jest --coverage",
