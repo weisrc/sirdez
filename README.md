@@ -141,8 +141,8 @@ const bob: Person = {
 [ci-url]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml
 [npm-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
 [npm-url]: https://www.npmjs.com/package/sirdez
-[deno-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
-[deno-url]: https://www.npmjs.com/package/sirdez
+[deno-img]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
+[deno-url]: https://deno.land/x/sirdez
 [coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
 [report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json
