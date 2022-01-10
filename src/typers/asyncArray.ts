@@ -1,6 +1,6 @@
-import { AsyncArrayMaker } from "../../types";
+import { AsyncArrayMaker } from "../types";
 
-export const array: AsyncArrayMaker = (typer, header) => ({
+export const asyncArray: AsyncArrayMaker = (typer, header) => ({
   async encode(ctx, data) {
     const { length } = data;
     header.encode(ctx, length);

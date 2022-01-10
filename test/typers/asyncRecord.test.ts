@@ -1,15 +1,15 @@
 import {
-  async,
+  asyncRecord,
   createContext,
   string,
   uint8,
   utf8
-} from "../../../src";
+} from "../../src";
 import { asyncBoolean } from "./asyncBoolean";
 
 const ctx = createContext();
 
-const typer = async.record(asyncBoolean, uint8, string(utf8, uint8));
+const typer = asyncRecord(asyncBoolean, uint8, string(utf8, uint8));
 
 beforeEach(() => {
   ctx.i = 0;

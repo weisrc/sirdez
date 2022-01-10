@@ -1,10 +1,6 @@
-import {
-  AsyncStructMaker,
-  AsyncTupleMaker,
-  TypeOf
-} from "../../types";
+import { AsyncStructMaker, AsyncTupleMaker, TypeOf } from "../types";
 
-export const struct: AsyncStructMaker = (definition) => {
+export const asyncStruct: AsyncStructMaker = (definition) => {
   const obj = definition instanceof Array ? () => [] : () => ({});
   return {
     async encode(ctx, data) {
@@ -22,5 +18,5 @@ export const struct: AsyncStructMaker = (definition) => {
   };
 };
 
-export const tuple: AsyncTupleMaker = (...defintion) =>
-  struct(defintion);
+export const asyncTuple: AsyncTupleMaker = (...defintion) =>
+  asyncStruct(defintion);

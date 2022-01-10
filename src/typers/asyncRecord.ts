@@ -1,6 +1,10 @@
-import { AsyncRecordMaker, TypeOf } from "../../types";
+import { AsyncRecordMaker, TypeOf } from "../types";
 
-export const record: AsyncRecordMaker = (typer, header, keyer) => ({
+export const asyncRecord: AsyncRecordMaker = (
+  typer,
+  header,
+  keyer
+) => ({
   async encode(ctx, data) {
     const { length } = Object.keys(data);
     header.encode(ctx, length);

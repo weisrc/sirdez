@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 
-import { AsyncTyper, boolean } from "../../../src";
+import { AsyncTyper, boolean } from "../../src";
 
 export const asyncBoolean: AsyncTyper<boolean> = {
   async encode(ctx, data) {

@@ -1,9 +1,9 @@
-import { async, createContext, uint8 } from "../../../src";
+import { createContext, uint8, asyncArray } from "../../src";
 import { asyncBoolean } from "./asyncBoolean";
 
 const ctx = createContext();
 
-const typer = async.array(asyncBoolean, uint8);
+const typer = asyncArray(asyncBoolean, uint8);
 
 beforeEach(() => {
   ctx.i = 0;

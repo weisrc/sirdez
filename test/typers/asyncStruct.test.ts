@@ -1,13 +1,16 @@
 import {
-  async,
+  asyncEvalStruct,
+  asyncEvalTuple,
+  asyncStruct,
   AsyncStructMaker,
+  asyncTuple,
   AsyncTupleMaker,
   createContext,
   string,
   TypeOf,
   uint8,
   utf8
-} from "../../../src";
+} from "../../src";
 import { asyncBoolean } from "./asyncBoolean";
 
 function testStruct(struct: AsyncStructMaker, name: string) {
@@ -48,8 +51,8 @@ function testTuple(tuple: AsyncTupleMaker, name: string) {
   });
 }
 
-testStruct(async.struct, "async.struct");
-testTuple(async.tuple, "async.tuple");
+testStruct(asyncStruct, "async.struct");
+testTuple(asyncTuple, "async.tuple");
 
-testStruct(async.codegen.struct, "async.codegen.struct");
-testTuple(async.codegen.tuple, "async.codegen.tuple");
+testStruct(asyncEvalStruct, "async.codegen.struct");
+testTuple(asyncEvalTuple, "async.codegen.tuple");

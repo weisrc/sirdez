@@ -1,6 +1,6 @@
 import {
-  codegen,
   createContext,
+  evalNumber,
   number,
   NumberMaker
 } from "../../src";
@@ -78,5 +78,5 @@ function testNumber(number: NumberMaker, prefix = "") {
   });
 }
 
-testNumber(codegen.number, "codegen.");
+testNumber(evalNumber, "codegen.");
 testNumber(number);

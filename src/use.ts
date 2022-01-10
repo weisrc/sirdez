@@ -1,17 +1,20 @@
-import { contextFromArray, createContext } from "../../context";
-import { AsyncConverter, AsyncTyper } from "../../types";
+import {
+  contextFromArray,
+  createContext,
+  growContext
+} from "./context";
+import { Converter, Typer } from "./types";
 
-export function use<T>(type: AsyncTyper<T>): AsyncConverter<T> {
-  let size = 64;
+export function use<T>(type: Typer<T>): Converter<T> {
+  const ctx = createContext(1024);
   return {
-    async encode(data) {
+    encode(data) {
       // eslint-disable-next-line no-constant-condition
       while (true) {
-        const ctx = createContext(size);
         const limit = ctx.bytes.length - 8;
         try {
           ctx.i = 0;
-          await type.encode(ctx, data);
+          type.encode(ctx, data);
           if (ctx.i < limit) {
             return ctx.bytes.subarray(0, ctx.i);
           }
@@ -20,7 +23,7 @@ export function use<T>(type: AsyncTyper<T>): AsyncConverter<T> {
             throw error;
           }
         }
-        size = ctx.i * 2;
+        growContext(ctx);
       }
     },
     decode(array: Uint8Array) {

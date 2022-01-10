@@ -1,6 +1,6 @@
-import { AsyncOptionalMaker } from "../../types";
+import { AsyncOptionalMaker } from "../types";
 
-export const optional: AsyncOptionalMaker = (typer) => ({
+export const asyncOptional: AsyncOptionalMaker = (typer) => ({
   async encode(ctx, data) {
     if (data == undefined) {
       ctx.view.setUint8(ctx.i++, 0);

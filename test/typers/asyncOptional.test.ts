@@ -1,4 +1,4 @@
-import { createContext, async } from "../../../src";
+import { createContext, asyncOptional } from "../../src";
 import { asyncBoolean } from "./asyncBoolean";
 
 const ctx = createContext();
@@ -7,7 +7,7 @@ beforeEach(() => {
   ctx.i = 0;
 });
 
-const typer = async.optional(asyncBoolean);
+const typer = asyncOptional(asyncBoolean);
 
 test("async.optional encode with value", async () => {
   await typer.encode(ctx, true);

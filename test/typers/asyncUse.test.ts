@@ -1,18 +1,20 @@
 import {
   array,
-  async,
+  asyncStruct,
+  asyncArray,
   optional,
   string,
   TypeOf,
   uint16,
   uint32,
   uint8,
-  utf8js
-} from "../../../src";
-import { text } from "../../fixtures/text";
+  utf8js,
+  asyncUse
+} from "../../src";
+import { text } from "../fixtures/text";
 import { asyncBoolean } from "./asyncBoolean";
 
-const personTyper = async.struct({
+const personTyper = asyncStruct({
   name: string(utf8js, uint8),
   age: uint8,
   address: optional(string(utf8js, uint8)),
@@ -21,7 +23,7 @@ const personTyper = async.struct({
   cool: asyncBoolean
 });
 
-const peopleTyper = async.array(personTyper, uint16);
+const peopleTyper = asyncArray(personTyper, uint16);
 
 const names = [
   "alice",
@@ -49,7 +51,7 @@ const randomPerson = (): Person => ({
   cool: Boolean(Math.round(Math.random()))
 });
 
-const { encode, decode } = async.use(peopleTyper);
+const { encode, decode } = asyncUse(peopleTyper);
 
 test("use will grow", async () => {
   const data = new Array(100).fill(0).map(randomPerson);
