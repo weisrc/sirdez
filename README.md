@@ -9,9 +9,9 @@ For **binary** **serialization** and **deserialization**,
 In **Node**, **Deno**, and the **Web** environment,  
 Which is **simple** and yet **performant**.
 
-[![ci][ci-img]][ci-url]
 [![npm][npm-img]][npm-url]
 [![deno][deno-img]][deno-url]
+[![ci][ci-img]][ci-url]
 [![coverage][coverage-img]][coverage-url]
 [![report][report-img]][report-url]
 
