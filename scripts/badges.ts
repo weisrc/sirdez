@@ -5,6 +5,7 @@ import { writeFileSync } from "fs";
 import { total } from "../coverage/coverage-summary.json";
 import {
   numPassedTests,
+  numFailedTests,
   numTotalTests
   // @ts-ignore
 } from "../report/results.json";
@@ -33,14 +34,12 @@ function createBadge(path: string, badge: Badge) {
   writeFileSync(path + "/badge.json", JSON.stringify(badge));
 }
 
-const reportPercent = numPassedTests / numTotalTests;
-
 createBadge("report", {
   schemaVersion: 1,
   label: "report",
   namedLogo: "jest",
-  message: (reportPercent * 100).toFixed(2) + "%",
-  color: percentToColor(reportPercent)
+  message: `${numPassedTests} passed, ${numFailedTests} failed`,
+  color: percentToColor(numFailedTests ? 0 : 1)
 });
 
 createBadge("coverage", {
