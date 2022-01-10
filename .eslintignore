@@ -1,0 +1,13 @@
+# test gen
+docs
+coverage
+report
+
+# code gen
+build
+es_build
+dist
+deno_dist
+
+# node
+node_modules

@@ -3,7 +3,6 @@
     "es2021": true,
     "shared-node-browser": true
   },
-  "ignorePatterns": ["dist", "build", "coverage", "doc", "report", "scripts"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"

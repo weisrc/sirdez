@@ -1,12 +1,22 @@
+# dotfiles
 .github
 .prettierrc
+.gitignore
+.prettierignore
+.eslintignore
+
+# testing
 coverage
-test
-src
-repo
-doc
-deno_build
 report
+test
+doc
+
+# code
+src
 scripts
-jest.config.js
+jest.config.ts
 vite.config.ts
+
+# dist
+dist
+deno_dist

@@ -12,26 +12,25 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 15.x
-      - name: Setup
+      - name: Setup environment
         run: |
           npm ci
           npm run clean
-      - name: Lint
+      - name: Lint source
         run: npm run lint
-      - name: Test
+      - name: Test source
         id: test
         continue-on-error: true
-        run: npm run coverage
-      - name: Generate badges and, add report and coverage
+        run: npm run test
+      - name: Create test badges
         run: |
           npm run badges
           git add -f report coverage
-      - name: Build and doc
+      - name: Generate dist and build
         if: steps.test.outcome == 'success'
         run: |
-          npm run build
-          npm run doc
-          git add -f build deno_build doc
+          npm run gen
+          git add -f dist deno_dist build es_build doc
       - name: Push
         env:
           MESSAGE: ${{ github.event.head_commit.message }}

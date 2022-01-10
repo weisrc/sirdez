@@ -1,7 +1,13 @@
+# test gen
+docs
 coverage
-build
-dist
-doc
 report
-deno_build
+
+# code gen
+build
+es_build
+dist
+deno_dist
+
+# node
 node_modules
