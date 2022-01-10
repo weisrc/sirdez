@@ -1,0 +1,111 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>sirdez</title><meta name="description" content="Documentation for sirdez"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">sirdez</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>sirdez</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><div markdown="1" align="center">
+
+<p><a href="https://weisrc.github.io/sirdez"><img src="https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U2lyIERleg/x.png" alt="Sir Dez"></a></p>
+
+<a href="#glorious-serdes-for-typescript" id="glorious-serdes-for-typescript" style="color: inherit; text-decoration: none;">
+  <h1><strong>Glorious <a href="https://en.wikipedia.org/wiki/SerDes"><em>SerDes</em></a> for TypeScript</strong></h1>
+</a>
+<p>The <strong>library</strong> you can rely on,<br>For <strong>binary</strong> <strong>serialization</strong> and <strong>deserialization</strong>,<br>In <strong>Node</strong>, <strong>Deno</strong>, and the <strong>Web</strong> environment,<br>Which is <strong>simple</strong> and yet <strong>performant</strong>.</p>
+<p><a href="https://github.com/weisrc/sirdez/actions/workflows/ci.yml"><img src="https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
+<a href="https://www.npmjs.com/package/sirdez"><img src="https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm" alt="npm"></a>
+<a href="https://www.npmjs.com/package/sirdez"><img src="https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm" alt="deno"></a>
+<a href="https://weisrc.github.io/sirdez/coverage/lcov-report"><img src="https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json" alt="coverage"></a>
+<a href="https://weisrc.github.io/sirdez/report"><img src="https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json" alt="report"></a></p>
+</div>
+
+
+<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
+  <h2>Getting Started</h2>
+</a>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h3>Installation</h3>
+</a>
+<details markdodwn="1">
+  <summary>Node (Webpack, Babel, React, Svelte, Vue, Svelte...)</summary>
+
+
+<a href="#in-the-terminal-with-npm" id="in-the-terminal-with-npm" style="color: inherit; text-decoration: none;">
+  <h5>In the terminal with NPM</h5>
+</a>
+<pre><code class="language-sh"><span class="hl-0">npm i sirdez</span>
+</code></pre>
+
+<a href="#or-with-yarn" id="or-with-yarn" style="color: inherit; text-decoration: none;">
+  <h5>Or with Yarn</h5>
+</a>
+<pre><code class="language-sh"><span class="hl-0">yarn add sirdez</span>
+</code></pre>
+
+<a href="#in-the-code-with-es-modules" id="in-the-code-with-es-modules" style="color: inherit; text-decoration: none;">
+  <h5>In the code with ES Modules</h5>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sirdez</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;sirdez&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#or-with-commonjs" id="or-with-commonjs" style="color: inherit; text-decoration: none;">
+  <h5>or with CommonJS</h5>
+</a>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sirdez</span><span class="hl-0"> = </span><span class="hl-6">require</span><span class="hl-0">(</span><span class="hl-4">&quot;sirdez&quot;</span><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+<details markdodwn="1">
+<summary>Web (without bundlers)</summary>
+
+
+<a href="#in-html-with-umd" id="in-html-with-umd" style="color: inherit; text-decoration: none;">
+  <h5>In HTML with UMD</h5>
+</a>
+<pre><code class="language-html"><span class="hl-7">&lt;</span><span class="hl-8">script</span><span class="hl-9"> </span><span class="hl-10">src</span><span class="hl-9">=</span><span class="hl-11">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.umd.js&quot;</span><span class="hl-7">&gt;&lt;/</span><span class="hl-8">script</span><span class="hl-7">&gt;</span>
+</code></pre>
+
+<a href="#in-an-es-module-script-statically" id="in-an-es-module-script-statically" style="color: inherit; text-decoration: none;">
+  <h5>In an ES module script (statically)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sirdez</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#in-an-es-module-script-dynamically" id="in-an-es-module-script-dynamically" style="color: inherit; text-decoration: none;">
+  <h5>In an ES module script (dynamically)</h5>
+</a>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sirdez</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-6">import</span><span class="hl-0">(</span><br/><span class="hl-0">  </span><span class="hl-4">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js&quot;</span><br/><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+<details markdodwn="1">
+<summary>Deno</summary>
+
+
+<a href="#in-code-statically" id="in-code-statically" style="color: inherit; text-decoration: none;">
+  <h5>In code (statically)</h5>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sirdez</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;https://deno.land/x/sirdez/mod.ts&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#in-code-dynamically" id="in-code-dynamically" style="color: inherit; text-decoration: none;">
+  <h5>In code (dynamically)</h5>
+</a>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sirdez</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-2">import</span><span class="hl-0">(</span><span class="hl-4">&quot;https://deno.land/x/sirdez/mod.ts&quot;</span><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h3>Usage</h3>
+</a>
+
+<a href="#simple-snippet-of-code" id="simple-snippet-of-code" style="color: inherit; text-decoration: none;">
+  <h4>Simple snippet of code</h4>
+</a>
+<pre><code class="language-js"><span class="hl-12">// create person typer</span><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">personTyper</span><span class="hl-0"> = </span><span class="hl-3">sirdez</span><span class="hl-0">.</span><span class="hl-6">struct</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-3">sirdez</span><span class="hl-0">.</span><span class="hl-3">string</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-3">sirdez</span><span class="hl-0">.</span><span class="hl-3">uint8</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-12">// use person typer</span><br/><span class="hl-2">const</span><span class="hl-0"> { </span><span class="hl-5">encode</span><span class="hl-0">, </span><span class="hl-5">decode</span><span class="hl-0"> } = </span><span class="hl-3">sirdez</span><span class="hl-0">.</span><span class="hl-6">use</span><span class="hl-0">(</span><span class="hl-3">personTyper</span><span class="hl-0">);</span><br/><br/><span class="hl-12">// encode</span><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">encoded</span><span class="hl-0"> = </span><span class="hl-6">encode</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-4">&quot;Bob&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-13">23</span><br/><span class="hl-0">});</span><br/><span class="hl-3">console</span><span class="hl-0">.</span><span class="hl-6">log</span><span class="hl-0">(</span><span class="hl-4">&quot;encoded&quot;</span><span class="hl-0">, </span><span class="hl-3">encoded</span><span class="hl-0">);</span><br/><br/><span class="hl-12">// decode</span><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">decoded</span><span class="hl-0"> = </span><span class="hl-6">decode</span><span class="hl-0">(</span><span class="hl-3">encoded</span><span class="hl-0">);</span><br/><span class="hl-3">console</span><span class="hl-0">.</span><span class="hl-6">log</span><span class="hl-0">(</span><span class="hl-4">&quot;decoded&quot;</span><span class="hl-0">, </span><span class="hl-3">decoded</span><span class="hl-0">);</span><br/><br/><span class="hl-12">// celebrate</span><br/><span class="hl-3">console</span><span class="hl-0">.</span><span class="hl-6">log</span><span class="hl-0">(</span><span class="hl-4">&quot;🍷Cheers!🍺&quot;</span><span class="hl-0">);</span>
+</code></pre>
+
+<a href="#using-typescript-utilities" id="using-typescript-utilities" style="color: inherit; text-decoration: none;">
+  <h4>Using TypeScript utilities</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-2">type</span><span class="hl-0"> </span><span class="hl-14">Person</span><span class="hl-0"> = </span><span class="hl-14">sirdez</span><span class="hl-0">.</span><span class="hl-14">TypeOf</span><span class="hl-0">&lt;</span><span class="hl-2">typeof</span><span class="hl-0"> </span><span class="hl-3">personTyper</span><span class="hl-0">&gt;;</span><br/><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">bob</span><span class="hl-0">: </span><span class="hl-14">Person</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-4">&quot;Bob&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-13">23</span><br/><span class="hl-0">};</span>
+</code></pre>
+<!-- urls -->
+
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/AsyncConverter.html" class="tsd-kind-icon">Async<wbr/>Converter</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/AsyncTyper.html" class="tsd-kind-icon">Async<wbr/>Typer</a></li><li class="tsd-kind-interface"><a href="interfaces/Context.html" class="tsd-kind-icon">Context</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/Converter.html" class="tsd-kind-icon">Converter</a></li><li class="tsd-kind-interface"><a href="interfaces/NumberMaker.html" class="tsd-kind-icon">Number<wbr/>Maker</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/Typer.html" class="tsd-kind-icon">Typer</a></li><li class="tsd-kind-type-alias"><a href="modules.html#ArrayMaker" class="tsd-kind-icon">Array<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#AsyncArrayMaker" class="tsd-kind-icon">Async<wbr/>Array<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#AsyncOptionalMaker" class="tsd-kind-icon">Async<wbr/>Optional<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#AsyncRecordMaker" class="tsd-kind-icon">Async<wbr/>Record<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#AsyncStructMaker" class="tsd-kind-icon">Async<wbr/>Struct<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#AsyncTupleMaker" class="tsd-kind-icon">Async<wbr/>Tuple<wbr/>Maker</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#AsyncTyperStruct" class="tsd-kind-icon">Async<wbr/>Typer<wbr/>Struct</a></li><li class="tsd-kind-type-alias"><a href="modules.html#BytesMaker" class="tsd-kind-icon">Bytes<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#OptionalMaker" class="tsd-kind-icon">Optional<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RecordMaker" class="tsd-kind-icon">Record<wbr/>Maker</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#Sequencer" class="tsd-kind-icon">Sequencer</a></li><li class="tsd-kind-type-alias"><a href="modules.html#StringMaker" class="tsd-kind-icon">String<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Struct" class="tsd-kind-icon">Struct</a></li><li class="tsd-kind-type-alias"><a href="modules.html#StructMaker" class="tsd-kind-icon">Struct<wbr/>Maker</a></li><li class="tsd-kind-type-alias"><a href="modules.html#TupleMaker" class="tsd-kind-icon">Tuple<wbr/>Maker</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#TypeOf" class="tsd-kind-icon">Type<wbr/>Of</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#TypeOfAsyncTyper" class="tsd-kind-icon">Type<wbr/>Of<wbr/>Async<wbr/>Typer</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#TypeOfTyper" class="tsd-kind-icon">Type<wbr/>Of<wbr/>Typer</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#TyperStruct" class="tsd-kind-icon">Typer<wbr/>Struct</a></li><li class="tsd-kind-variable"><a href="modules.html#ascii" class="tsd-kind-icon">ascii</a></li><li class="tsd-kind-variable"><a href="modules.html#bigInt64" class="tsd-kind-icon">big<wbr/>Int64</a></li><li class="tsd-kind-variable"><a href="modules.html#bigUint64" class="tsd-kind-icon">big<wbr/>Uint64</a></li><li class="tsd-kind-variable"><a href="modules.html#boolean" class="tsd-kind-icon">boolean</a></li><li class="tsd-kind-variable"><a href="modules.html#evalBigInt64" class="tsd-kind-icon">eval<wbr/>Big<wbr/>Int64</a></li><li class="tsd-kind-variable"><a href="modules.html#evalBigUint64" class="tsd-kind-icon">eval<wbr/>Big<wbr/>Uint64</a></li><li class="tsd-kind-variable"><a href="modules.html#evalFloat32" class="tsd-kind-icon">eval<wbr/>Float32</a></li><li class="tsd-kind-variable"><a href="modules.html#evalFloat64" class="tsd-kind-icon">eval<wbr/>Float64</a></li><li class="tsd-kind-variable"><a href="modules.html#evalInt16" class="tsd-kind-icon">eval<wbr/>Int16</a></li><li class="tsd-kind-variable"><a href="modules.html#evalInt32" class="tsd-kind-icon">eval<wbr/>Int32</a></li><li class="tsd-kind-variable"><a href="modules.html#evalInt8" class="tsd-kind-icon">eval<wbr/>Int8</a></li><li class="tsd-kind-variable"><a href="modules.html#evalUint16" class="tsd-kind-icon">eval<wbr/>Uint16</a></li><li class="tsd-kind-variable"><a href="modules.html#evalUint32" class="tsd-kind-icon">eval<wbr/>Uint32</a></li><li class="tsd-kind-variable"><a href="modules.html#evalUint8" class="tsd-kind-icon">eval<wbr/>Uint8</a></li><li class="tsd-kind-variable"><a href="modules.html#float32" class="tsd-kind-icon">float32</a></li><li class="tsd-kind-variable"><a href="modules.html#float64" class="tsd-kind-icon">float64</a></li><li class="tsd-kind-variable"><a href="modules.html#int16" class="tsd-kind-icon">int16</a></li><li class="tsd-kind-variable"><a href="modules.html#int32" class="tsd-kind-icon">int32</a></li><li class="tsd-kind-variable"><a href="modules.html#int8" class="tsd-kind-icon">int8</a></li><li class="tsd-kind-variable"><a href="modules.html#uint16" class="tsd-kind-icon">uint16</a></li><li class="tsd-kind-variable"><a href="modules.html#uint32" class="tsd-kind-icon">uint32</a></li><li class="tsd-kind-variable"><a href="modules.html#uint8" class="tsd-kind-icon">uint8</a></li><li class="tsd-kind-variable"><a href="modules.html#utf16" class="tsd-kind-icon">utf16</a></li><li class="tsd-kind-variable"><a href="modules.html#utf8" class="tsd-kind-icon">utf8</a></li><li class="tsd-kind-variable"><a href="modules.html#utf8js" class="tsd-kind-icon">utf8js</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#array" class="tsd-kind-icon">array</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncArray" class="tsd-kind-icon">async<wbr/>Array</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncEvalStruct" class="tsd-kind-icon">async<wbr/>Eval<wbr/>Struct</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncEvalTuple" class="tsd-kind-icon">async<wbr/>Eval<wbr/>Tuple</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncOptional" class="tsd-kind-icon">async<wbr/>Optional</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncRecord" class="tsd-kind-icon">async<wbr/>Record</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncStruct" class="tsd-kind-icon">async<wbr/>Struct</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncTuple" class="tsd-kind-icon">async<wbr/>Tuple</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#asyncUse" class="tsd-kind-icon">async<wbr/>Use</a></li><li class="tsd-kind-function"><a href="modules.html#bytes" class="tsd-kind-icon">bytes</a></li><li class="tsd-kind-function"><a href="modules.html#contextFromArray" class="tsd-kind-icon">context<wbr/>From<wbr/>Array</a></li><li class="tsd-kind-function"><a href="modules.html#createContext" class="tsd-kind-icon">create<wbr/>Context</a></li><li class="tsd-kind-function"><a href="modules.html#evalNumber" class="tsd-kind-icon">eval<wbr/>Number</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#evalStruct" class="tsd-kind-icon">eval<wbr/>Struct</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#evalTuple" class="tsd-kind-icon">eval<wbr/>Tuple</a></li><li class="tsd-kind-function"><a href="modules.html#growContext" class="tsd-kind-icon">grow<wbr/>Context</a></li><li class="tsd-kind-function"><a href="modules.html#number" class="tsd-kind-icon">number</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#optional" class="tsd-kind-icon">optional</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#record" class="tsd-kind-icon">record</a></li><li class="tsd-kind-function"><a href="modules.html#string" class="tsd-kind-icon">string</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#struct" class="tsd-kind-icon">struct</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#tuple" class="tsd-kind-icon">tuple</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#use" class="tsd-kind-icon">use</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

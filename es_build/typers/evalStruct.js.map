@@ -1,0 +1,1 @@
+{"version":3,"file":"evalStruct.js","sourceRoot":"","sources":["../../src/typers/evalStruct.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,iBAAiB,EAAE,MAAM,UAAU,CAAC;AAE7C,MAAM,CAAC,MAAM,UAAU,GAAgB,CAAC,UAAU,EAAE,EAAE,CACpD,iBAAiB,CAAC,UAAU,EAAE,KAAK,CAAC,CAAC;AAEvC,MAAM,CAAC,MAAM,SAAS,GAAe,CAAC,GAAG,UAAU,EAAE,EAAE,CACrD,UAAU,CAAC,UAAU,CAAC,CAAC"}
