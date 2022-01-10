@@ -7,7 +7,7 @@ import {
 } from "../types";
 
 const nameOf = (key: string) =>
-  isNaN(+key) ? JSON.stringify(key) : key;
+  /*@__PURE__*/ isNaN(+key) ? /*@__PURE__*/ JSON.stringify(key) : key;
 
 export function createStructTyper<
   T extends Struct,
@@ -20,11 +20,10 @@ export function createStructTyper<
 ): Async extends true ? AsyncTyper<T> : Typer<T> {
   const as = async ? "async " : "";
   const aw = async ? "await " : "";
-  const keys = Object.keys(definition);
-  const indexes = Object.keys(keys).map((i) => +i);
-  const values = Object.values(definition);
-
-  return new Function(
+  const keys = /*@__PURE__*/ Object.keys(definition);
+  const indexes = /*@__PURE__*/ Object.keys(keys).map((i) => +i);
+  const values = /*@__PURE__*/ Object.values(definition);
+  return /*@__PURE__*/ new Function(
     `[${indexes.map((i) => "k" + i).join()}]`,
     `[${indexes.map((i) => "e" + i).join()}]`,
     `[${indexes.map((i) => "d" + i).join()}]`,
@@ -37,7 +36,7 @@ export function createStructTyper<
       .join(";")};return d}}`
   )(
     keys,
-    values.map(({ encode }) => encode),
-    values.map(({ decode }) => decode)
+    /*@__PURE__*/ values.map(({ encode }) => encode),
+    /*@__PURE__*/ values.map(({ decode }) => decode)
   );
 }

@@ -2,6 +2,12 @@
   "name": "sirdez",
   "version": "0.0.0",
   "main": "build/index.js",
+  "exports": {
+    ".": {
+      "node": "./build/index.js",
+      "import": "./es_build/index.js"
+    }
+  },
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
