@@ -54,5 +54,5 @@ function testTuple(tuple: AsyncTupleMaker, name: string) {
 testStruct(asyncStruct, "async.struct");
 testTuple(asyncTuple, "async.tuple");
 
-testStruct(asyncEvalStruct, "async.codegen.struct");
-testTuple(asyncEvalTuple, "async.codegen.tuple");
+testStruct(asyncEvalStruct, "async.eval.struct");
+testTuple(asyncEvalTuple, "async.eval.tuple");

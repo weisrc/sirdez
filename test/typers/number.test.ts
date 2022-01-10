@@ -78,5 +78,5 @@ function testNumber(number: NumberMaker, prefix = "") {
   });
 }
 
-testNumber(evalNumber, "codegen.");
+testNumber(evalNumber, "eval.");
 testNumber(number);
