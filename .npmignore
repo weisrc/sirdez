@@ -9,9 +9,9 @@
 coverage
 report
 test
-doc
 
 # code
+docs
 src
 scripts
 jest.config.ts
