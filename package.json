@@ -43,5 +43,33 @@
     "typedoc": "^0.22.10",
     "typescript": "^4.5.4",
     "vite": "^2.7.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weisrc/sirdez.git"
+  },
+  "keywords": [
+    "binary",
+    "buffer",
+    "encoding",
+    "decoding",
+    "serde",
+    "schema",
+    "data",
+    "sirdez",
+    "message",
+    "protocol",
+    "marshalling",
+    "serialization",
+    "json",
+    "rpc",
+    "ipc",
+    "treeshakable"
+  ],
+  "author": "weisrc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weisrc/sirdez/issues"
+  },
+  "homepage": "https://github.com/weisrc/sirdez#readme"
 }

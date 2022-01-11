@@ -1,0 +1,21 @@
+name: Publish Package to npmjs
+on:
+  release:
+    types: [created]
+  workflow_dispatch: {}
+jobs:
+  publish:
+    environment: npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+      - name: Setup
+        run: npm ci
+      - name: Publish
+        if:
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
