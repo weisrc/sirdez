@@ -29,8 +29,7 @@ jobs:
       - name: Build and doc
         if: steps.test.outcome == 'success'
         run: |
-          npm run build
-          npm run doc
+          npm run build_and_doc
           git add -f dist deno_dist build docs
       - name: Push
         env:

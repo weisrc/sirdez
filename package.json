@@ -19,7 +19,8 @@
     "build:deno": "denoify --out deno_dist",
     "build:node": "tsc",
     "build": "run-p build:*",
-    "doc": "typedoc --out docs src"
+    "doc": "typedoc --out docs src",
+    "build_and_doc": "run-p build doc"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
