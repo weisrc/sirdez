@@ -18,5 +18,4 @@ jest.config.ts
 vite.config.ts
 
 # dist
-dist
 deno_dist

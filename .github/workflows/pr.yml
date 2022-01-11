@@ -18,5 +18,5 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test
-      - name: Dist and build
-        run: npm run dist_build
+      - name: Build
+        run: npm run build

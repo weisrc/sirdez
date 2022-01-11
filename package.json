@@ -5,7 +5,7 @@
   "exports": {
     ".": {
       "node": "./build/index.js",
-      "import": "./es_build/index.js"
+      "import": "./dist/sirdez.es.js"
     }
   },
   "scripts": {
@@ -14,16 +14,12 @@
     "test": "jest --coverage",
     "verify": "run-p format lint test",
     "badges": "ts-node scripts/badges",
-    "clean": "rm -rf dist deno_dist build es_build docs report coverage",
-    "dist:web": "vite build",
-    "dist:deno": "denoify --out deno_dist",
-    "dist": "run-p dist:*",
-    "build:cjs": "tsc",
-    "build:esm": "tsc --project tsconfig.es.json",
+    "clean": "rm -rf dist deno_dist build docs report coverage",
+    "build:web": "vite build",
+    "build:deno": "denoify --out deno_dist",
+    "build:node": "tsc",
     "build": "run-p build:*",
-    "dist_build": "run-p dist build",
-    "doc": "typedoc --out docs src",
-    "gen": "run-p dist_build doc"
+    "doc": "typedoc --out docs src"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

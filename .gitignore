@@ -5,7 +5,6 @@ report
 
 # code gen
 build
-es_build
 dist
 deno_dist
 

@@ -26,11 +26,11 @@ jobs:
         run: |
           npm run badges
           git add -f report coverage
-      - name: Generate dist and build
+      - name: Build
         if: steps.test.outcome == 'success'
         run: |
-          npm run gen
-          git add -f dist deno_dist build es_build docs
+          npm run build
+          git add -f dist deno_dist build docs
       - name: Push
         env:
           MESSAGE: ${{ github.event.head_commit.message }}
