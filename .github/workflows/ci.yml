@@ -26,10 +26,11 @@ jobs:
         run: |
           npm run badges
           git add -f report coverage
-      - name: Build
+      - name: Build and doc
         if: steps.test.outcome == 'success'
         run: |
           npm run build
+          npm run doc
           git add -f dist deno_dist build docs
       - name: Push
         env:
