@@ -1,4 +1,4 @@
-name: Publish Package to npmjs
+name: npm-publish
 on:
   release:
     types: [created]
@@ -16,7 +16,6 @@ jobs:
       - name: Setup
         run: npm ci
       - name: Publish
-        if:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
