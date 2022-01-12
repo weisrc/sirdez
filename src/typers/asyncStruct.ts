@@ -1,4 +1,4 @@
-import { AsyncStructMaker, AsyncTupleMaker, TypeOf } from "../types";
+import { AsyncStructMaker, AsyncTupleMaker, GetType } from "../types";
 
 export const asyncStruct: AsyncStructMaker = (definition) => {
   const obj = definition instanceof Array ? () => [] : () => ({});
@@ -9,7 +9,7 @@ export const asyncStruct: AsyncStructMaker = (definition) => {
       }
     },
     async decode(ctx) {
-      const data = obj() as TypeOf<typeof this>;
+      const data = obj() as GetType<typeof this>;
       for (const key in definition) {
         data[key] = await definition[key].decode(ctx);
       }

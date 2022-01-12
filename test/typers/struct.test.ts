@@ -7,7 +7,7 @@ import {
   StructMaker,
   tuple,
   TupleMaker,
-  TypeOf,
+  GetType,
   uint8,
   utf8
 } from "../../src";
@@ -36,7 +36,7 @@ function testStruct(struct: StructMaker, name: string) {
 function testTuple(tuple: TupleMaker, name: string) {
   const ctx = createContext();
   const typer = tuple(string(utf8, uint8), uint8);
-  const data: TypeOf<typeof typer> = ["Alice", 123];
+  const data: GetType<typeof typer> = ["Alice", 123];
 
   test(name + " encode", () => {
     typer.encode(ctx, data);

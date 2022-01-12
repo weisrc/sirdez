@@ -4,7 +4,7 @@ import {
   asyncArray,
   optional,
   string,
-  TypeOf,
+  GetType,
   uint16,
   uint32,
   uint8,
@@ -40,7 +40,7 @@ const names = [
 const randomName = () =>
   names[Math.floor(Math.random() * names.length)];
 
-type Person = TypeOf<typeof personTyper>;
+type Person = GetType<typeof personTyper>;
 
 const randomPerson = (): Person => ({
   name: randomName(),

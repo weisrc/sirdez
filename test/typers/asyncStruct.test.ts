@@ -7,7 +7,7 @@ import {
   AsyncTupleMaker,
   createContext,
   string,
-  TypeOf,
+  GetType,
   uint8,
   utf8
 } from "../../src";
@@ -37,7 +37,7 @@ function testStruct(struct: AsyncStructMaker, name: string) {
 function testTuple(tuple: AsyncTupleMaker, name: string) {
   const ctx = createContext();
   const typer = tuple(string(utf8, uint8), asyncBoolean);
-  const data: TypeOf<typeof typer> = ["Alice", true];
+  const data: GetType<typeof typer> = ["Alice", true];
 
   test(name + " encode", async () => {
     await typer.encode(ctx, data);

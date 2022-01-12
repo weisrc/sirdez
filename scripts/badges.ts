@@ -31,10 +31,10 @@ function percentToColor(percent: number) {
 }
 
 function createBadge(path: string, badge: Badge) {
-  writeFileSync(path + "/badge.json", JSON.stringify(badge));
+  writeFileSync(path, JSON.stringify(badge));
 }
 
-createBadge("report", {
+createBadge("out/report-badge.json", {
   schemaVersion: 1,
   label: "report",
   namedLogo: "jest",
@@ -42,7 +42,7 @@ createBadge("report", {
   color: percentToColor(numFailedTests ? 0 : 1)
 });
 
-createBadge("coverage", {
+createBadge("out/coverage-badge.json", {
   schemaVersion: 1,
   label: "coverage",
   namedLogo: "jest",

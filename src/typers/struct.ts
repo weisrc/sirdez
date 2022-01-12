@@ -1,4 +1,4 @@
-import { StructMaker, TupleMaker, TypeOf } from "..";
+import { StructMaker, TupleMaker, GetType } from "..";
 
 export const struct: StructMaker = (definition) => {
   const obj = definition instanceof Array ? () => [] : () => ({});
@@ -9,7 +9,7 @@ export const struct: StructMaker = (definition) => {
       }
     },
     decode(ctx) {
-      const data = obj() as TypeOf<typeof this>;
+      const data = obj() as GetType<typeof this>;
       for (const key in definition) {
         data[key] = definition[key].decode(ctx);
       }

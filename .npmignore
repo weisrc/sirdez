@@ -5,13 +5,17 @@
 .prettierignore
 .eslintignore
 
-# testing
+# generated
+out
 coverage
 report
+docs
+
+# testing
 test
+benchmark
 
 # code
-docs
 src
 scripts
 jest.config.ts

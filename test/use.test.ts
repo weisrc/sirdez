@@ -3,14 +3,14 @@ import {
   optional,
   string,
   struct,
-  TypeOf,
+  GetType,
   uint16,
   uint32,
   uint8,
   use,
   utf8js
-} from "../../src";
-import { text } from "../fixtures/text";
+} from "../src";
+import { text } from "./fixtures/text";
 
 const personTyper = struct({
   name: string(utf8js, uint8),
@@ -37,7 +37,7 @@ const names = [
 const randomName = () =>
   names[Math.floor(Math.random() * names.length)];
 
-type Person = TypeOf<typeof personTyper>;
+type Person = GetType<typeof personTyper>;
 
 const randomPerson = (): Person => ({
   name: randomName(),

@@ -17,10 +17,12 @@ export type Sequencer<T> = {
 
 export interface Converter<T> {
   encode(data: T): Uint8Array;
+  instantEncode(data: T): Readonly<Uint8Array>;
   decode(array: Uint8Array): T;
 }
 
 export interface AsyncConverter<T> {
   encode(data: T): Promise<Uint8Array>;
+  instantEncode(data: T): Promise<Readonly<Uint8Array>>;
   decode(array: Uint8Array): Promise<T>;
 }

@@ -1,4 +1,4 @@
-import { RecordMaker, TypeOf } from "../types";
+import { RecordMaker, GetType } from "../types";
 
 export const record: RecordMaker = (typer, header, keyer) => ({
   encode(ctx, data) {
@@ -11,7 +11,7 @@ export const record: RecordMaker = (typer, header, keyer) => ({
   },
   decode(ctx) {
     const length = header.decode(ctx);
-    const data: Record<string, TypeOf<typeof typer>> = {};
+    const data: Record<string, GetType<typeof typer>> = {};
     for (let i = 0; i < length; i++) {
       data[keyer.decode(ctx)] = typer.decode(ctx);
     }

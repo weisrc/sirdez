@@ -1,9 +1,10 @@
 # test gen
-docs
+out
 coverage
 report
 
 # code gen
+docs
 build
 dist
 deno_dist

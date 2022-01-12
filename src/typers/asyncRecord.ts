@@ -1,4 +1,4 @@
-import { AsyncRecordMaker, TypeOf } from "../types";
+import { AsyncRecordMaker, GetType } from "../types";
 
 export const asyncRecord: AsyncRecordMaker = (
   typer,
@@ -15,7 +15,7 @@ export const asyncRecord: AsyncRecordMaker = (
   },
   async decode(ctx) {
     const length = header.decode(ctx);
-    const data: TypeOf<typeof this> = {};
+    const data: GetType<typeof this> = {};
     for (let i = 0; i < length; i++) {
       data[keyer.decode(ctx)] = await typer.decode(ctx);
     }

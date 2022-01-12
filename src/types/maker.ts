@@ -4,7 +4,8 @@ import {
   Typer,
   Sequencer,
   AsyncTyper,
-  AsyncTyperStruct
+  AsyncTyperStruct,
+  Converter
 } from ".";
 
 type IntKind = "uint" | "int";
@@ -78,3 +79,5 @@ export type OptionalMaker = <T>(
 export type AsyncOptionalMaker = <T>(
   typer: AsyncTyper<T | void>
 ) => AsyncTyper<T | void>;
+
+export type ConverterMaker = <T>(type: Typer<T>) => Converter<T>;

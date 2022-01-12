@@ -1,30 +1,28 @@
+import { asyncEncodeIntoContext } from ".";
 import { contextFromArray, createContext } from "./context";
-import { AsyncConverter, AsyncTyper } from "./types";
+import { AsyncConverter, AsyncTyper, Context } from "./types";
 
-export function asyncUse<T>(type: AsyncTyper<T>): AsyncConverter<T> {
-  let size = 64;
+export function asyncUse<T>(typer: AsyncTyper<T>): AsyncConverter<T> {
+  const pool: Context[] = [];
+
+  async function encode(data: T) {
+    const ctx = pool.pop() ?? createContext();
+    await asyncEncodeIntoContext(ctx, typer, data);
+    pool.push(ctx);
+    return ctx;
+  }
+
   return {
     async encode(data) {
-      // eslint-disable-next-line no-constant-condition
-      while (true) {
-        const ctx = createContext(size);
-        const limit = ctx.bytes.length - 8;
-        try {
-          ctx.i = 0;
-          await type.encode(ctx, data);
-          if (ctx.i < limit) {
-            return ctx.bytes.subarray(0, ctx.i);
-          }
-        } catch (error) {
-          if (ctx.i < limit) {
-            throw error;
-          }
-        }
-        size = ctx.i * 2;
-      }
+      const ctx = await encode(data);
+      return ctx.bytes.slice(0, ctx.i);
+    },
+    async instantEncode(data) {
+      const ctx = await encode(data);
+      return ctx.bytes.subarray(0, ctx.i);
     },
     decode(array: Uint8Array) {
-      return type.decode(contextFromArray(array));
+      return typer.decode(contextFromArray(array));
     }
   };
 }

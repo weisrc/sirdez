@@ -124,7 +124,7 @@ console.log("🍷Cheers!🍺");
 #### Using TypeScript utilities
 
 ```ts
-type Person = sirdez.TypeOf<typeof personTyper>;
+type Person = sirdez.GetType<typeof personTyper>;
 
 const bob: Person = {
   name: "Bob",
@@ -143,7 +143,7 @@ const bob: Person = {
 [npm-url]: https://www.npmjs.com/package/sirdez
 [deno-img]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
 [deno-url]: https://deno.land/x/sirdez
-[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage/badge.json
+[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/coverage-badge.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
-[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report/badge.json
+[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/report-badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
