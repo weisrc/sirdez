@@ -47,11 +47,16 @@ const randomPerson = (): Person => ({
   resume: text.slice(0, 500)
 });
 
-const { encode, decode } = use(peopleTyper);
+const { encode, instantEncode, decode } = use(peopleTyper);
 
 test("use will grow", () => {
   const data = new Array(100).fill(0).map(randomPerson);
   expect(decode(encode(data))).toEqual(data);
+});
+
+test("use instant", () => {
+  const data = new Array(100).fill(0).map(randomPerson);
+  expect(decode(instantEncode(data))).toEqual(data);
 });
 
 test("use will throw other errors", () => {

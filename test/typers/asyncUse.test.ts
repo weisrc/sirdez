@@ -51,11 +51,16 @@ const randomPerson = (): Person => ({
   cool: Boolean(Math.round(Math.random()))
 });
 
-const { encode, decode } = asyncUse(peopleTyper);
+const { encode, instantEncode, decode } = asyncUse(peopleTyper);
 
-test("use will grow", async () => {
+test("async.use will grow", async () => {
   const data = new Array(100).fill(0).map(randomPerson);
   expect(await decode(await encode(data))).toEqual(data);
+});
+
+test("async.use instant", async () => {
+  const data = new Array(100).fill(0).map(randomPerson);
+  expect(await decode(await instantEncode(data))).toEqual(data);
 });
 
 test("use will throw other errors", () => {
