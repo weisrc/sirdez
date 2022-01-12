@@ -44,13 +44,18 @@ const randomPerson = (): Person => ({
   age: Math.floor(Math.random() * 100),
   address: Math.random() > 0.5 ? "some address here" : undefined,
   friends: new Array(100).fill(0).map(randomName),
-  resume: text.slice(0, 500)
+  resume: text.slice(0, 200)
 });
 
 const { encode, instantEncode, decode } = use(peopleTyper);
 
 test("use will grow", () => {
   const data = new Array(100).fill(0).map(randomPerson);
+  expect(decode(encode(data))).toEqual(data);
+});
+
+test("use faster decode", () => {
+  const data = new Array(1).fill(0).map(randomPerson);
   expect(decode(encode(data))).toEqual(data);
 });
 
