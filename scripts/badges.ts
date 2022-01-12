@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { writeFileSync } from "fs";
+import { mkdirSync, writeFileSync } from "fs";
 // @ts-ignore
 import { total } from "../coverage/coverage-summary.json";
 import {
@@ -31,6 +31,7 @@ function percentToColor(percent: number) {
 }
 
 function createBadge(path: string, badge: Badge) {
+  mkdirSync("out", { recursive: true });
   writeFileSync(path, JSON.stringify(badge));
 }
 
