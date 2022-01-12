@@ -12,6 +12,10 @@ import {
   utf16
 } from "../src";
 
+console.log(
+  "src https://github.com/weisrc/sirdez/blob/main/benchmark/user.ts"
+);
+
 let pacman = 0;
 
 const sirdez = use(
@@ -32,7 +36,7 @@ const data: GetType<typeof sirdez> = {
 
 const avsc = Type.forValue(data);
 
-console.log("user#encode:");
+console.log("suite user#encode");
 
 new Suite()
   .add("sirdez", () => {
@@ -57,7 +61,7 @@ const sirdezEncoded = sirdez.encode(data);
 const avscEncoded = avsc.toBuffer(data);
 const jsonEncoded = JSON.stringify(data);
 
-console.log("user#decode:");
+console.log("suite user#decode");
 
 new Suite()
   .add("sirdez", () => {
