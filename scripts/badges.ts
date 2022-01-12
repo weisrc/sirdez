@@ -5,8 +5,7 @@ import { mkdirSync, writeFileSync } from "fs";
 import { total } from "../coverage/coverage-summary.json";
 import {
   numPassedTests,
-  numFailedTests,
-  numTotalTests
+  numFailedTests
   // @ts-ignore
 } from "../report/results.json";
 
