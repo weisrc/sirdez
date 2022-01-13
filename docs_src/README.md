@@ -161,9 +161,9 @@ Help and suggestions are welcomed!
 [npm-url]: https://www.npmjs.com/package/sirdez
 [deno-img]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
 [deno-url]: https://deno.land/x/sirdez
-[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/coverage-badge.json
+[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage-badge.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
-[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/report-badge.json
+[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report-badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
 [bench-img]: https://img.shields.io/badge/bench-unknown-blue?logo=speedtest
 [bench-url]: asdf

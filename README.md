@@ -14,38 +14,49 @@ Which is **simple** and yet **performant**.
 [![ci][ci-img]][ci-url]
 [![coverage][coverage-img]][coverage-url]
 [![report][report-img]][report-url]
+[![docs][docs-img]][docs-url]
+[![bench][bench-img]][bench-url]
 
 </div>
 
-## Getting Started
+## Features
 
-### Installation
+- 100% tree-shakable
+- Zero dependencies (small footprint)
+- Full Node, Deno and browser support
+- Performant
+- Super extensible
+- Easy to use
+
+## Installation
+
+Expand for more details.
 
 <details markdodwn="1">
   <summary>Node (Webpack, Babel, React, Svelte, Vue, Svelte...)</summary>
 
-##### In the terminal with NPM
+#### In the terminal with NPM
 
 ```sh
 npm i sirdez
 ```
 
-##### Or with Yarn
+#### Or with Yarn
 
 ```sh
 yarn add sirdez
 ```
 
-##### In the code with ES Modules
+#### In the code with ES Modules
 
 ```ts
-import * as sirdez from "sirdez";
+import * as sd from "sirdez";
 ```
 
-##### or with CommonJS
+#### or with CommonJS
 
 ```ts
-const sirdez = require("sirdez");
+const sd = require("sirdez");
 ```
 
 </details>
@@ -53,22 +64,22 @@ const sirdez = require("sirdez");
 <details markdodwn="1">
 <summary>Web (without bundlers)</summary>
 
-##### In HTML with UMD
+#### In HTML with UMD
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.umd.js"></script>
 ```
 
-##### In an ES module script (statically)
+#### In an ES module script (statically)
 
 ```js
-import * as sirdez from "https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js";
+import * as sd from "https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js";
 ```
 
-##### In an ES module script (dynamically)
+#### In an ES module script (dynamically)
 
 ```js
-const sirdez = await import(
+const sd = await import(
   "https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js"
 );
 ```
@@ -78,59 +89,66 @@ const sirdez = await import(
 <details markdodwn="1">
 <summary>Deno</summary>
 
-##### In code (statically)
+#### In code (statically)
 
 ```ts
-import * as sirdez from "https://deno.land/x/sirdez/mod.ts";
+import * as sd from "https://deno.land/x/sirdez/mod.ts";
 ```
 
-##### In code (dynamically)
+#### In code (dynamically)
 
 ```ts
-const sirdez = await import("https://deno.land/x/sirdez/mod.ts");
+const sd = await import("https://deno.land/x/sirdez/mod.ts");
 ```
 
 </details>
 
-### Usage
+## Usage
 
 #### Simple snippet of code
 
 ```js
-// create person typer
-const personTyper = sirdez.struct({
-  name: sirdez.string,
-  age: sirdez.uint8
-});
+const person = sd.use(
+  sd.struct({
+    name: sd.string(sd.utf8, sd.uint8),
+    age: sd.uint8
+  })
+);
 
-// use person typer
-const { encode, decode } = sirdez.use(personTyper);
-
-// encode
-const encoded = encode({
+const encoded = person.encode({
   name: "Bob",
   age: 23
 });
-console.log("encoded", encoded);
 
-// decode
-const decoded = decode(encoded);
-console.log("decoded", decoded);
+const decoded = person.decode(encoded);
 
-// celebrate
-console.log("🍷Cheers!🍺");
+console.log({ encoded, decoded });
 ```
 
 #### Using TypeScript utilities
 
 ```ts
-type Person = sirdez.GetType<typeof personTyper>;
+type Person = sd.GetType<typeof person>;
 
 const bob: Person = {
   name: "Bob",
   age: 23
 };
 ```
+
+## Resources
+
+- [Documentation][docs-url]
+- [Coverage Report][coverage-url]
+- [Test Report][report-url]
+- [Benchmark Results][bench-url]
+- [NPM package][npm-url]
+- [Deno Land][deno-url]
+- [GitHub Action CI][ci-url]
+
+## Contribution
+
+Help and suggestions are welcomed!
 
 <!-- urls -->
 
@@ -143,7 +161,11 @@ const bob: Person = {
 [npm-url]: https://www.npmjs.com/package/sirdez
 [deno-img]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
 [deno-url]: https://deno.land/x/sirdez
-[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/coverage-badge.json
+[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage-badge.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
-[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/out/report-badge.json
+[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report-badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
+[bench-img]: https://img.shields.io/badge/bench-unknown-blue?logo=speedtest
+[bench-url]: asdf
+[docs-img]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
+[docs-url]: https://weisrc/github.io/sirdez
