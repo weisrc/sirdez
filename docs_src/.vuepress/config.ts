@@ -18,6 +18,7 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: logo("SD") }]],
   plugins: [["vuepress-plugin-one-click-copy", { duration: 500 }]],
   themeConfig: {
+    searchMaxSuggestions: 10,
     repo: "weisrc/sirdez",
     repoLabel: "GitHub",
     docsRepo: "weisrc/sirdez",
@@ -31,6 +32,6 @@ export default defineConfig({
       { text: "Guide", link: "/guide/" },
       { text: "API", link: "https://weisrc.github.io/sirdez/api" }
     ],
-    sidebar: [["/", "Sir Dez"], "components"]
+    sidebar: [["/", "Sir Dez"], "components", "numbers"]
   }
 });

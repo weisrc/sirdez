@@ -127,7 +127,7 @@ const mappings = {
   bigInt64
 } as const;
 
-export const number: NumberMaker = (kind, size) =>
+export const number: NumberMaker = (kind, bitSize) =>
   mappings[
-    `${kind}${size}` as keyof typeof mappings
+    `${kind}${bitSize}` as keyof typeof mappings
   ] as ReturnType<NumberMaker>;

@@ -1,13 +1,13 @@
 import { NumberMaker } from "../types";
 
-export const evalNumber: NumberMaker = (kind, size) => {
+export const evalNumber: NumberMaker = (kind, bitSize) => {
   const name =
     /*@__PURE__*/ kind[0].toUpperCase() +
     /*@__PURE__*/ kind.slice(1) +
-    size;
-  const offset = size / 8;
+    bitSize;
+  const size = bitSize / 8;
   return /*@__PURE__*/ new Function(
-    `return {encode(c,d){c.view.set${name}(c.i,d);c.i+=${offset}},decode(c){const d=c.view.get${name}(c.i);c.i+=${offset};return d}}`
+    `return {encode(c,d){c.view.set${name}(c.i,d);c.i+=${size}},decode(c){const d=c.view.get${name}(c.i);c.i+=${size};return d}}`
   )();
 };
 

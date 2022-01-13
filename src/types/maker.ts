@@ -21,10 +21,10 @@ type Kind = IntKind | FloatKind | BigIntKind;
 type Size = IntSize | FloatSize | BigIntSize;
 
 export interface NumberMaker {
-  (kind: IntKind, size: IntSize): Typer<number>;
-  (kind: FloatKind, size: FloatSize): Typer<number>;
-  (kind: BigIntKind, size: BigIntSize): Typer<bigint>;
-  (kind: Kind, size: Size): Typer<never>;
+  (kind: IntKind, bitSize: IntSize): Typer<number>;
+  (kind: FloatKind, bitSize: FloatSize): Typer<number>;
+  (kind: BigIntKind, bitSize: BigIntSize): Typer<bigint>;
+  (kind: Kind, bitSize: Size): Typer<never>;
 }
 
 export type StringMaker = (
