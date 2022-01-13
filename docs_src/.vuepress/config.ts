@@ -29,7 +29,7 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
-      { text: "API", link: "weisrc.github.io/sirdez/api" }
+      { text: "API", link: "https://weisrc.github.io/sirdez/api" }
     ],
     sidebar: [["/", "Sir Dez"], "components"]
   }
