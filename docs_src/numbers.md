@@ -4,21 +4,21 @@ All numbers are stored in big-endian using `DataView` methods for its [performan
 
 ## Variants
 
-`sd.number` have an implementation for each of the following. It has a mapping to find the typer for a given `kind` and `size`. Using number will need to include all the below in the bundle.
+`sd.number` have an implementation for each of the following. It has a mapping to find the `sd.SerDes` for a given `kind` and `bitSize`. Using number will need to include all the below in the bundle.
 
 ::: warning
 There is no input validation. Passing bad values will result it to return `undefined`. Thus calling it will throw an error.
 :::
 
-`sd.evalNumber` is code generating maker that can create the following. Instead of mapping to a typer, it evokes `new Function` to create the typer, hence the bundle size will be smaller.
+`sd.evalNumber` is code generating factory that can create the following. Instead of mapping to a `sd.SerDes`, it evokes `new Function` to create the `sd.SerDes`, hence the bundle size will be smaller.
 
 ::: warning
-There is no input validation. Passing bad values will result in either errors when invoking the returned typer or while generating it, or unexpected behaviors. Please fully use the power of TypeScript to prevent this.
+There is no input validation. Passing bad values will result in either errors when invoking the returned `sd.SerDes` or while generating it, or unexpected behaviors. Please fully use the power of TypeScript to prevent this.
 :::
 
 ## Mappings
 
-Both makers requires a `kind` and a `bitSize`.
+Both factories requires a `kind` and a `bitSize`.
 
 Truth table for `sd.number` and `sd.evalNumber`.
 

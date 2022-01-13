@@ -108,21 +108,19 @@ const sd = await import("https://deno.land/x/sirdez/mod.ts");
 #### Simple snippet of code
 
 ```js
-const person = sd.use(
-  sd.struct({
-    name: sd.string(sd.utf8, sd.uint8),
-    age: sd.uint8
-  })
-);
+const person = sd.struct({
+  name: sd.string(sd.utf8, sd.uint8),
+  age: sd.uint8
+});
 
-const encoded = person.encode({
+const bytes = person.toBytes({
   name: "Bob",
   age: 23
 });
 
-const decoded = person.decode(encoded);
+const samePerson = person.fromBytes(bytes);
 
-console.log({ encoded, decoded });
+console.log({ bytes, samePerson });
 ```
 
 #### Using TypeScript utilities
