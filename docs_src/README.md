@@ -168,4 +168,4 @@ Help and suggestions are welcomed!
 [bench-img]: https://img.shields.io/badge/bench-unknown-blue?logo=speedtest
 [bench-url]: asdf
 [docs-img]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
-[docs-url]: https://weisrc/github.io/sirdez
+[docs-url]: https://weisrc.github.io/sirdez
