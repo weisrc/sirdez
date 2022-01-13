@@ -2,12 +2,12 @@
 
 import { mkdirSync, writeFileSync } from "fs";
 // @ts-ignore
-import { total } from "../coverage/coverage-summary.json";
+import { total } from "../docs/coverage/coverage-summary.json";
 import {
   numPassedTests,
   numFailedTests
   // @ts-ignore
-} from "../report/results.json";
+} from "../docs/report.json";
 
 interface Badge {
   schemaVersion: 1;
@@ -30,11 +30,10 @@ function percentToColor(percent: number) {
 }
 
 function createBadge(path: string, badge: Badge) {
-  mkdirSync("out", { recursive: true });
   writeFileSync(path, JSON.stringify(badge));
 }
 
-createBadge("out/report-badge.json", {
+createBadge("docs/report-badge.json", {
   schemaVersion: 1,
   label: "report",
   namedLogo: "jest",
@@ -42,7 +41,7 @@ createBadge("out/report-badge.json", {
   color: percentToColor(numFailedTests ? 0 : 1)
 });
 
-createBadge("out/coverage-badge.json", {
+createBadge("docs/coverage-badge.json", {
   schemaVersion: 1,
   label: "coverage",
   namedLogo: "jest",

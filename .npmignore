@@ -1,25 +1,20 @@
-# dotfiles
+# files
 .github
 .prettierrc
 .gitignore
 .prettierignore
 .eslintignore
+jest.config.ts
+vite.config.ts
+typedoc.json
 
-# generated
-out
-coverage
-report
-docs
-
-# testing
+# dirs
+src
+scripts
+docs_src
 test
 benchmark
 
-# code
-src
-scripts
-jest.config.ts
-vite.config.ts
-
-# dist
+# generated
+docs
 deno_dist
