@@ -1,6 +1,6 @@
 import { AsyncSerDes, SerDes } from "./serdes";
 
-export * from "./maker";
+export * from "./factories";
 export * from "./serdes";
 export * from "./struct";
 

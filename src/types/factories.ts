@@ -27,7 +27,7 @@ export interface NumberFactory {
 }
 
 export type StringFactory = (
-  format: Encoding<string>,
+  encoding: Encoding<string>,
   headSd: SerDes<number>
 ) => SerDes<string>;
 
