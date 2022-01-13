@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { mkdirSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 // @ts-ignore
 import { total } from "../docs/coverage/coverage-summary.json";
-import {
-  numPassedTests,
-  numFailedTests
-  // @ts-ignore
-} from "../docs/report.json";
+// @ts-ignore
+import { numFailedTests, numPassedTests } from "../docs/report.json";
 
 interface Badge {
   schemaVersion: 1;

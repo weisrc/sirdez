@@ -1,9 +1,4 @@
-import {
-  AsyncTyper,
-  Typer,
-  Converter,
-  AsyncConverter
-} from "./serdes";
+import { AsyncSerDes, SerDes } from "./serdes";
 
 export * from "./maker";
 export * from "./serdes";
@@ -15,12 +10,8 @@ export interface Context {
   bytes: Uint8Array;
 }
 
-export type GetType<T> = T extends AsyncTyper<infer A>
+export type GetType<T> = T extends AsyncSerDes<infer A>
   ? A
-  : T extends Typer<infer B>
+  : T extends SerDes<infer B>
   ? B
-  : T extends AsyncConverter<infer C>
-  ? C
-  : T extends Converter<infer D>
-  ? D
   : never;

@@ -1,11 +1,11 @@
-import { Typer, AsyncTyper } from ".";
+import { SerDes, AsyncSerDes } from ".";
 
 export type Struct = Record<string | number, unknown> | unknown[];
 
-export type TyperStruct<T extends Struct> = {
-  [k in keyof T]: Typer<T[k]>;
+export type StructDefinition<T extends Struct> = {
+  [k in keyof T]: SerDes<T[k]>;
 };
 
-export type AsyncTyperStruct<T extends Struct> = {
-  [k in keyof T]: AsyncTyper<T[k]> | Typer<T[k]>;
+export type AsyncStructDefinition<T extends Struct> = {
+  [k in keyof T]: AsyncSerDes<T[k]> | SerDes<T[k]>;
 };

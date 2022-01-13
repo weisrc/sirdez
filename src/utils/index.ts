@@ -1,1 +1,1 @@
-export * from "./createStructTyper";
+export * from "./createStructSerDes";

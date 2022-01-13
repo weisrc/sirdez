@@ -1,4 +1,4 @@
-import { AsyncTyper, Context, Typer } from "./types";
+import { AsyncSer, Context, Des, Ser } from "./types";
 
 export function createContext(size = 4096): Context {
   const buffer = new ArrayBuffer(size);
@@ -14,9 +14,9 @@ export function growContext(ctx: Context) {
   ctx.view = new DataView(ctx.bytes.buffer);
 }
 
-export function encodeIntoContext<T>(
+export function contextSer<T>(
   ctx: Context,
-  typer: Typer<T>,
+  ser: Ser<T>,
   data: T
 ): void {
   // eslint-disable-next-line no-constant-condition
@@ -24,7 +24,7 @@ export function encodeIntoContext<T>(
     const limit = ctx.bytes.length - 8;
     ctx.i = 0;
     try {
-      typer.encode(ctx, data);
+      ser(ctx, data);
       if (ctx.i < limit) return;
     } catch (error) {
       if (ctx.i < limit) throw error;
@@ -33,9 +33,9 @@ export function encodeIntoContext<T>(
   }
 }
 
-export async function asyncEncodeIntoContext<T>(
+export async function asyncContextSer<T>(
   ctx: Context,
-  typer: AsyncTyper<T>,
+  ser: AsyncSer<T>,
   data: T
 ) {
   // eslint-disable-next-line no-constant-condition
@@ -43,7 +43,7 @@ export async function asyncEncodeIntoContext<T>(
     const limit = ctx.bytes.length - 8;
     ctx.i = 0;
     try {
-      await typer.encode(ctx, data);
+      await ser(ctx, data);
       if (ctx.i < limit) return;
     } catch (error) {
       if (ctx.i < limit) throw error;
@@ -52,22 +52,22 @@ export async function asyncEncodeIntoContext<T>(
   }
 }
 
-export function decodeFromArray<T>(
+export function contextDes<T>(
   ctx: Context,
-  typer: Typer<T>,
-  array: Uint8Array
+  des: Des<T>,
+  buf: Uint8Array
 ): T {
-  const { length } = array;
+  const { length } = buf;
   if (length < 4096) {
-    ctx.bytes.set(array);
+    ctx.bytes.set(buf);
     ctx.i = 0;
-    return typer.decode(ctx);
+    return des(ctx);
   } else {
-    return typer.decode(contextFromArray(array));
+    return des(contextFromBytes(buf));
   }
 }
 
-export function contextFromArray(array: Uint8Array): Context {
+export function contextFromBytes(array: Uint8Array): Context {
   return {
     i: 0,
     bytes: array,

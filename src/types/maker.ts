@@ -1,11 +1,10 @@
 import {
+  AsyncSerDes,
+  AsyncStructDefinition,
+  Encoding,
+  SerDes,
   Struct,
-  TyperStruct,
-  Typer,
-  Sequencer,
-  AsyncTyper,
-  AsyncTyperStruct,
-  Converter
+  StructDefinition
 } from ".";
 
 type IntKind = "uint" | "int";
@@ -20,64 +19,62 @@ type BigIntSize = 64;
 type Kind = IntKind | FloatKind | BigIntKind;
 type Size = IntSize | FloatSize | BigIntSize;
 
-export interface NumberMaker {
-  (kind: IntKind, bitSize: IntSize): Typer<number>;
-  (kind: FloatKind, bitSize: FloatSize): Typer<number>;
-  (kind: BigIntKind, bitSize: BigIntSize): Typer<bigint>;
-  (kind: Kind, bitSize: Size): Typer<never>;
+export interface NumberFactory {
+  (kind: IntKind, bitSize: IntSize): SerDes<number>;
+  (kind: FloatKind, bitSize: FloatSize): SerDes<number>;
+  (kind: BigIntKind, bitSize: BigIntSize): SerDes<bigint>;
+  (kind: Kind, bitSize: Size): SerDes<never>;
 }
 
-export type StringMaker = (
-  sequencer: Sequencer<string>,
-  header: Typer<number>
-) => Typer<string>;
+export type StringFactory = (
+  format: Encoding<string>,
+  headSd: SerDes<number>
+) => SerDes<string>;
 
-export type BytesMaker = (header: Typer<number>) => Typer<Uint8Array>;
+export type BytesFactory = (
+  headSd: SerDes<number>
+) => SerDes<Uint8Array>;
 
-export type StructMaker = <T extends Struct>(
-  definition: TyperStruct<T>
-) => Typer<T>;
+export type StructFactory = <T extends Struct>(
+  definition: StructDefinition<T>
+) => SerDes<T>;
 
-export type TupleMaker = <T extends unknown[]>(
-  ...definition: TyperStruct<T>
-) => Typer<T>;
+export type TupleFactory = <T extends unknown[]>(
+  ...definition: StructDefinition<T>
+) => SerDes<T>;
 
-export type AsyncStructMaker = <T extends Struct>(
-  definition: AsyncTyperStruct<T>
-) => AsyncTyper<T>;
+export type AsyncStructFactory = <T extends Struct>(
+  definition: AsyncStructDefinition<T>
+) => AsyncSerDes<T>;
 
-export type AsyncTupleMaker = <T extends unknown[]>(
-  ...definition: AsyncTyperStruct<T>
-) => AsyncTyper<T>;
+export type AsyncTupleFactory = <T extends unknown[]>(
+  ...definition: AsyncStructDefinition<T>
+) => AsyncSerDes<T>;
 
-export type RecordMaker = <T>(
-  typer: Typer<T>,
-  header: Typer<number>,
-  keyer: Typer<string>
-) => Typer<Record<string, T>>;
+export type RecordFactory = <T>(
+  sd: SerDes<T>,
+  headSd: SerDes<number>,
+  keySd: SerDes<string>
+) => SerDes<Record<string, T>>;
 
-export type AsyncRecordMaker = <T>(
-  typer: AsyncTyper<T>,
-  header: Typer<number>,
-  keyer: Typer<string>
-) => AsyncTyper<Record<string, T>>;
+export type AsyncRecordFactory = <T>(
+  sd: AsyncSerDes<T>,
+  headSd: SerDes<number>,
+  keySd: SerDes<string>
+) => AsyncSerDes<Record<string, T>>;
 
-export type ArrayMaker = <T>(
-  typer: Typer<T>,
-  header: Typer<number>
-) => Typer<T[]>;
+export type ArrayFactory = <T>(
+  sd: SerDes<T>,
+  headSd: SerDes<number>
+) => SerDes<T[]>;
 
-export type AsyncArrayMaker = <T>(
-  typer: AsyncTyper<T>,
-  header: Typer<number>
-) => AsyncTyper<T[]>;
+export type AsyncArrayFactory = <T>(
+  sd: AsyncSerDes<T>,
+  headSd: SerDes<number>
+) => AsyncSerDes<T[]>;
 
-export type OptionalMaker = <T>(
-  typer: Typer<T | void>
-) => Typer<T | void>;
+export type OptionalFactory = <T>(sd: SerDes<T>) => SerDes<T | void>;
 
-export type AsyncOptionalMaker = <T>(
-  typer: AsyncTyper<T | void>
-) => AsyncTyper<T | void>;
-
-export type ConverterMaker = <T>(type: Typer<T>) => Converter<T>;
+export type AsyncOptionalFactory = <T>(
+  sd: AsyncSerDes<T>
+) => AsyncSerDes<T | void>;
