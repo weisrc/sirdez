@@ -13,6 +13,7 @@ const logo = (text: string) =>
 export default defineConfig({
   dest: "docs/.vuepress",
   title: "Sir Dez",
+  base: "/sirdez/",
   description,
   head: [["link", { rel: "icon", href: logo("SD") }]],
   plugins: [["vuepress-plugin-one-click-copy", { duration: 500 }]],
