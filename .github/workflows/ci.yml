@@ -24,7 +24,7 @@ jobs:
         run: npm run test
       - name: Benchmark
         run: npm run benchmark
-      - name: Create test badges and add docs
+      - name: Create badges and add docs
         run: |
           npm run badges
           git add -f docs
