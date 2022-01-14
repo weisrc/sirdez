@@ -14,10 +14,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "module": "CommonJS",
-    "outDir": "build",
-    "paths": {
-      "sirdez": ["./src"]
-    }
+    "outDir": "build"
   },
   "include": ["./src"],
   "ts-node": {
