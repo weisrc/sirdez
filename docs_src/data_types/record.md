@@ -19,13 +19,14 @@ Records allow to store key-value data. For example a phone book where the name o
 A simple record that indexes users by id.
 
 ```ts
+const id = sd.string(sd.ascii, sd.uint8);
 const user = sd.struct({
-  id: sd.uint32,
+  id,
   name: sd.string(sd.utf8, sd.uint8),
   age: sd.uint8
 });
 
-const { toBytes, fromBytes } = sd.record(user, sd.uint16, sd.uint32);
+const { toBytes, fromBytes } = sd.record(user, sd.uint16, id);
 ```
 
 ## Specifications
@@ -35,4 +36,3 @@ const { toBytes, fromBytes } = sd.record(user, sd.uint16, sd.uint32);
 ```
 
 The amount of key-value pairs will be encoded at the start of the payload. It will then be followed by the actual pairs.
-
