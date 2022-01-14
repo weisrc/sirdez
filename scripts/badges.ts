@@ -5,6 +5,8 @@ import { writeFileSync } from "fs";
 import { total } from "../docs/coverage/coverage-summary.json";
 // @ts-ignore
 import { numFailedTests, numPassedTests } from "../docs/report.json";
+// @ts-ignore
+import { general } from "../docs/benchmark.json";
 
 interface Badge {
   schemaVersion: 1;
@@ -44,4 +46,14 @@ createBadge("docs/coverage-badge.json", {
   namedLogo: "jest",
   message: total.lines.pct + "%",
   color: percentToColor(total.lines.pct / 100)
+});
+
+const speed = (general.sirdez_temp / general.json).toFixed(2);
+
+createBadge("docs/benchmark-badge.json", {
+  schemaVersion: 1,
+  label: "benchmark",
+  namedLogo: "speedtest",
+  message: `${speed}x JSON`,
+  color: "blue"
 });

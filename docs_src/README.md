@@ -15,7 +15,7 @@ Which is **simple** and yet **performant**.
 [![coverage][coverage-img]][coverage-url]
 [![report][report-img]][report-url]
 [![docs][docs-img]][docs-url]
-[![bench][bench-img]][bench-url]
+[![benchmark][benchmark-img]][benchmark-url]
 
 </div>
 
@@ -139,7 +139,7 @@ const bob: Person = {
 - [Documentation][docs-url]
 - [Coverage Report][coverage-url]
 - [Test Report][report-url]
-- [Benchmark Results][bench-url]
+- [Benchmarkmark Results][benchmark-url]
 - [NPM package][npm-url]
 - [Deno Land][deno-url]
 - [GitHub Action CI][ci-url]
@@ -163,7 +163,7 @@ Help and suggestions are welcomed!
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
 [report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report-badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
-[bench-img]: https://img.shields.io/badge/bench-unknown-blue?logo=speedtest
-[bench-url]: asdf
+[benchmark-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/benchmark-badge.json
+[benchmark-url]: asdf
 [docs-img]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez

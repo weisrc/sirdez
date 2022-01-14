@@ -22,7 +22,9 @@ jobs:
         id: test
         continue-on-error: true
         run: npm run test
-      - name: Create test badges
+      - name: Benchmark
+        run: npm run benchmark
+      - name: Create test badges and add docs
         run: |
           npm run badges
           git add -f docs
