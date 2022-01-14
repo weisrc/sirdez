@@ -4,6 +4,7 @@
 .gitignore
 .prettierignore
 .eslintignore
+.eslintrc.json
 jest.config.ts
 vite.config.ts
 typedoc.json
