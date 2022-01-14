@@ -33,7 +33,7 @@ export default defineConfig({
       { text: "API", link: "https://weisrc.github.io/sirdez/api" }
     ],
     sidebar: [
-      ["/", "Sir Dez"],
+      ["/", "Introduction"],
       "components",
       {
         title: "Data Types",
