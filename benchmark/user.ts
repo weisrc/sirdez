@@ -1,5 +1,4 @@
 import { Type } from "avsc";
-import { Suite } from "benchmark";
 import {
   array,
   evalStruct,
@@ -8,24 +7,18 @@ import {
   uint16,
   uint32,
   uint8,
-  use,
   utf16
 } from "../src";
-
-console.log(
-  "src https://github.com/weisrc/sirdez/blob/main/benchmark/user.ts"
-);
+import { suite } from "./utils";
 
 let pacman = 0;
 
-const sirdez = use(
-  evalStruct({
-    ghost: uint8,
-    name: string(utf16, uint8),
-    joinedAt: uint32,
-    repositories: array(string(utf16, uint8), uint16)
-  })
-);
+const sirdez = evalStruct({
+  ghost: uint8,
+  name: string(utf16, uint8),
+  joinedAt: uint32,
+  repositories: array(string(utf16, uint8), uint16)
+});
 
 const data: GetType<typeof sirdez> = {
   ghost: 0,
@@ -36,46 +29,36 @@ const data: GetType<typeof sirdez> = {
 
 const avsc = Type.forValue(data);
 
-console.log("suite user#encode");
-
-new Suite()
-  .add("sirdez", () => {
-    pacman += sirdez.encode(data)[0];
-  })
-  .add("sirdez#instant", () => {
-    pacman += sirdez.instantEncode(data)[0];
-  })
-  .add("avsc", () => {
+suite("user_encode", {
+  sirdez: () => {
+    pacman += sirdez.toBytes(data)[0];
+  },
+  sirdez_temp: () => {
+    pacman += sirdez.toTempBytes(data)[0];
+  },
+  avsc: () => {
     pacman += avsc.toBuffer(data)[0];
-  })
-  .add("JSON", () => {
+  },
+  json: () => {
     // @ts-expect-error will work
     pacman += !JSON.stringify(data);
-  })
-  .on("cycle", ({ target: { name, hz } }) => {
-    console.log(`${Math.round(hz)} ${name}`);
-  })
-  .run();
+  }
+});
 
-const sirdezEncoded = sirdez.encode(data);
+const sirdezEncoded = sirdez.toBytes(data);
 const avscEncoded = avsc.toBuffer(data);
 const jsonEncoded = JSON.stringify(data);
 
-console.log("suite user#decode");
-
-new Suite()
-  .add("sirdez", () => {
-    pacman += sirdez.decode(sirdezEncoded).ghost;
-  })
-  .add("avsc", () => {
+suite("user_decode", {
+  sirdez: () => {
+    pacman += sirdez.fromBytes(sirdezEncoded).ghost;
+  },
+  avsc: () => {
     pacman += avsc.fromBuffer(avscEncoded).ghost;
-  })
-  .add("JSON", () => {
+  },
+  json: () => {
     pacman += JSON.parse(jsonEncoded).ghost;
-  })
-  .on("cycle", ({ target: { name, hz } }) => {
-    console.log(`${Math.round(hz)} ${name}`);
-  })
-  .run();
+  }
+});
 
 eval("" + pacman);

@@ -14,7 +14,7 @@
     "test": "jest --coverage",
     "verify": "run-p format lint test",
     "badges": "ts-node scripts/badges",
-    "clean": "rm -rf dist deno_dist build docs",
+    "clean": "rm -rf dist deno_dist build && find docs/* ! -name '*.log' -delete",
     "build:web": "vite build",
     "build:deno": "denoify --out deno_dist",
     "build:node": "tsc",

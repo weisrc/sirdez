@@ -1,17 +1,15 @@
-import { Suite } from "benchmark";
-import { evalStruct, float64, GetType, uint8, use } from "../src";
 import { Type } from "avsc";
+import { evalStruct, float64, GetType, uint8 } from "../src";
+import { suite } from "./utils";
 
 let pacman = 0;
 
-const sirdez = use(
-  evalStruct({
-    ghost: uint8,
-    x: float64,
-    y: float64,
-    z: float64
-  })
-);
+const sirdez = evalStruct({
+  ghost: uint8,
+  x: float64,
+  y: float64,
+  z: float64
+});
 
 const avsc = Type.forSchema({
   type: "record",
@@ -31,45 +29,35 @@ const data: GetType<typeof sirdez> = {
   z: Math.SQRT2
 };
 
-console.log("vector#encode:");
-
-new Suite()
-  .add("sirdez", () => {
-    pacman += sirdez.encode(data)[0];
-  })
-  .add("sirdez#instant", () => {
-    pacman += sirdez.instantEncode(data)[0];
-  })
-  .add("avsc", () => {
+suite("vector_encode", {
+  sirdez: () => {
+    pacman += sirdez.toBytes(data)[0];
+  },
+  sirdez_temp: () => {
+    pacman += sirdez.toTempBytes(data)[0];
+  },
+  avsc: () => {
     pacman += avsc.toBuffer(data)[0];
-  })
-  .add("json", () => {
+  },
+  json: () => {
     JSON.stringify(data);
-  })
-  .on("cycle", ({ target: { name, hz } }) => {
-    console.log(`${Math.round(hz)} ${name}`);
-  })
-  .run();
+  }
+});
 
-console.log("vector#decode:");
-
-const array = sirdez.encode(data);
+const array = sirdez.toBytes(data);
 const buffer = avsc.toBuffer(data);
 const json = JSON.stringify(data);
 
-new Suite()
-  .add("sirdez", () => {
-    pacman += sirdez.decode(array).x;
-  })
-  .add("avsc", () => {
+suite("vector_decode", {
+  sirdez: () => {
+    pacman += sirdez.fromBytes(array).x;
+  },
+  avsc: () => {
     pacman += avsc.fromBuffer(buffer).x;
-  })
-  .add("json", () => {
+  },
+  json: () => {
     pacman += JSON.parse(json).x;
-  })
-  .on("cycle", ({ target: { name, hz } }) => {
-    console.log(`${Math.round(hz)} ${name}`);
-  })
-  .run();
+  }
+});
 
 eval("" + pacman);
