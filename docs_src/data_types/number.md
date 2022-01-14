@@ -1,4 +1,4 @@
-# Numbers
+# Number
 
 All numbers are stored in big-endian using `DataView` methods for its [performance](https://v8.dev/blog/dataview). There are two variants of numbers which have similar performance with different bundle size footprints.
 
@@ -15,6 +15,8 @@ There is no input validation. Passing bad values will result it to return `undef
 ::: warning
 There is no input validation. Passing bad values will result in either errors when invoking the returned `sd.SerDes` or while generating it, or unexpected behaviors. Please fully use the power of TypeScript to prevent this.
 :::
+
+For non-dynamic numbers, please use `sd.<kind><size>` if you are using a few, or `sd.eval<Kind><size>` if you are using most to reduce bundle size.
 
 ## Mappings
 
@@ -35,6 +37,24 @@ Truth table for `sd.number` and `sd.evalNumber`.
 | float   | 32      | `sd.float32`   |
 | float   | 64      | `sd.float64`   |
 
+All number data types have been exported. So avoid using `sd.number` or `sd.evalNumber` for statically.
+
+## Usage
+
+Statically using numbers.
+
+```ts
+const { toBytes, fromBytes } = sd.uint8;
+const { toBytes, fromBytes } = sd.evalUint8;
+```
+
+Dynamically using numbers.
+
+```ts
+const { toBytes, fromBytes } = sd.number("uint", 8);
+const { toBytes, fromBytes } = sd.evalNumber("uint", 8);
+```
+
 ## Specifications
 
-All numbers are _directly_ encoded and decoded at the location of pointer `sd.Context#i` to then increment the pointer by the byte size of the datatype.
+All numbers are _directly_ serialized in big-endian at the location of pointer `sd.Context#i` to then increment the pointer by the byte size of the datatype.

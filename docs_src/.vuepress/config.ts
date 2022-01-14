@@ -23,7 +23,7 @@ export default defineConfig({
     repoLabel: "GitHub",
     docsRepo: "weisrc/sirdez",
     docsDir: "docs_src",
-    docsBranch: "master",
+    docsBranch: "main",
     editLinks: true,
     editLinkText: "Edit on GitHub",
     logo: logo("SD"),
@@ -32,6 +32,21 @@ export default defineConfig({
       { text: "Guide", link: "/guide/" },
       { text: "API", link: "https://weisrc.github.io/sirdez/api" }
     ],
-    sidebar: [["/", "Sir Dez"], "components", "numbers"]
+    sidebar: [
+      ["/", "Sir Dez"],
+      "components",
+      {
+        title: "Data Types",
+        children: [
+          "data_types/boolean",
+          "data_types/number",
+          "data_types/string",
+          "data_types/struct",
+          "data_types/array",
+          "data_types/record",
+          "data_types/optional"
+        ]
+      }
+    ]
   }
 });

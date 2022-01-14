@@ -54,13 +54,13 @@ export type AsyncTupleFactory = <T extends unknown[]>(
 export type RecordFactory = <T>(
   sd: SerDes<T>,
   headSd: SerDes<number>,
-  keySd: SerDes<string>
+  keySd: SerDes<string | number>
 ) => SerDes<Record<string, T>>;
 
 export type AsyncRecordFactory = <T>(
   sd: AsyncSerDes<T>,
   headSd: SerDes<number>,
-  keySd: SerDes<string>
+  keySd: SerDes<string | number>
 ) => AsyncSerDes<Record<string, T>>;
 
 export type ArrayFactory = <T>(

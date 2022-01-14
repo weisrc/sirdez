@@ -21,7 +21,7 @@ Which is **simple** and yet **performant**.
 
 ## Features
 
-- 100% tree-shakable
+- 99% tree-shakable
 - Zero dependencies (small footprint)
 - Full Node, Deno and browser support
 - Performant
