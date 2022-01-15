@@ -16,7 +16,7 @@ const data = new Array(64).fill(new Array(64).fill(0));
 
 let pacman = 0;
 
-suite("64x64 Double Matrix", {
+suite("64x64 Matrix", {
   "sirdez with temp": () => {
     pacman += sdMatrix.fromBytes(sdMatrix.toTempBytes(data))[0][0];
   },

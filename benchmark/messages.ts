@@ -35,7 +35,7 @@ function test(id: string, data: string[]) {
   });
 }
 
-test("512 Short Messages", new Array(512).fill("Hello world"));
+test("512 Messages", new Array(512).fill("Hello world"));
 
 const longMessage = `
 The library you can rely on,
@@ -44,6 +44,6 @@ In Node, Deno, and the Web environment,
 Which is simple and yet performant.
 `;
 
-test("512 Long Messages", new Array(512).fill(longMessage));
+test("512 Texts", new Array(512).fill(longMessage));
 
 eval("" + pacman);

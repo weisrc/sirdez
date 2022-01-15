@@ -1,3 +1,4 @@
+import "./general";
 import "./matrix";
 import "./messages";
 import "./users";
