@@ -45,7 +45,7 @@ const config = {
 };
 
 const url =
-  "https://image-charts.com/chart.js/2.8.0?encoding=base64&bkg=transparent&c=" +
+  "https://image-charts.com/chart.js/2.8.0?height=200&encoding=base64&bkg=transparent&c=" +
   btoa(JSON.stringify(config));
 
 const file = createWriteStream("docs/benchmark-chart.png");
