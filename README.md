@@ -143,7 +143,7 @@ const bob: Person = {
 - [Documentation][docs-url]
 - [Coverage Report][coverage-url]
 - [Test Report][report-url]
-- [Benchmarkmark Results][benchmark-url]
+- [Benchmark Results][benchmark-url]
 - [NPM package][npm-url]
 - [Deno Land][deno-url]
 - [GitHub Action CI][ci-url]
