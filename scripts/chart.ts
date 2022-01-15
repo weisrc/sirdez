@@ -21,8 +21,6 @@ interface Dataset {
 const labels: string[] = [];
 const datasetMap: Record<string, Dataset> = {};
 
-delete result.general;
-
 for (const [suiteName, suite] of Object.entries(result)) {
   labels.push(suiteName);
   for (const [name, hz] of Object.entries(suite)) {

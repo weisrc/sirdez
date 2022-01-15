@@ -12,9 +12,9 @@ export const array: ArrayFactory = (sd, headSd) =>
     },
     (ctx) => {
       const length = headSd.des(ctx);
-      const data = [];
+      const data = new Array(length);
       for (let i = 0; i < length; i++) {
-        data.push(sd.des(ctx));
+        data[i] = sd.des(ctx);
       }
       return data;
     }
