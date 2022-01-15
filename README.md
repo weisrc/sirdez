@@ -28,10 +28,9 @@ Which is **simple** and yet **performant**.
 - Easy to use
 - Performant
 
-**Versus other tools (ops/sec)**
+**Perfomance comparison with other tools (ops/sec)**
 
 [![chart][chart-img]][chart-url]
-
 
 ## Installation
 
