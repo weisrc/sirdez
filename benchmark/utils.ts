@@ -1,11 +1,7 @@
 import { Suite } from "benchmark";
 import { mkdirSync, writeFileSync } from "fs";
 
-const { GITHUB_SHA } = process.env;
-
-const $sha = GITHUB_SHA ? GITHUB_SHA.slice(0, 7) : undefined;
-
-const out = { $sha };
+const out = {};
 
 export function suite(id: string, items: Record<string, () => void>) {
   console.log(`*** ${id} ***`);
