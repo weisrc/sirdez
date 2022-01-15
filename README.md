@@ -26,7 +26,6 @@ Which is **simple** and yet **performant**.
 - Full Node, Deno and browser support
 - Super extensible
 - Easy to use
-- Performant
 
 **Perfomance comparison with other tools (ops/sec)**
 
