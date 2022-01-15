@@ -30,11 +30,11 @@ const data: GetType<typeof sirdez> = {
 };
 
 suite("vector_encode", {
-  sirdez: () => {
-    pacman += sirdez.toBytes(data)[0];
-  },
   sirdez_temp: () => {
     pacman += sirdez.toTempBytes(data)[0];
+  },
+  sirdez: () => {
+    pacman += sirdez.toBytes(data)[0];
   },
   avsc: () => {
     pacman += avsc.toBuffer(data)[0];

@@ -24,9 +24,14 @@ Which is **simple** and yet **performant**.
 - 99% tree-shakable
 - Zero dependencies (small footprint)
 - Full Node, Deno and browser support
-- Performant
 - Super extensible
 - Easy to use
+- Performant
+
+**Versus other tools (ops/sec)**
+
+[![chart][chart-img]][chart-url]
+
 
 ## Installation
 
@@ -164,6 +169,8 @@ Help and suggestions are welcomed!
 [report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report-badge.json
 [report-url]: https://weisrc.github.io/sirdez/report
 [benchmark-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/benchmark-badge.json
-[benchmark-url]: asdf
+[benchmark-url]: TODO
 [docs-img]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez
+[chart-img]: https://weisrc.github.io/sirdez/benchmark-chart.png
+[chart-url]: TODO

@@ -14,6 +14,7 @@
     "test": "jest --coverage",
     "verify": "run-p format lint test",
     "benchmark": "ts-node benchmark",
+    "chart": "ts-node scripts/chart",
     "badges": "ts-node scripts/badges",
     "clean": "rm -rf dist deno_dist build && rm -rf docs",
     "build:web": "vite build",
