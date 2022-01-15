@@ -1,0 +1,12 @@
+import { NumberFactory } from "../types";
+export declare const evalNumber: NumberFactory;
+export declare const evalUint8: import("../types").SerDes<number>;
+export declare const evalUint16: import("../types").SerDes<number>;
+export declare const evalUint32: import("../types").SerDes<number>;
+export declare const evalInt8: import("../types").SerDes<number>;
+export declare const evalInt16: import("../types").SerDes<number>;
+export declare const evalInt32: import("../types").SerDes<number>;
+export declare const evalBigUint64: import("../types").SerDes<bigint>;
+export declare const evalBigInt64: import("../types").SerDes<bigint>;
+export declare const evalFloat32: import("../types").SerDes<number>;
+export declare const evalFloat64: import("../types").SerDes<number>;
