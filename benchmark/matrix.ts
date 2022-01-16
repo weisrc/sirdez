@@ -2,7 +2,9 @@ import { Type } from "avsc";
 import * as sd from "../src";
 import { suite } from "./utils";
 
-const sdMatrix = sd.array(sd.array(sd.float64, sd.uint16), sd.uint16);
+const sdMatrix = sd.use(
+  sd.array(sd.array(sd.float64, sd.uint16), sd.uint16)
+);
 
 const avMatrix = Type.forSchema({
   type: "array",
@@ -17,8 +19,8 @@ const data = new Array(64).fill(new Array(64).fill(0));
 let pacman = 0;
 
 suite("64x64 Matrix", {
-  "sirdez with temp": () => {
-    pacman += sdMatrix.fromBytes(sdMatrix.toTempBytes(data))[0][0];
+  "unsafe sirdez": () => {
+    pacman += sdMatrix.fromBytes(sdMatrix.toUnsafeBytes(data))[0][0];
   },
   sirdez: () => {
     pacman += sdMatrix.fromBytes(sdMatrix.toBytes(data))[0][0];

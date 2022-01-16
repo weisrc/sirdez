@@ -2,28 +2,29 @@ import { suite } from "./utils";
 import { Type } from "avsc";
 import * as sd from "../src";
 
-const sdGeneral = sd.evalStruct({
-  ghost: sd.uint8,
-  string: sd.string(sd.utf8js, sd.uint16),
-  number: sd.float64,
-  boolean: sd.boolean,
-  array: sd.array(
-    sd.evalStruct({
-      string: sd.string(sd.utf8js, sd.uint16),
-      x: sd.float64,
-      y: sd.float64,
-      z: sd.float64
-    }),
-    sd.uint16
-  )
-});
+const sdGeneral = sd.use(
+  sd.struct({
+    ghost: sd.uint8,
+    string: sd.string(sd.utf8js, sd.uint16),
+    number: sd.float64,
+    boolean: sd.boolean,
+    array: sd.array(
+      sd.struct({
+        string: sd.string(sd.utf8js, sd.uint16),
+        x: sd.float64,
+        y: sd.float64,
+        z: sd.float64
+      }),
+      sd.uint16
+    )
+  })
+);
 
 let pacman = 0;
 
 const data: sd.GetType<typeof sdGeneral> = {
   ghost: 0,
-  string:
-    "This is a string with characters.",
+  string: "This is a string with characters.",
   number: Math.PI,
   boolean: true,
   array: new Array(512).fill({
@@ -63,8 +64,10 @@ const avGeneral = Type.forSchema({
 });
 
 suite("General", {
-  "sirdez with temp": () => {
-    pacman += sdGeneral.fromBytes(sdGeneral.toTempBytes(data)).ghost;
+  "unsafe sirdez": () => {
+    pacman += sdGeneral.fromBytes(
+      sdGeneral.toUnsafeBytes(data)
+    ).ghost;
   },
   sirdez: () => {
     pacman += sdGeneral.fromBytes(sdGeneral.toBytes(data)).ghost;

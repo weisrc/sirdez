@@ -1,9 +1,4 @@
-import {
-  createContext,
-  evalNumber,
-  number,
-  NumberFactory
-} from "../../src";
+import { createContext, number, NumberFactory } from "../../src";
 
 const ctx = createContext();
 
@@ -78,5 +73,5 @@ function testNumber(number: NumberFactory, prefix = "") {
   });
 }
 
-testNumber(evalNumber, "eval.");
+testNumber(number, "eval.");
 testNumber(number);

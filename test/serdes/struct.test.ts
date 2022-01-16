@@ -1,13 +1,11 @@
 import {
   createContext,
-  evalStruct,
-  evalTuple,
+  GetType,
   string,
   struct,
   StructFactory,
   tuple,
   TupleFactory,
-  GetType,
   uint8,
   utf8
 } from "../../src";
@@ -53,5 +51,5 @@ function testTuple(tuple: TupleFactory, name: string) {
 testStruct(struct, "struct");
 testTuple(tuple, "tuple");
 
-testStruct(evalStruct, "eval.struct");
-testTuple(evalTuple, "eval.tuple");
+testStruct(struct, "eval.struct");
+testTuple(tuple, "eval.tuple");

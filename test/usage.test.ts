@@ -9,6 +9,7 @@ import {
   uint8,
   utf8js
 } from "../src";
+import { use } from "../src/use";
 import { text } from "./fixtures/text";
 
 const personTyper = struct({
@@ -46,7 +47,7 @@ const randomPerson = (): Person => ({
   resume: text.slice(0, 200)
 });
 
-const { toBytes, toTempBytes, fromBytes } = peopleTyper;
+const { toBytes, toUnsafeBytes, fromBytes } = use(peopleTyper);
 
 test("use will grow", () => {
   const data = new Array(100).fill(0).map(randomPerson);
@@ -60,7 +61,7 @@ test("use faster decode", () => {
 
 test("use instant", () => {
   const data = new Array(100).fill(0).map(randomPerson);
-  expect(fromBytes(toTempBytes(data))).toEqual(data);
+  expect(fromBytes(toUnsafeBytes(data))).toEqual(data);
 });
 
 test("use will throw other errors", () => {

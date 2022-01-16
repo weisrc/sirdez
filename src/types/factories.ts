@@ -1,11 +1,4 @@
-import {
-  AsyncSerDes,
-  AsyncStructDefinition,
-  Encoding,
-  SerDes,
-  Struct,
-  StructDefinition
-} from ".";
+import { Encoding, SerDes } from ".";
 
 type IntKind = "uint" | "int";
 type IntSize = 8 | 16 | 32;
@@ -35,6 +28,12 @@ export type BytesFactory = (
   headSd: SerDes<number>
 ) => SerDes<Uint8Array>;
 
+export type Struct = Record<string | number, unknown> | unknown[];
+
+export type StructDefinition<T extends Struct> = {
+  [k in keyof T]: SerDes<T[k]>;
+};
+
 export type StructFactory = <T extends Struct>(
   definition: StructDefinition<T>
 ) => SerDes<T>;
@@ -43,38 +42,15 @@ export type TupleFactory = <T extends unknown[]>(
   ...definition: StructDefinition<T>
 ) => SerDes<T>;
 
-export type AsyncStructFactory = <T extends Struct>(
-  definition: AsyncStructDefinition<T>
-) => AsyncSerDes<T>;
-
-export type AsyncTupleFactory = <T extends unknown[]>(
-  ...definition: AsyncStructDefinition<T>
-) => AsyncSerDes<T>;
-
 export type RecordFactory = <T>(
   sd: SerDes<T>,
   headSd: SerDes<number>,
   keySd: SerDes<string>
 ) => SerDes<Record<string, T>>;
 
-export type AsyncRecordFactory = <T>(
-  sd: AsyncSerDes<T>,
-  headSd: SerDes<number>,
-  keySd: SerDes<string>
-) => AsyncSerDes<Record<string, T>>;
-
 export type ArrayFactory = <T>(
   sd: SerDes<T>,
   headSd: SerDes<number>
 ) => SerDes<T[]>;
 
-export type AsyncArrayFactory = <T>(
-  sd: AsyncSerDes<T>,
-  headSd: SerDes<number>
-) => AsyncSerDes<T[]>;
-
 export type OptionalFactory = <T>(sd: SerDes<T>) => SerDes<T | void>;
-
-export type AsyncOptionalFactory = <T>(
-  sd: AsyncSerDes<T>
-) => AsyncSerDes<T | void>;

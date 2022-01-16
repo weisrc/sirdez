@@ -1,4 +1,4 @@
-import { AsyncSer, Context, Des, Ser } from "./types";
+import { Context, Des, Ser } from "./types";
 
 export function createContext(size = 4096): Context {
   const buffer = new ArrayBuffer(size);
@@ -25,25 +25,6 @@ export function contextSer<T>(
     ctx.i = 0;
     try {
       ser(ctx, data);
-      if (ctx.i < limit) return;
-    } catch (error) {
-      if (ctx.i < limit) throw error;
-    }
-    growContext(ctx);
-  }
-}
-
-export async function asyncContextSer<T>(
-  ctx: Context,
-  ser: AsyncSer<T>,
-  data: T
-) {
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
-    const limit = ctx.bytes.length - 8;
-    ctx.i = 0;
-    try {
-      await ser(ctx, data);
       if (ctx.i < limit) return;
     } catch (error) {
       if (ctx.i < limit) throw error;

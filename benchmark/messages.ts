@@ -2,9 +2,8 @@ import { Type } from "avsc";
 import * as sd from "../src";
 import { suite } from "./utils";
 
-const sdMessages = sd.array(
-  sd.string(sd.ascii, sd.uint16),
-  sd.uint16
+const sdMessages = sd.use(
+  sd.array(sd.string(sd.nodeUtf8, sd.uint16), sd.uint16)
 );
 
 const avMessages = Type.forSchema({
@@ -16,9 +15,9 @@ let pacman = 0;
 
 function test(id: string, data: string[]) {
   suite(id, {
-    "sirdez with temp": () => {
+    "unsafe sirdez": () => {
       pacman +=
-        sdMessages.fromBytes(sdMessages.toTempBytes(data)).length -
+        sdMessages.fromBytes(sdMessages.toUnsafeBytes(data)).length -
         512;
     },
     sirdez: () => {

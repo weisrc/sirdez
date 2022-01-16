@@ -2,14 +2,19 @@ import { Type } from "avsc";
 import * as sd from "../src";
 import { suite } from "./utils";
 
-const sdUsers = sd.array(
-  sd.evalStruct({
-    ghost: sd.uint8,
-    name: sd.string(sd.utf8js, sd.uint8),
-    joinedAt: sd.uint32,
-    repositories: sd.array(sd.string(sd.utf8js, sd.uint8), sd.uint16)
-  }),
-  sd.uint16
+const sdUsers = sd.use(
+  sd.array(
+    sd.struct({
+      ghost: sd.uint8,
+      name: sd.string(sd.utf8js, sd.uint8),
+      joinedAt: sd.uint32,
+      repositories: sd.array(
+        sd.string(sd.utf8js, sd.uint8),
+        sd.uint16
+      )
+    }),
+    sd.uint16
+  )
 );
 
 const avUser = Type.forSchema({
@@ -39,8 +44,8 @@ const data: sd.GetType<typeof sdUsers> = new Array(256).fill({
 let pacman = 0;
 
 suite("256 Users", {
-  "sirdez with temp": () => {
-    pacman += sdUsers.fromBytes(sdUsers.toTempBytes(data))[0].ghost;
+  "unsafe sirdez": () => {
+    pacman += sdUsers.fromBytes(sdUsers.toUnsafeBytes(data))[0].ghost;
   },
   sirdez: () => {
     pacman += sdUsers.fromBytes(sdUsers.toBytes(data))[0].ghost;
