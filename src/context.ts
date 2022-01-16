@@ -36,15 +36,15 @@ export function contextSer<T>(
 export function contextDes<T>(
   ctx: Context,
   des: Des<T>,
-  buf: Uint8Array
+  bytes: Uint8Array
 ): T {
-  const { length } = buf;
+  const { length } = bytes;
   if (length < 4096) {
-    ctx.bytes.set(buf);
+    ctx.bytes.set(bytes);
     ctx.i = 0;
     return des(ctx);
   } else {
-    return des(contextFromBytes(buf));
+    return des(contextFromBytes(bytes));
   }
 }
 

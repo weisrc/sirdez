@@ -1,5 +1,5 @@
 import {
-  contextFromBytes,
+  contextDes,
   contextSer,
   createContext,
   SerDes,
@@ -20,7 +20,7 @@ export function use<T>({ ser, des }: SerDes<T>): UsableSerDes<T> {
       return ctx.bytes.subarray(0, ctx.i);
     },
     fromBytes(bytes) {
-      return des(contextFromBytes(bytes));
+      return contextDes(ctx, des, bytes);
     }
   };
 }
