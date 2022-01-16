@@ -10,22 +10,13 @@ Headers determine the size of the array.
 - `sd.uint16` for arrays of length [0, 65 535].
 - `sd.uint32` for arrays of length [0, 4 294 967 295]
 
-## Asynchronous
-
-To store items that require asynchronous serialization and deserialization using `sd.AsyncSerDes`, use `sd.asyncArray`.
-
-::: warning
-Performance will be poor because the current implementation awaits every item in order.
-:::
-
 ## Usage
 
 Creating a `sd.SerDes` for points. It can store up to 65 535 items points as defined by `headSd` of `sd.uint16`.
 
 ```ts
-const { toBytes, fromBytes } = sd.array(
-  sd.evalStruct({ x: sd.float, y: sd.float }),
-  sd.uint16
+const { toBytes, fromBytes } = sd.use(
+  sd.array(sd.struct({ x: sd.float, y: sd.float }), sd.uint16)
 );
 ```
 

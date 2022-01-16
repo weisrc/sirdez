@@ -7,7 +7,7 @@ Boolean datatype is most basic of all. It consist of two values: `true` and `fal
 ## Usage
 
 ```ts
-const { toBytes, fromBytes } = sd.boolean;
+const { toBytes, fromBytes } = sd.use(sd.boolean);
 ```
 
 ## Specifications

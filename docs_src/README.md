@@ -111,10 +111,12 @@ const sd = await import("https://deno.land/x/sirdez/mod.ts");
 #### Simple snippet of code
 
 ```js
-const person = sd.struct({
-  name: sd.string(sd.utf8, sd.uint8),
-  age: sd.uint8
-});
+const person = sd.use(
+  sd.struct({
+    name: sd.string(sd.utf8, sd.uint8),
+    age: sd.uint8
+  })
+);
 
 const bytes = person.toBytes({
   name: "Bob",
