@@ -6,12 +6,8 @@ Structs allow to encode more complex data structures. They serialize JavaScript 
 
 There are two variants of structs.
 
-- `sd.struct` does not use `new Function`, but it is much slower because it is implemented using a for loop.
-- `sd.evalStruct` uses `new Function` and generates a very fast function to serialize and deserialize an object.
-
-## Asynchronous
-
-An asynchronous version of `sd.struct` named `sd.asyncStruct` is available for more complex use cases.
+- `sd.struct` uses `new Function` and generates a very fast function to serialize and deserialize an object.
+- `sd.struct@no_eval` does not use `new Function`, but it is much slower because it is implemented using a for loop.
 
 ## Usage
 
@@ -24,10 +20,8 @@ const defintion = {
   z: sd.float64
 };
 
-const { toBytes, fromBytes } = sd.struct(definition);
+const { toBytes, fromBytes } = sd.use(sd.struct(definition));
 ```
-
-For more performance, replace `sd.struct` with `sd.evalStruct`.
 
 ## Specifications
 

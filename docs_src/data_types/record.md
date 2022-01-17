@@ -10,10 +10,6 @@ Records allow to store key-value data. For example a phone book where the name o
 - `headSd` is the header that will indicate the amount of entries in the record.
 - `keySd` is the serializer/deserializer for the key components of the record.
 
-## Asynchronous
-
-`sd.asyncRecord` is available, but should be avoided because it is slow.
-
 ## Usage
 
 A simple record that indexes users by id.
@@ -26,7 +22,7 @@ const user = sd.struct({
   age: sd.uint8
 });
 
-const { toBytes, fromBytes } = sd.record(user, sd.uint16, id);
+const { toBytes, fromBytes } = sd.use(sd.record(user, sd.uint16, id));
 ```
 
 ## Specifications

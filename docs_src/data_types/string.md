@@ -11,7 +11,7 @@ Strings in this library are exteremely versatile: you choose the encoding format
 This is how you can create a UTF8 encoded string with a maximum length of 255 (because the range of `sd.uint8` is [0, 255]).
 
 ```ts
-const { toBytes, fromBytes } = sd.string(sd.utf8, sd.uint8);
+const { toBytes, fromBytes } = sd.use(sd.string(sd.utf8, sd.uint8));
 ```
 
 ::: warning

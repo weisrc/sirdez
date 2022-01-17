@@ -4,12 +4,16 @@ The purpose of this section is to familiarize with the components and their rela
 
 ## SerDes
 
-Sir Dez' SerDes are capable of serializing and deserializing data types and structures.
+UsableSerDes are the building blocks used to create serializers and deserializers for complex data structures. However they are not very useful when used alone without a context. This is where `sd.UsableSerDes` come into play.
 
 > Note: `sd` comes from `import * as sd from "sirdez"`
 
+## UsableSerDes
+
+UsableSerDes are capable of serializing and deserializing data types and structures. A `sd.SerDes` can be easily converted into it with `sd.use`.
+
 ```ts
-const { toBytes, fromBytes } = sd.uint8;
+const { toBytes, fromBytes } = sd.use(sd.uint8);
 const bytes = toBytes(255);
 const same255 = fromBytes(bytes);
 console.log({ bytes, same255 });
@@ -19,23 +23,13 @@ console.log({ bytes, same255 });
 
 `fromBytes` decodes the `encoded` back to a JavaScript number.
 
-### Temporary serialization
+### Unsafe serialization
 
 ```ts
-const { toTempBytes } = sd.uint8;
+const { toUnsafeBytes } = sd.uint8;
 ```
 
-Creating a new `Uint8Array` to return the encoded is not performant for larger data structures. To address this, converters have a second encoding method named `toTempBytes`. **`Uint8Array` returned by `toTempBytes` must be used at that instant because the data will be mutated on its next call.** It is using `subarray` under hood which does not return a copy.
-
-### Asynchronous
-
-For serialization schemes that require asynchronous code such as `crypto.sublte.encodeInto`, use `sd.AsyncSerDes`.
-
-```ts
-const { toBytes, toTempBytes, fromBytes } = encryptedUser;
-```
-
-> Although Sir Dez does not offer useful `AsyncSerDes`, there are many async factories implemented for extensibility.
+Creating a new `Uint8Array` to return the encoded is not performant for larger data structures. To address this, converters have a second encoding method named `toUnsafeBytes`. **`Uint8Array` returned by `toUnsafeBytes` must be used at that instant because the data will be mutated on its next call.** It is using `subarray` under hood which does not return a copy.
 
 ## Factories
 
@@ -48,7 +42,7 @@ const vector3dSerDes = sd.struct({
   z: sd.float64
 });
 
-const { toBytes, fromBytes } = vector3dSerDes;
+const { toBytes, fromBytes } = sd.use(vector3dSerDes);
 ```
 
 `sd.struct` is a `sd.StructMaker`. It creates typers given a key-value schema of typers.
@@ -62,5 +56,5 @@ Encodings allow to encode string related data. Sir Dez comes with built-in encod
 > `sd.utf8` uses the native `TextEncoder` and `TextDecoder`. However, it somehow under performs for small strings, therefore `sd.utf8js` is recommended for small strings.
 
 ```ts
-const { toBytes, fromBytes } = sd.string(sd.utf8js, sd.uint8);
+const { toBytes, fromBytes } = sd.use(sd.string(sd.utf8js, sd.uint8));
 ```

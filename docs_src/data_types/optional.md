@@ -4,16 +4,12 @@ Optional type allows you to have a value that may or may not be there when seria
 
 `sd.optional` takes `sd`, a `sd.SerDes` that will serialize if there is a value.
 
-## Asynchronous
-
-The asynchronous version is `sd.asyncOptional` which behaves similarly, but takes a `sd.AsyncSerDes` as `sd` parameter.
-
 ## Usage
 
 Optional number.
 
 ```ts
-const { toBytes, fromBytes } = sd.optional(sd.uint8);
+const { toBytes, fromBytes } = sd.use(sd.optional(sd.uint8));
 ```
 
 ## Specifications
