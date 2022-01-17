@@ -1,6 +1,6 @@
-import { suite } from "./utils";
 import { Type } from "avsc";
 import * as sd from "../src";
+import { suite } from "./utils";
 
 const sdGeneral = sd.use(
   sd.struct({

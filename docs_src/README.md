@@ -27,7 +27,7 @@ Which is **simple** and yet **performant**.
 - Super extensible
 - Easy to use
 
-**Perfomance comparison with other tools (ops/sec)**
+**Perfomance comparison with other tools in Node (ops/sec)**
 
 [![chart][chart-img]][chart-url]
 
