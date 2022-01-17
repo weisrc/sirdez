@@ -1,6 +1,6 @@
 # Array
 
-Arrays allow you to store elements of a specific type. For example vertices, transactions, users... `sd.array` will require a `sd.SerDes` which will be used to encode the items, and a `headSd` which is a `sd.SerDes<number>` to encode the number of items in the array.
+Arrays allow you to store elements of a specific type. For example vertices, transactions, users... `sd.array` will require a `sd.Serdes` which will be used to encode the items, and a `headSd` which is a `sd.Serdes<number>` to encode the number of items in the array.
 
 ## Headers
 
@@ -12,7 +12,7 @@ Headers determine the size of the array.
 
 ## Usage
 
-Creating a `sd.SerDes` for points. It can store up to 65 535 items points as defined by `headSd` of `sd.uint16`.
+Creating a `sd.Serdes` for points. It can store up to 65 535 items points as defined by `headSd` of `sd.uint16`.
 
 ```ts
 const { toBytes, fromBytes } = sd.use(

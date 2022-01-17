@@ -2,15 +2,15 @@
 
 The purpose of this section is to familiarize with the components and their relationships as well as their use cases. With this knowledge, you will be capable of fully extending Sir Dez to better fit your needs.
 
-## SerDes
+## Serdes
 
-UsableSerDes are the building blocks used to create serializers and deserializers for complex data structures. However they are not very useful when used alone without a context. This is where `sd.UsableSerDes` come into play.
+Serdes are the building blocks used to create serializers and deserializers for complex data structures. However they are not very useful when used alone without a context. This is where `sd.UsableSerdes` come into play.
 
 > Note: `sd` comes from `import * as sd from "sirdez"`
 
-## UsableSerDes
+## UsableSerdes
 
-UsableSerDes are capable of serializing and deserializing data types and structures. A `sd.SerDes` can be easily converted into it with `sd.use`.
+UsableSerdes are capable of serializing and deserializing data types and structures. A `sd.SerDes` can be easily converted into it with `sd.use`.
 
 ```ts
 const { toBytes, fromBytes } = sd.use(sd.uint8);
@@ -36,13 +36,13 @@ Creating a new `Uint8Array` to return the encoded is not performant for larger d
 Sir Dez' Factories are the factories of typers. Factories are the functions responsible for composing typers and creating new typers dynamically.
 
 ```ts
-const vector3dSerDes = sd.struct({
+const vector3dSerdes = sd.struct({
   x: sd.float64,
   y: sd.float64,
   z: sd.float64
 });
 
-const { toBytes, fromBytes } = sd.use(vector3dSerDes);
+const { toBytes, fromBytes } = sd.use(vector3dSerdes);
 ```
 
 `sd.struct` is a `sd.StructMaker`. It creates typers given a key-value schema of typers.
