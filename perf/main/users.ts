@@ -8,7 +8,10 @@ const sdUsers = sd.use(
       ghost: sd.uint8,
       name: sd.string(sd.utf8js, sd.uint8),
       joinedAt: sd.uint32,
-      repositories: sd.array(sd.string(sd.utf8js, sd.uint8), sd.uint16)
+      repositories: sd.array(
+        sd.string(sd.utf8js, sd.uint8),
+        sd.uint16
+      )
     }),
     sd.uint16
   )
