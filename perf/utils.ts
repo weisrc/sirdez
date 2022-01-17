@@ -1,15 +1,19 @@
 import { Suite } from "benchmark";
 import { mkdirSync, writeFileSync } from "fs";
 
-let out = {};
-try {
-  out = require("../docs/benchmark.json");
-} catch {
-  console.log("benchmark.json not found");
-}
-
-export function suite(id: string, items: Record<string, () => void>) {
+export function suite(
+  file: string,
+  id: string,
+  items: Record<string, () => void>
+) {
   console.log(`*** ${id} ***`);
+
+  let out = {};
+  try {
+    out = require(`../docs/perf/${file}.json`);
+  } catch {
+    console.log(`creating ${file}.json...`);
+  }
 
   out[id] = {};
   const entries = Object.entries(items);
@@ -25,9 +29,7 @@ export function suite(id: string, items: Record<string, () => void>) {
     const { name, hz } = s[i];
     out[id][name] = Math.round(hz);
   }
-}
 
-process.on("exit", () => {
-  mkdirSync("docs", { recursive: true });
-  writeFileSync("docs/benchmark.json", JSON.stringify(out));
-});
+  mkdirSync("docs/perf", { recursive: true });
+  writeFileSync(`docs/perf/${file}.json`, JSON.stringify(out));
+}

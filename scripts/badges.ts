@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { writeFileSync } from "fs";
+import { mkdirSync, writeFileSync } from "fs";
 // @ts-ignore
 import { total } from "../docs/coverage/coverage-summary.json";
 // @ts-ignore
-import { numFailedTests, numPassedTests } from "../docs/report.json";
-// @ts-ignore
-import { General as benchmark } from "../docs/benchmark.json";
+import { General as perf } from "../docs/perf/main.json";
+import {
+  numFailedTests,
+  numPassedTests
+  // @ts-ignore
+} from "../docs/report/index.json";
 
 interface Badge {
   schemaVersion: 1;
@@ -24,15 +27,17 @@ interface Badge {
   cacheSeconds?: number;
 }
 
+mkdirSync("docs/badges", { recursive: true });
+
 function percentToColor(percent: number) {
   return `hsl(${(percent * 120).toFixed()}, 100%, 40%)`;
 }
 
-function createBadge(path: string, badge: Badge) {
-  writeFileSync(path, JSON.stringify(badge));
+function createBadge(file: string, badge: Badge) {
+  writeFileSync(`docs/badges/${file}.json`, JSON.stringify(badge));
 }
 
-createBadge("docs/report-badge.json", {
+createBadge("report", {
   schemaVersion: 1,
   label: "report",
   namedLogo: "jest",
@@ -40,7 +45,7 @@ createBadge("docs/report-badge.json", {
   color: percentToColor(numFailedTests ? 0 : 1)
 });
 
-createBadge("docs/coverage-badge.json", {
+createBadge("coverage", {
   schemaVersion: 1,
   label: "coverage",
   namedLogo: "jest",
@@ -48,11 +53,11 @@ createBadge("docs/coverage-badge.json", {
   color: percentToColor(total.lines.pct / 100)
 });
 
-const speed = (benchmark.sirdez / benchmark.json).toFixed(2);
+const speed = (perf.sirdez / perf.json).toFixed(2);
 
-createBadge("docs/benchmark-badge.json", {
+createBadge("perf", {
   schemaVersion: 1,
-  label: "benchmark",
+  label: "perf",
   namedLogo: "speedtest",
   message: `${speed}x JSON`,
   color: "blue"

@@ -1,6 +1,6 @@
 import { Type } from "avsc";
-import * as sd from "../src/node";
-import { suite } from "./utils";
+import * as sd from "../../src/node";
+import { suite } from "../utils";
 
 const sdGeneral = sd.use(
   sd.struct({
@@ -63,7 +63,7 @@ const avGeneral = Type.forSchema({
   ]
 });
 
-suite("General", {
+suite("main", "General", {
   "unsafe sirdez": () => {
     pacman += sdGeneral.fromBytes(
       sdGeneral.toUnsafeBytes(data)

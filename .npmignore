@@ -15,7 +15,7 @@ src
 scripts
 docs_src
 test
-benchmark
+perf
 
 # generated
 docs

@@ -1,6 +1,6 @@
 import { Type } from "avsc";
-import * as sd from "../src/node";
-import { suite } from "./utils";
+import * as sd from "../../src/node";
+import { suite } from "../utils";
 
 const sdUsers = sd.use(
   sd.array(
@@ -8,10 +8,7 @@ const sdUsers = sd.use(
       ghost: sd.uint8,
       name: sd.string(sd.utf8js, sd.uint8),
       joinedAt: sd.uint32,
-      repositories: sd.array(
-        sd.string(sd.utf8js, sd.uint8),
-        sd.uint16
-      )
+      repositories: sd.array(sd.string(sd.utf8js, sd.uint8), sd.uint16)
     }),
     sd.uint16
   )
@@ -43,7 +40,7 @@ const data: sd.GetType<typeof sdUsers> = new Array(256).fill({
 
 let pacman = 0;
 
-suite("256 Users", {
+suite("main", "256 Users", {
   "unsafe sirdez": () => {
     pacman += sdUsers.fromBytes(sdUsers.toUnsafeBytes(data))[0].ghost;
   },

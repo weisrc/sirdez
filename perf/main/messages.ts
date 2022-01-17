@@ -1,6 +1,6 @@
 import { Type } from "avsc";
-import * as sd from "../src/node";
-import { suite } from "./utils";
+import * as sd from "../../src/node";
+import { suite } from "../utils";
 
 const sdMessages = sd.use(
   sd.array(
@@ -35,7 +35,7 @@ const data = new Array(512).fill({ msg, at: 0 });
 
 let pacman = 0;
 
-suite("512 Messages", {
+suite("main", "512 Messages", {
   "unsafe sirdez": () => {
     pacman +=
       sdMessages.fromBytes(sdMessages.toUnsafeBytes(data)).length -

@@ -1,6 +1,6 @@
 import { Type } from "avsc";
-import * as sd from "../src/node";
-import { suite } from "./utils";
+import * as sd from "../../src/node";
+import { suite } from "../utils";
 
 const sdMatrix = sd.use(
   sd.array(sd.array(sd.float64, sd.uint16), sd.uint16)
@@ -18,7 +18,7 @@ const data = new Array(100).fill(new Array(100).fill(0));
 
 let pacman = 0;
 
-suite("100x100 Matrix", {
+suite("main", "100x100 Matrix", {
   "unsafe sirdez": () => {
     pacman += sdMatrix.fromBytes(sdMatrix.toUnsafeBytes(data))[0][0];
   },

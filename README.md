@@ -1,6 +1,6 @@
 <div markdown="1" align="center">
 
-[![Sir Dez][logo-img]][logo-url]
+[![Sir Dez][logo-badge]][logo-url]
 
 # **Glorious [_SerDes_][serdes] for TypeScript**
 
@@ -9,13 +9,13 @@ For **binary** **serialization** and **deserialization**,
 In **Node**, **Deno**, and the **Web** environment,  
 Which is **simple** and yet **performant**.
 
-[![npm][npm-img]][npm-url]
-[![deno][deno-img]][deno-url]
-[![ci][ci-img]][ci-url]
-[![coverage][coverage-img]][coverage-url]
-[![report][report-img]][report-url]
-[![docs][docs-img]][docs-url]
-[![benchmark][benchmark-img]][benchmark-url]
+[![npm][npm-badge]][npm-url]
+[![deno][deno-badge]][deno-url]
+[![ci][ci-badge]][ci-url]
+[![coverage][coverage-badge]][coverage-url]
+[![report][report-badge]][report-url]
+[![docs][docs-badge]][docs-url]
+[![perf][perf-badge]][perf-url]
 
 </div>
 
@@ -29,7 +29,7 @@ Which is **simple** and yet **performant**.
 
 **Perfomance comparison with other tools in Node (ops/sec)**
 
-[![chart][chart-img]][chart-url]
+[![performance][perf-chart]][perf-url]
 
 ## Installation
 
@@ -144,7 +144,7 @@ const bob: Person = {
 - [Documentation][docs-url]
 - [Coverage Report][coverage-url]
 - [Test Report][report-url]
-- [Benchmark Results][benchmark-url]
+- [Performance Report][perf-url]
 - [NPM package][npm-url]
 - [Deno Land][deno-url]
 - [GitHub Action CI][ci-url]
@@ -156,21 +156,20 @@ Help and suggestions are welcomed!
 <!-- urls -->
 
 [serdes]: https://en.wikipedia.org/wiki/SerDes
-[logo-img]: https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U2lyIERleg/x.png
+[logo-badge]: https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U2lyIERleg/x.png
 [logo-url]: https://weisrc.github.io/sirdez
-[ci-img]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg
+[ci-badge]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg
 [ci-url]: https://github.com/weisrc/sirdez/actions/workflows/ci.yml
-[npm-img]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
+[npm-badge]: https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm
 [npm-url]: https://www.npmjs.com/package/sirdez
-[deno-img]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
+[deno-badge]: https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno
 [deno-url]: https://deno.land/x/sirdez
-[coverage-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/coverage-badge.json
+[coverage-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/coverage.json
 [coverage-url]: https://weisrc.github.io/sirdez/coverage/lcov-report
-[report-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/report-badge.json
+[report-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/report.json
 [report-url]: https://weisrc.github.io/sirdez/report
-[benchmark-img]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/benchmark-badge.json
-[benchmark-url]: TODO
-[docs-img]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
+[perf-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/perf.json
+[perf-chart]: https://weisrc.github.io/sirdez/perf/main.png
+[perf-url]: TODO
+[docs-badge]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez
-[chart-img]: https://weisrc.github.io/sirdez/benchmark-chart.png
-[chart-url]: TODO

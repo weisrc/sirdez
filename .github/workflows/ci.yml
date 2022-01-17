@@ -22,8 +22,7 @@ jobs:
         run: yarn test
       - name: Benchmark and chart
         run: |
-          yarn benchmark
-          yarn chart
+          yarn perf
       - name: Create badges and add docs
         run: |
           yarn badges
