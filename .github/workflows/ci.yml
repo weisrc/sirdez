@@ -13,27 +13,25 @@ jobs:
         with:
           node-version: 16.x
       - name: Setup
-        run: |
-          npm ci
-          npm run clean
+        run: yarn ci && yarn clean
       - name: Lint
-        run: npm run lint
+        run: yarn lint
       - name: Test
         id: test
         continue-on-error: true
-        run: npm run test
+        run: yarn test
       - name: Benchmark and chart
         run: |
-          npm run benchmark
-          npm run chart
+          yarn benchmark
+          yarn chart
       - name: Create badges and add docs
         run: |
-          npm run badges
+          yarn badges
           git add -f docs
       - name: Build and docs
         if: steps.test.outcome == 'success'
         run: |
-          npm run build_and_docs
+          yarn build_and_docs
           git add -f dist deno_dist build docs
       - name: Push
         env:

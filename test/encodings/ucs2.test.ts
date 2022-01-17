@@ -1,4 +1,4 @@
-import { createContext, utf16 } from "../../src";
+import { createContext, ucs2 } from "../../src";
 import { text } from "../fixtures/text";
 
 const ctx = createContext(20000);
@@ -7,9 +7,9 @@ beforeEach(() => {
   ctx.i = 0;
 });
 
-test("utf16", () => {
-  utf16.encode(ctx, text);
+test("ucs2", () => {
+  ucs2.encode(ctx, text);
   const end = ctx.i;
   ctx.i = 0;
-  expect(utf16.decode(ctx, end)).toBe(text);
+  expect(ucs2.decode(ctx, end)).toBe(text);
 });

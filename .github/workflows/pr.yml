@@ -13,10 +13,10 @@ jobs:
         with:
           node-version: 15.x
       - name: Setup
-        run: npm ci && npm run clean
+        run: yarn ci && yarn clean
       - name: Lint
-        run: npm run lint
+        run: yarn lint
       - name: Test
-        run: npm run test
+        run: yarn test
       - name: Build
-        run: npm run build
+        run: yarn build

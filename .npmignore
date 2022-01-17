@@ -1,5 +1,4 @@
 # files
-.github
 .prettierrc
 .gitignore
 .prettierignore
@@ -8,8 +7,10 @@
 jest.config.ts
 vite.config.ts
 typedoc.json
+yarn.lock
 
 # dirs
+.github
 src
 scripts
 docs_src

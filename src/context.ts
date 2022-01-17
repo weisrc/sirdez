@@ -18,14 +18,14 @@ export function contextSer<T>(
   ctx: Context,
   ser: Ser<T>,
   data: T
-): void {
+): Uint8Array {
   // eslint-disable-next-line no-constant-condition
   while (true) {
     const limit = ctx.bytes.length - 8;
     ctx.i = 0;
     try {
       ser(ctx, data);
-      if (ctx.i < limit) return;
+      if (ctx.i < limit) return ctx.bytes;
     } catch (error) {
       if (ctx.i < limit) throw error;
     }

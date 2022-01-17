@@ -1,6 +1,6 @@
 import { Encoding } from "../types";
 
-export const ascii: Encoding<string> = {
+export const latin1: Encoding<string> = {
   encode(ctx, data) {
     const { length } = data;
     for (let i = 0; i < length; i++) {

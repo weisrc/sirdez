@@ -1,12 +1,12 @@
 import { define } from "../define";
-import { NumberFactory, SerDes } from "../types";
+import { NumberFactory, Serdes } from "../types";
 
-export const uint8: SerDes<number> = define(
+export const uint8: Serdes<number> = define(
   (ctx, data) => ctx.view.setUint8(ctx.i++, data),
   (ctx) => ctx.view.getUint8(ctx.i++)
 );
 
-export const uint16: SerDes<number> = define(
+export const uint16: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setUint16(ctx.i, data);
     ctx.i += 2;
@@ -18,7 +18,7 @@ export const uint16: SerDes<number> = define(
   }
 );
 
-export const uint32: SerDes<number> = define(
+export const uint32: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setUint32(ctx.i, data);
     ctx.i += 4;
@@ -30,7 +30,7 @@ export const uint32: SerDes<number> = define(
   }
 );
 
-export const bigUint64: SerDes<bigint> = define(
+export const bigUint64: Serdes<bigint> = define(
   (ctx, data) => {
     ctx.view.setBigUint64(ctx.i, data);
     ctx.i += 8;
@@ -42,12 +42,12 @@ export const bigUint64: SerDes<bigint> = define(
   }
 );
 
-export const int8: SerDes<number> = define(
+export const int8: Serdes<number> = define(
   (ctx, data) => ctx.view.setInt8(ctx.i++, data),
   (ctx) => ctx.view.getInt8(ctx.i++)
 );
 
-export const int16: SerDes<number> = define(
+export const int16: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setInt16(ctx.i, data);
     ctx.i += 2;
@@ -59,7 +59,7 @@ export const int16: SerDes<number> = define(
   }
 );
 
-export const int32: SerDes<number> = define(
+export const int32: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setInt32(ctx.i, data);
     ctx.i += 4;
@@ -71,7 +71,7 @@ export const int32: SerDes<number> = define(
   }
 );
 
-export const bigInt64: SerDes<bigint> = define(
+export const bigInt64: Serdes<bigint> = define(
   (ctx, data) => {
     ctx.view.setBigInt64(ctx.i, data);
     ctx.i += 8;
@@ -83,7 +83,7 @@ export const bigInt64: SerDes<bigint> = define(
   }
 );
 
-export const float32: SerDes<number> = define(
+export const float32: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setFloat32(ctx.i, data);
     ctx.i += 4;
@@ -95,7 +95,7 @@ export const float32: SerDes<number> = define(
   }
 );
 
-export const float64: SerDes<number> = define(
+export const float64: Serdes<number> = define(
   (ctx, data) => {
     ctx.view.setFloat64(ctx.i, data);
     ctx.i += 8;

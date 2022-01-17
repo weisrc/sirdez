@@ -1,4 +1,4 @@
-import { Encoding, SerDes } from ".";
+import { Encoding, Serdes } from ".";
 
 type IntKind = "uint" | "int";
 type IntSize = 8 | 16 | 32;
@@ -13,44 +13,44 @@ type Kind = IntKind | FloatKind | BigIntKind;
 type Size = IntSize | FloatSize | BigIntSize;
 
 export interface NumberFactory {
-  (kind: IntKind, bitSize: IntSize): SerDes<number>;
-  (kind: FloatKind, bitSize: FloatSize): SerDes<number>;
-  (kind: BigIntKind, bitSize: BigIntSize): SerDes<bigint>;
-  (kind: Kind, bitSize: Size): SerDes<never>;
+  (kind: IntKind, bitSize: IntSize): Serdes<number>;
+  (kind: FloatKind, bitSize: FloatSize): Serdes<number>;
+  (kind: BigIntKind, bitSize: BigIntSize): Serdes<bigint>;
+  (kind: Kind, bitSize: Size): Serdes<never>;
 }
 
 export type StringFactory = (
   encoding: Encoding<string>,
-  headSd: SerDes<number>
-) => SerDes<string>;
+  headSd: Serdes<number>
+) => Serdes<string>;
 
 export type BytesFactory = (
-  headSd: SerDes<number>
-) => SerDes<Uint8Array>;
+  headSd: Serdes<number>
+) => Serdes<Uint8Array>;
 
 export type Struct = Record<string | number, unknown> | unknown[];
 
 export type StructDefinition<T extends Struct> = {
-  [k in keyof T]: SerDes<T[k]>;
+  [k in keyof T]: Serdes<T[k]>;
 };
 
 export type StructFactory = <T extends Struct>(
   definition: StructDefinition<T>
-) => SerDes<T>;
+) => Serdes<T>;
 
 export type TupleFactory = <T extends unknown[]>(
   ...definition: StructDefinition<T>
-) => SerDes<T>;
+) => Serdes<T>;
 
 export type RecordFactory = <T>(
-  sd: SerDes<T>,
-  headSd: SerDes<number>,
-  keySd: SerDes<string>
-) => SerDes<Record<string, T>>;
+  sd: Serdes<T>,
+  headSd: Serdes<number>,
+  keySd: Serdes<string>
+) => Serdes<Record<string, T>>;
 
 export type ArrayFactory = <T>(
-  sd: SerDes<T>,
-  headSd: SerDes<number>
-) => SerDes<T[]>;
+  sd: Serdes<T>,
+  headSd: Serdes<number>
+) => Serdes<T[]>;
 
-export type OptionalFactory = <T>(sd: SerDes<T>) => SerDes<T | void>;
+export type OptionalFactory = <T>(sd: Serdes<T>) => Serdes<T | void>;

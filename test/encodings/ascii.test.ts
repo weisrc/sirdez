@@ -1,4 +1,4 @@
-import { ascii, createContext } from "../../src";
+import { latin1, createContext } from "../../src";
 
 const ctx = createContext();
 
@@ -7,11 +7,11 @@ beforeEach(() => {
 });
 
 const data =
-  "Hello world, I am made using characters that ascii supports!";
+  "Hello world, I am made using characters that latin1 supports!";
 
-test("ascii", () => {
-  ascii.encode(ctx, data);
+test("latin1", () => {
+  latin1.encode(ctx, data);
   const end = ctx.i;
   ctx.i = 0;
-  expect(ascii.decode(ctx, end)).toBe(data);
+  expect(latin1.decode(ctx, end)).toBe(data);
 });

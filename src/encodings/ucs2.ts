@@ -1,6 +1,6 @@
 import { Encoding } from "../types";
 
-export const utf16: Encoding<string> = {
+export const ucs2: Encoding<string> = {
   encode(ctx, data) {
     const { length } = data;
     for (let i = 0; i < length; i++) {
