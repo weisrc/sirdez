@@ -5,7 +5,7 @@ import { suite } from "./utils";
 const sdMessages = sd.use(
   sd.array(
     sd.struct({
-      msg: sd.string(sd.nodeUtf8, sd.uint16),
+      msg: sd.string(sd.utf8, sd.uint16),
       at: sd.uint32
     }),
     sd.uint16
