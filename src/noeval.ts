@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export * from "./context";
 export * from "./define";
 export * from "./encodings";
@@ -8,7 +9,6 @@ export {
   array,
   boolean,
   bytes,
-  number,
   optional,
   record,
   string

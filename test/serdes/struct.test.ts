@@ -10,6 +10,11 @@ import {
   utf8
 } from "../../src";
 
+import {
+  struct as noevalStruct,
+  tuple as noevalTuple
+} from "../../src/noeval";
+
 function testStruct(struct: StructFactory, name: string) {
   const ctx = createContext();
   const data = { name: "Alice", age: 100 };
@@ -51,5 +56,5 @@ function testTuple(tuple: TupleFactory, name: string) {
 testStruct(struct, "struct");
 testTuple(tuple, "tuple");
 
-testStruct(struct, "eval.struct");
-testTuple(tuple, "eval.tuple");
+testStruct(noevalStruct, "struct@noeval");
+testTuple(noevalTuple, "tuple@noeval");

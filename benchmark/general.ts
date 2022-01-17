@@ -1,5 +1,5 @@
 import { Type } from "avsc";
-import * as sd from "../src";
+import * as sd from "../src/node";
 import { suite } from "./utils";
 
 const sdGeneral = sd.use(

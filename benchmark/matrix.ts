@@ -1,5 +1,5 @@
 import { Type } from "avsc";
-import * as sd from "../src";
+import * as sd from "../src/node";
 import { suite } from "./utils";
 
 const sdMatrix = sd.use(
@@ -14,11 +14,11 @@ const avMatrix = Type.forSchema({
   }
 });
 
-const data = new Array(64).fill(new Array(64).fill(0));
+const data = new Array(100).fill(new Array(100).fill(0));
 
 let pacman = 0;
 
-suite("64x64 Matrix", {
+suite("100x100 Matrix", {
   "unsafe sirdez": () => {
     pacman += sdMatrix.fromBytes(sdMatrix.toUnsafeBytes(data))[0][0];
   },

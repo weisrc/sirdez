@@ -1,4 +1,5 @@
 import { createContext, number, NumberFactory } from "../../src";
+import { number as noevalNumber } from "../../src/noeval";
 
 const ctx = createContext();
 
@@ -6,7 +7,7 @@ beforeEach(() => {
   ctx.i = 0;
 });
 
-function testNumber(number: NumberFactory, prefix = "") {
+function testNumber(number: NumberFactory, suffix = "") {
   for (const kind of ["Uint", "Int"]) {
     const signed = kind === "Int";
     for (const size of [8, 16, 32]) {
@@ -18,12 +19,12 @@ function testNumber(number: NumberFactory, prefix = "") {
         ? [-(2 ** (size - 1)), 2 ** (size - 1) - 1]
         : [0, 2 ** size - 1];
       for (const n of range) {
-        test(prefix + name + size + " encode", () => {
+        test(name + suffix + size + " encode", () => {
           typer.ser(ctx, n);
           expect(ctx.i).toBe(offset);
           expect(ctx.view[`get${method}`](0)).toBe(n);
         });
-        test(prefix + name + size + " decode", () => {
+        test(name + suffix + size + " decode", () => {
           expect(typer.des(ctx)).toBe(n);
           expect(ctx.i).toBe(offset);
         });
@@ -36,12 +37,12 @@ function testNumber(number: NumberFactory, prefix = "") {
       ? [-9223372036854775808n, 9223372036854775807n]
       : [0n, 2n ** 64n - 1n];
     for (const n of range) {
-      test(prefix + name + "64 encode", () => {
+      test(name + suffix + "64 encode", () => {
         typer.ser(ctx, n);
         expect(ctx.i).toBe(8);
         expect(ctx.view[`get${method}`](0)).toBe(n);
       });
-      test(prefix + name + "64 decode", () => {
+      test(name + suffix + "64 decode", () => {
         expect(typer.des(ctx)).toBe(n);
         expect(ctx.i).toBe(8);
       });
@@ -50,28 +51,28 @@ function testNumber(number: NumberFactory, prefix = "") {
 
   const data = 2.7182817459106445;
 
-  test(prefix + "float32 encode", () => {
+  test("float32" + suffix + " encode", () => {
     number("float", 32).ser(ctx, data);
     expect(ctx.i).toBe(4);
     expect(ctx.view.getFloat32(0)).toBe(data);
   });
 
-  test(prefix + "float32 decode", () => {
+  test("float32" + suffix + " decode", () => {
     expect(number("float", 32).des(ctx)).toBe(data);
     expect(ctx.i).toBe(4);
   });
 
-  test(prefix + "float64 encode", () => {
+  test("float64" + suffix + " encode", () => {
     number("float", 64).ser(ctx, data);
     expect(ctx.i).toBe(8);
     expect(ctx.view.getFloat64(0)).toBe(data);
   });
 
-  test(prefix + "float64 decode", () => {
+  test("float64" + suffix + " decode", () => {
     expect(number("float", 64).des(ctx)).toBe(data);
     expect(ctx.i).toBe(8);
   });
 }
 
-testNumber(number, "eval.");
 testNumber(number);
+testNumber(noevalNumber, "@noeval");
