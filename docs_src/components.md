@@ -29,7 +29,7 @@ console.log({ bytes, same255 });
 const { toUnsafeBytes } = sd.uint8;
 ```
 
-Creating a new `Uint8Array` to return the encoded is not performant for larger data structures. To address this, converters have a second encoding method named `toUnsafeBytes`. **`Uint8Array` returned by `toUnsafeBytes` must be used at that instant because the data will be mutated on its next call.** It is using `subarray` under hood which does not return a copy.
+Creating a new `Uint8Array` to return the encoded is not performant for larger data structures. To address this, converters have a second encoding method named `toUnsafeBytes`. **`Uint8Array` returned by `toUnsafeBytes` must be used immediately and should not be stored because the data will be mutated on its next call.** It is using `subarray` under hood which does not return a copy.
 
 ## Factories
 
