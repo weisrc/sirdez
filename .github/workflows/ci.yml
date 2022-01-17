@@ -20,7 +20,7 @@ jobs:
         id: test
         continue-on-error: true
         run: yarn test
-      - name: Benchmark and chart
+      - name: Performance
         run: |
           yarn perf
       - name: Create badges and add docs
