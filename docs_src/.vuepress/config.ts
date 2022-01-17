@@ -35,6 +35,7 @@ export default defineConfig({
     sidebar: [
       ["/", "Introduction"],
       "components",
+      "extending",
       {
         title: "Data Types",
         children: [
