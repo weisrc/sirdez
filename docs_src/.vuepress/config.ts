@@ -34,6 +34,7 @@ export default defineConfig({
     ],
     sidebar: [
       ["/", "Introduction"],
+      "design",
       "components",
       "extending",
       {

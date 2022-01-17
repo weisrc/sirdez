@@ -31,6 +31,8 @@ Which is **simple** and yet **performant**.
 
 [![performance][perf-chart]][perf-url]
 
+[More information about the design of Sir Dez here!][design-url]
+
 ## Installation
 
 Expand for more details.
@@ -173,3 +175,4 @@ Help and suggestions are welcomed!
 [perf-url]: TODO
 [docs-badge]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez
+[design-url]: https://weisrc.github.io/sirdez/design

@@ -6,6 +6,14 @@
     ".": {
       "node": "./build/node.js",
       "import": "./dist/sirdez.es.js"
+    },
+    "./noeval": {
+      "node": "./build/node.js",
+      "import": "./dist/noeval.es.js"
+    },
+    "./common": {
+      "node": "./build/index.js",
+      "import": "./dist/sirdez.es.js"
     }
   },
   "scripts": {
