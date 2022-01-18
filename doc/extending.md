@@ -49,10 +49,12 @@ const numbers: sd.Encoding<string> = {
       sd.float64.ser(+n);
     }
   },
-  decode(ctx, end) {
+  decode(ctx, size) {
     const arr = [];
-    while (ctx.i++ < end) {
+    const end = ctx.i + size;
+    while (ctx.i < end) {
       arr.push(sd.float64.des(ctx));
+      ctx.i++;
     }
     return arr.join(" ");
   }

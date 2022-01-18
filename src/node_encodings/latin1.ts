@@ -6,6 +6,6 @@ export const latin1: Encoding<string> = {
   encode(ctx, data) {
     ctx.i += latin1Write.call(ctx.bytes, data, ctx.i);
   },
-  decode: (ctx, end) =>
-    latin1Slice.call(ctx.bytes, ctx.i, (ctx.i = end))
+  decode: (ctx, size) =>
+    latin1Slice.call(ctx.bytes, ctx.i, (ctx.i += size))
 };

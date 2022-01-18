@@ -14,5 +14,5 @@ export const string: StringFactory = (encoding, headSd) =>
       headSd.ser(ctx, size);
       ctx.i = end;
     },
-    (ctx) => encoding.decode(ctx, headSd.des(ctx) + ctx.i)
+    (ctx) => encoding.decode(ctx, headSd.des(ctx))
   );

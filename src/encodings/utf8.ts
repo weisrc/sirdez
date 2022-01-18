@@ -8,7 +8,6 @@ export const utf8: Encoding<string> = {
     ctx.i += encoder.encodeInto(data, ctx.bytes.subarray(ctx.i))
       .written as number;
   },
-  decode(ctx, end) {
-    return decoder.decode(ctx.bytes.subarray(ctx.i, (ctx.i = end)));
-  }
+  decode: (ctx, size) =>
+    decoder.decode(ctx.bytes.subarray(ctx.i, (ctx.i += size)))
 };

@@ -22,5 +22,5 @@ export interface UsableSerdes<T> extends Serdes<T> {
 
 export type Encoding<T> = {
   encode(ctx: Context, data: T): void;
-  decode(ctx: Context, end: number): T;
+  decode(ctx: Context, size: number): T;
 };

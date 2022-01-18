@@ -6,6 +6,6 @@ export const utf8: Encoding<string> = {
   encode(ctx, data) {
     ctx.i += utf8Write.call(ctx.bytes, data, ctx.i);
   },
-  decode: (ctx, end) =>
-    utf8Slice.call(ctx.bytes, ctx.i, (ctx.i = end))
+  decode: (ctx, size) =>
+    utf8Slice.call(ctx.bytes, ctx.i, (ctx.i += size))
 };

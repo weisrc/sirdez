@@ -7,10 +7,11 @@ export const latin1: Encoding<string> = {
       ctx.view.setUint8(ctx.i++, data.charCodeAt(i));
     }
   },
-  decode(ctx, end) {
-    return String.fromCharCode.apply(
-      null,
-      ctx.bytes.subarray(ctx.i, (ctx.i = end)) as unknown as number[]
-    );
+  decode(ctx, size) {
+    const codes: number[] = new Array(size);
+    for (let i = 0; i < size; i++) {
+      codes[i] = ctx.view.getUint8(ctx.i++);
+    }
+    return String.fromCharCode(...codes);
   }
 };

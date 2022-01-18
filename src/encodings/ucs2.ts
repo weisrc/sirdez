@@ -8,12 +8,13 @@ export const ucs2: Encoding<string> = {
       ctx.i += 2;
     }
   },
-  decode(ctx, end) {
-    const codes: number[] = [];
-    while (ctx.i < end) {
-      codes.push(ctx.view.getUint16(ctx.i));
+  decode(ctx, size) {
+    const length = size / 2;
+    const codes: number[] = new Array(length);
+    for (let i = 0; i < length; i++) {
+      codes[i] = ctx.view.getUint16(ctx.i);
       ctx.i += 2;
     }
-    return String.fromCharCode.apply(null, codes);
+    return String.fromCharCode(...codes);
   }
 };

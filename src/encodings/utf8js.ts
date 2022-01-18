@@ -37,8 +37,9 @@ export const utf8js: Encoding<string> = {
       }
     }
   },
-  decode(ctx, end) {
+  decode(ctx, size) {
     const codes: number[] = [];
+    const end = ctx.i + size;
     while (ctx.i < end) {
       const s = ctx.view.getUint8(ctx.i);
       if (s < 192) {
@@ -76,6 +77,6 @@ export const utf8js: Encoding<string> = {
         ctx.i += 4;
       }
     }
-    return String.fromCodePoint.apply(null, codes);
+    return String.fromCodePoint(...codes);
   }
 };
