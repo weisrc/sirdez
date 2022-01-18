@@ -12,27 +12,27 @@ export const utf8js: Encoding<string> = {
       } else if (code < 0x800) {
         // .... .aaa - aabb bbbb
         // 110a aaaa - 10bb bbbb
-        const a = (code & 0x7_c0) << 2;
+        const a = (code & 0x7c0) << 2;
         const b = code & 0x3f;
         ctx.view.setUint16(ctx.i, a | b | 0xc080);
         ctx.i += 2;
       } else if (code < 0xd800 || code >= 0xe000) {
         // .... .... - .... .... - aaaa bbbb - bbcc cccc
         // 1110 aaaa - 10bb bbbb - 10cc cccc - .... ....
-        const a = (code & 0xf0_00) << 12;
-        const b = (code & 0xf_c0) << 10;
+        const a = (code & 0xf000) << 12;
+        const b = (code & 0xfc0) << 10;
         const c = (code & 0x3f) << 8;
-        ctx.view.setUint32(ctx.i, a | b | c | 0xe0_80_80_00);
+        ctx.view.setUint32(ctx.i, a | b | c | 0xe0808000);
         ctx.i += 3;
       } else {
         const code = data.codePointAt(i++) as number;
         // .... .... - .... aabb - bbbb cccc - ccdd dddd
         // 1111 00aa - 10bb bbbb - 10cc cccc - 10dd dddd
-        const a = (code & 0x1c_00_00) << 6;
-        const b = (code & 0x3_f0_00) << 4;
-        const c = (code & 0xf_c0) << 2;
+        const a = (code & 0x1c0000) << 6;
+        const b = (code & 0x3f000) << 4;
+        const c = (code & 0xfc0) << 2;
         const d = code & 0x3f;
-        ctx.view.setUint32(ctx.i, a | b | c | d | 0xf0_80_80_80);
+        ctx.view.setUint32(ctx.i, a | b | c | d | 0xf0808080);
         ctx.i += 4;
       }
     }
@@ -70,8 +70,8 @@ export const utf8js: Encoding<string> = {
 
         const u = ctx.view.getUint32(ctx.i);
         const a = (s & 0x7) << 18;
-        const b = (u & 0x3f_00_00) >> 4;
-        const c = (u & 0x3f_00) >> 2;
+        const b = (u & 0x3f0000) >> 4;
+        const c = (u & 0x3f00) >> 2;
         const d = u & 0x3f;
         codes.push(a | b | c | d);
         ctx.i += 4;
