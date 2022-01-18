@@ -21,17 +21,17 @@ Which is **simple** and yet **performant**.
 
 ## Features
 
+- Performant
+- Easy to use
+- Super extensible
 - 99% tree-shakable
 - Zero dependencies (small footprint)
 - Full Node, Deno and browser support
-- Super extensible
-- Easy to use
+- [Learn more about Sir Dez' design][design-url]
 
 **Perfomance comparison with other tools in Node (ops/sec)**
 
 [![performance][perf-chart]][perf-url]
-
-[More information about the design of Sir Dez here!][design-url]
 
 ## Installation
 

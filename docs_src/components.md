@@ -33,7 +33,7 @@ Creating a new `Uint8Array` to return the encoded is not performant for larger d
 
 ## Factories
 
-Sir Dez' Factories are the factories of typers. Factories are the functions responsible for composing typers and creating new typers dynamically.
+Sir Dez' Factories are the factories of `sd.Serdes`. Factories are the functions responsible for composing `sd.Serdes` and creating new `sd.Serdes` dynamically.
 
 ```ts
 const vector3dSerdes = sd.struct({
@@ -45,9 +45,7 @@ const vector3dSerdes = sd.struct({
 const { toBytes, fromBytes } = sd.use(vector3dSerdes);
 ```
 
-`sd.struct` is a `sd.StructMaker`. It creates typers given a key-value schema of typers.
-
-> Like `sd.SerDes`, factories have async variants. The async version of `sd.StructFactory` is `sd.AsyncStructFacotry` which creates `sd.AsyncSerDes`.
+`sd.struct` is a `sd.StructFactory`. It creates `sd.Serdes` given a key-value schema of `sd.Serdes`.
 
 ## Encodings
 
