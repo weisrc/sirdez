@@ -1,2 +1,2 @@
-// @ts-nocheck
+// @ts-ignore
 export * from "./build";
