@@ -1,0 +1,145 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>sirdez</title><meta name="description" content="Documentation for sirdez"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">sirdez</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>sirdez</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><div markdown="1" align="center">
+
+<p><a href="https://weisrc.github.io/sirdez"><img src="https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U2lyIERleg/x.png" alt="Sir Dez"></a></p>
+
+<a href="#glorious-serdes-for-typescript" id="glorious-serdes-for-typescript" style="color: inherit; text-decoration: none;">
+  <h1><strong>Glorious <a href="https://en.wikipedia.org/wiki/SerDes"><em>SerDes</em></a> for TypeScript</strong></h1>
+</a>
+<p>The <strong>library</strong> you can rely on,<br>For <strong>binary</strong> <strong>serialization</strong> and <strong>deserialization</strong>,<br>In <strong>Node</strong>, <strong>Deno</strong>, and the <strong>Web</strong> environment,<br>Which is <strong>simple</strong> and yet <strong>performant</strong>.</p>
+<p><a href="https://www.npmjs.com/package/sirdez"><img src="https://img.shields.io/npm/v/sirdez?color=cb3837&label=npm&logo=npm" alt="npm"></a>
+<a href="https://deno.land/x/sirdez"><img src="https://img.shields.io/github/v/release/weisrc/sirdez?color=white&include_prereleases&label=deno&logo=deno" alt="deno"></a>
+<a href="https://github.com/weisrc/sirdez/actions/workflows/ci.yml"><img src="https://github.com/weisrc/sirdez/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
+<a href="https://weisrc.github.io/sirdez/coverage/lcov-report"><img src="https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/coverage.json" alt="coverage"></a>
+<a href="https://weisrc.github.io/sirdez/report"><img src="https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/report.json" alt="report"></a>
+<a href="https://weisrc.github.io/sirdez"><img src="https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs" alt="docs"></a>
+<a href="TODO"><img src="https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/perf.json" alt="perf"></a>
+<a href="https://bundlephobia.com/package/sirdez"><img src="https://img.shields.io/bundlephobia/minzip/sirdez" alt="bundle"></a></p>
+</div>
+
+
+<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+  <h2>Features</h2>
+</a>
+<ul>
+<li>Performant</li>
+<li>Easy to use</li>
+<li>Full TypeScript support</li>
+<li>Super extensible</li>
+<li>99% tree-shakable</li>
+<li>Zero dependencies (small footprint)</li>
+<li>Runs in Node, Deno and browsers</li>
+<li><a href="https://weisrc.github.io/sirdez/design">More details...</a></li>
+</ul>
+<p><strong>Performance Comparison with other tools in Node (ops/sec)</strong></p>
+<p><a href="TODO"><img src="https://weisrc.github.io/sirdez/perf/main.png" alt="performance"></a></p>
+
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<p>Expand for more details.</p>
+<details markdodwn="1">
+  <summary>Node (Webpack, Babel, React, Svelte, Vue, Svelte...)</summary>
+
+
+<a href="#in-the-terminal-with-npm" id="in-the-terminal-with-npm" style="color: inherit; text-decoration: none;">
+  <h4>In the terminal with NPM</h4>
+</a>
+<pre><code class="language-sh"><span class="hl-0">npm i sirdez</span>
+</code></pre>
+
+<a href="#or-with-yarn" id="or-with-yarn" style="color: inherit; text-decoration: none;">
+  <h4>Or with Yarn</h4>
+</a>
+<pre><code class="language-sh"><span class="hl-0">yarn add sirdez</span>
+</code></pre>
+
+<a href="#in-the-code-with-es-modules" id="in-the-code-with-es-modules" style="color: inherit; text-decoration: none;">
+  <h4>In the code with ES Modules</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sd</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;sirdez&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#or-with-commonjs" id="or-with-commonjs" style="color: inherit; text-decoration: none;">
+  <h4>or with CommonJS</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sd</span><span class="hl-0"> = </span><span class="hl-6">require</span><span class="hl-0">(</span><span class="hl-4">&quot;sirdez&quot;</span><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+<details markdodwn="1">
+<summary>Web (without bundlers)</summary>
+
+
+<a href="#in-html-with-umd" id="in-html-with-umd" style="color: inherit; text-decoration: none;">
+  <h4>In HTML with UMD</h4>
+</a>
+<pre><code class="language-html"><span class="hl-7">&lt;</span><span class="hl-8">script</span><span class="hl-9"> </span><span class="hl-10">src</span><span class="hl-9">=</span><span class="hl-11">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.umd.js&quot;</span><span class="hl-7">&gt;&lt;/</span><span class="hl-8">script</span><span class="hl-7">&gt;</span>
+</code></pre>
+
+<a href="#in-an-es-module-script-statically" id="in-an-es-module-script-statically" style="color: inherit; text-decoration: none;">
+  <h4>In an ES module script (statically)</h4>
+</a>
+<pre><code class="language-js"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sd</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#in-an-es-module-script-dynamically" id="in-an-es-module-script-dynamically" style="color: inherit; text-decoration: none;">
+  <h4>In an ES module script (dynamically)</h4>
+</a>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sd</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-6">import</span><span class="hl-0">(</span><br/><span class="hl-0">  </span><span class="hl-4">&quot;https://cdn.jsdelivr.net/npm/sirdez/dist/sirdez.es.js&quot;</span><br/><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+<details markdodwn="1">
+<summary>Deno</summary>
+
+
+<a href="#in-code-statically" id="in-code-statically" style="color: inherit; text-decoration: none;">
+  <h4>In code (statically)</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> </span><span class="hl-2">*</span><span class="hl-0"> </span><span class="hl-1">as</span><span class="hl-0"> </span><span class="hl-3">sd</span><span class="hl-0"> </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-4">&quot;https://deno.land/x/sirdez/mod.ts&quot;</span><span class="hl-0">;</span>
+</code></pre>
+
+<a href="#in-code-dynamically" id="in-code-dynamically" style="color: inherit; text-decoration: none;">
+  <h4>In code (dynamically)</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">sd</span><span class="hl-0"> = </span><span class="hl-1">await</span><span class="hl-0"> </span><span class="hl-2">import</span><span class="hl-0">(</span><span class="hl-4">&quot;https://deno.land/x/sirdez/mod.ts&quot;</span><span class="hl-0">);</span>
+</code></pre>
+</details>
+
+
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+
+<a href="#simple-snippet-of-code" id="simple-snippet-of-code" style="color: inherit; text-decoration: none;">
+  <h4>Simple snippet of code</h4>
+</a>
+<pre><code class="language-js"><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">person</span><span class="hl-0"> = </span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-6">use</span><span class="hl-0">(</span><br/><span class="hl-0">  </span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-6">struct</span><span class="hl-0">({</span><br/><span class="hl-0">    </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-6">string</span><span class="hl-0">(</span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-3">utf8</span><span class="hl-0">, </span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-3">uint8</span><span class="hl-0">),</span><br/><span class="hl-0">    </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-3">sd</span><span class="hl-0">.</span><span class="hl-3">uint8</span><br/><span class="hl-0">  })</span><br/><span class="hl-0">);</span><br/><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">bytes</span><span class="hl-0"> = </span><span class="hl-3">person</span><span class="hl-0">.</span><span class="hl-6">toBytes</span><span class="hl-0">({</span><br/><span class="hl-0">  </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-4">&quot;Bob&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-12">23</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">samePerson</span><span class="hl-0"> = </span><span class="hl-3">person</span><span class="hl-0">.</span><span class="hl-6">fromBytes</span><span class="hl-0">(</span><span class="hl-3">bytes</span><span class="hl-0">);</span><br/><br/><span class="hl-3">console</span><span class="hl-0">.</span><span class="hl-6">log</span><span class="hl-0">({ </span><span class="hl-3">bytes</span><span class="hl-0">, </span><span class="hl-3">samePerson</span><span class="hl-0"> });</span>
+</code></pre>
+
+<a href="#using-typescript-utilities" id="using-typescript-utilities" style="color: inherit; text-decoration: none;">
+  <h4>Using TypeScript utilities</h4>
+</a>
+<pre><code class="language-ts"><span class="hl-2">type</span><span class="hl-0"> </span><span class="hl-13">Person</span><span class="hl-0"> = </span><span class="hl-13">sd</span><span class="hl-0">.</span><span class="hl-13">GetType</span><span class="hl-0">&lt;</span><span class="hl-2">typeof</span><span class="hl-0"> </span><span class="hl-3">person</span><span class="hl-0">&gt;;</span><br/><br/><span class="hl-2">const</span><span class="hl-0"> </span><span class="hl-5">bob</span><span class="hl-0">: </span><span class="hl-13">Person</span><span class="hl-0"> = {</span><br/><span class="hl-0">  </span><span class="hl-3">name:</span><span class="hl-0"> </span><span class="hl-4">&quot;Bob&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">  </span><span class="hl-3">age:</span><span class="hl-0"> </span><span class="hl-12">23</span><br/><span class="hl-0">};</span>
+</code></pre>
+
+<a href="#resources" id="resources" style="color: inherit; text-decoration: none;">
+  <h2>Resources</h2>
+</a>
+<ul>
+<li><a href="https://weisrc.github.io/sirdez">Documentation</a></li>
+<li><a href="https://weisrc.github.io/sirdez/coverage/lcov-report">Coverage Report</a></li>
+<li><a href="https://weisrc.github.io/sirdez/report">Test Report</a></li>
+<li><a href="TODO">Performance Report</a></li>
+<li><a href="https://www.npmjs.com/package/sirdez">NPM package</a></li>
+<li><a href="https://deno.land/x/sirdez">Deno Land</a></li>
+<li><a href="https://github.com/weisrc/sirdez/actions/workflows/ci.yml">GitHub Action CI</a></li>
+</ul>
+
+<a href="#contribution" id="contribution" style="color: inherit; text-decoration: none;">
+  <h2>Contribution</h2>
+</a>
+<p>Help and suggestions are welcomed!</p>
+<!-- urls -->
+
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface"><a href="interfaces/Context.html" class="tsd-kind-icon">Context</a></li><li class="tsd-kind-interface"><a href="interfaces/NumberFactory.html" class="tsd-kind-icon">Number<wbr/>Factory</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/Serdes.html" class="tsd-kind-icon">Serdes</a></li><li class="tsd-kind-interface tsd-has-type-parameter"><a href="interfaces/UsableSerdes.html" class="tsd-kind-icon">Usable<wbr/>Serdes</a></li><li class="tsd-kind-type-alias"><a href="modules.html#ArrayFactory" class="tsd-kind-icon">Array<wbr/>Factory</a></li><li class="tsd-kind-type-alias"><a href="modules.html#BytesFactory" class="tsd-kind-icon">Bytes<wbr/>Factory</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#Des" class="tsd-kind-icon">Des</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#Encoding" class="tsd-kind-icon">Encoding</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#GetType" class="tsd-kind-icon">Get<wbr/>Type</a></li><li class="tsd-kind-type-alias"><a href="modules.html#MapFactory" class="tsd-kind-icon">Map<wbr/>Factory</a></li><li class="tsd-kind-type-alias"><a href="modules.html#OptionalFactory" class="tsd-kind-icon">Optional<wbr/>Factory</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#Ser" class="tsd-kind-icon">Ser</a></li><li class="tsd-kind-type-alias"><a href="modules.html#StringFactory" class="tsd-kind-icon">String<wbr/>Factory</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Struct" class="tsd-kind-icon">Struct</a></li><li class="tsd-kind-type-alias tsd-has-type-parameter"><a href="modules.html#StructDefinition" class="tsd-kind-icon">Struct<wbr/>Definition</a></li><li class="tsd-kind-type-alias"><a href="modules.html#StructFactory" class="tsd-kind-icon">Struct<wbr/>Factory</a></li><li class="tsd-kind-type-alias"><a href="modules.html#TupleFactory" class="tsd-kind-icon">Tuple<wbr/>Factory</a></li><li class="tsd-kind-variable"><a href="modules.html#bigInt64" class="tsd-kind-icon">big<wbr/>Int64</a></li><li class="tsd-kind-variable"><a href="modules.html#bigUint64" class="tsd-kind-icon">big<wbr/>Uint64</a></li><li class="tsd-kind-variable"><a href="modules.html#boolean" class="tsd-kind-icon">boolean</a></li><li class="tsd-kind-variable"><a href="modules.html#float32" class="tsd-kind-icon">float32</a></li><li class="tsd-kind-variable"><a href="modules.html#float64" class="tsd-kind-icon">float64</a></li><li class="tsd-kind-variable"><a href="modules.html#int16" class="tsd-kind-icon">int16</a></li><li class="tsd-kind-variable"><a href="modules.html#int32" class="tsd-kind-icon">int32</a></li><li class="tsd-kind-variable"><a href="modules.html#int8" class="tsd-kind-icon">int8</a></li><li class="tsd-kind-variable"><a href="modules.html#latin1" class="tsd-kind-icon">latin1</a></li><li class="tsd-kind-variable"><a href="modules.html#ucs2" class="tsd-kind-icon">ucs2</a></li><li class="tsd-kind-variable"><a href="modules.html#uint16" class="tsd-kind-icon">uint16</a></li><li class="tsd-kind-variable"><a href="modules.html#uint32" class="tsd-kind-icon">uint32</a></li><li class="tsd-kind-variable"><a href="modules.html#uint8" class="tsd-kind-icon">uint8</a></li><li class="tsd-kind-variable"><a href="modules.html#utf8" class="tsd-kind-icon">utf8</a></li><li class="tsd-kind-variable"><a href="modules.html#utf8js" class="tsd-kind-icon">utf8js</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#array" class="tsd-kind-icon">array</a></li><li class="tsd-kind-function"><a href="modules.html#bytes" class="tsd-kind-icon">bytes</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#contextDes" class="tsd-kind-icon">context<wbr/>Des</a></li><li class="tsd-kind-function"><a href="modules.html#contextFromBytes" class="tsd-kind-icon">context<wbr/>From<wbr/>Bytes</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#contextSer" class="tsd-kind-icon">context<wbr/>Ser</a></li><li class="tsd-kind-function"><a href="modules.html#createContext" class="tsd-kind-icon">create<wbr/>Context</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#define" class="tsd-kind-icon">define</a></li><li class="tsd-kind-function"><a href="modules.html#growContext" class="tsd-kind-icon">grow<wbr/>Context</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#map" class="tsd-kind-icon">map</a></li><li class="tsd-kind-function"><a href="modules.html#number" class="tsd-kind-icon">number</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#optional" class="tsd-kind-icon">optional</a></li><li class="tsd-kind-function"><a href="modules.html#string" class="tsd-kind-icon">string</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#struct" class="tsd-kind-icon">struct</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#tuple" class="tsd-kind-icon">tuple</a></li><li class="tsd-kind-function tsd-has-type-parameter"><a href="modules.html#use" class="tsd-kind-icon">use</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
