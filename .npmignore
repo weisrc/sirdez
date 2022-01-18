@@ -6,6 +6,7 @@
 .eslintrc
 jest.config.ts
 vite.config.ts
+tsconfig.json
 typedoc.json
 yarn.lock
 
