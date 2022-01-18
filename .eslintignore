@@ -8,5 +8,5 @@ deno_dist
 node_modules
 
 # d.ts
-common.d.ts
-noeval.d.ts
+common.ts
+noeval.ts

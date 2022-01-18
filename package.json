@@ -2,6 +2,7 @@
   "name": "sirdez",
   "version": "0.0.2",
   "main": "build/node.js",
+  "module": "dist/sirdez.es.js",
   "exports": {
     ".": {
       "node": "./build/node.js",
