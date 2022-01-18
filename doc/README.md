@@ -28,7 +28,8 @@ Which is **simple** and yet **performant**.
 - 99% tree-shakable
 - Zero dependencies (small footprint)
 - Runs in Node, Deno and browsers
-- [Learn more in Sir Dez' Design][design-url]
+
+> Detailed explaination in [Sir Dez' Design Section][design-url].
 
 **Performance Comparison with other tools in Node (ops/sec)**
 
