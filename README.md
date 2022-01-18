@@ -16,6 +16,7 @@ Which is **simple** and yet **performant**.
 [![report][report-badge]][report-url]
 [![docs][docs-badge]][docs-url]
 [![perf][perf-badge]][perf-url]
+[![bundle][bundle-badge]][bundle-url]
 
 </div>
 
@@ -178,3 +179,5 @@ Help and suggestions are welcomed!
 [docs-badge]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez
 [design-url]: https://weisrc.github.io/sirdez/design
+[bundle-badge]: https://img.shields.io/bundlephobia/minzip/sirdez
+[bundle-url]: https://bundlephobia.com/package/sirdez
