@@ -7,7 +7,7 @@ export {
   boolean,
   bytes,
   optional,
-  record,
+  map as record,
   string
 } from "./serdes";
 export * from "./types";

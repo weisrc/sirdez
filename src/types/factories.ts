@@ -42,10 +42,10 @@ export type TupleFactory = <T extends unknown[]>(
   ...definition: StructDefinition<T>
 ) => Serdes<T>;
 
-export type RecordFactory = <T>(
-  sd: Serdes<T>,
-  headSd: Serdes<number>,
-  keySd: Serdes<string>
+export type MapFactory = <T>(
+  keySd: Serdes<string>,
+  valueSd: Serdes<T>,
+  headSd: Serdes<number>
 ) => Serdes<Record<string, T>>;
 
 export type ArrayFactory = <T>(

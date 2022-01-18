@@ -1,6 +1,6 @@
 export * from "./array";
 export * from "./optional";
-export * from "./record";
+export * from "./map";
 export * from "./string";
 export * from "./bytes";
 export * from "./boolean";

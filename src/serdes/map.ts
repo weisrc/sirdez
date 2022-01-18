@@ -1,21 +1,21 @@
 import { define } from "../define";
-import { RecordFactory, GetType } from "../types";
+import { MapFactory, GetType } from "../types";
 
-export const record: RecordFactory = (sd, headSd, keySd) =>
+export const map: MapFactory = (keySd, valueSd, headSd) =>
   define(
     (ctx, data) => {
       const { length } = Object.keys(data);
       headSd.ser(ctx, length);
       for (const key in data) {
         keySd.ser(ctx, key);
-        sd.ser(ctx, data[key]);
+        valueSd.ser(ctx, data[key]);
       }
     },
     (ctx) => {
       const length = headSd.des(ctx);
-      const data: Record<string, GetType<typeof sd>> = {};
+      const data: Record<string, GetType<typeof valueSd>> = {};
       for (let i = 0; i < length; i++) {
-        data[keySd.des(ctx)] = sd.des(ctx);
+        data[keySd.des(ctx)] = valueSd.des(ctx);
       }
       return data;
     }
