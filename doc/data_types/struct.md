@@ -9,7 +9,7 @@ There are two variants of structs.
 - `sd.struct` uses `new Function` and generates a very fast function to serialize and deserialize an object.
 - `sd.struct@noeval` does not use `new Function`, but it is much slower because it is implemented using a for loop.
 
-> `sd.something@module` will be located at `"sirdez/<module>"` when importing, as well as all other _general_ exports.
+> `sd.something@<module>` will be located at `"sirdez/<module>"` when importing, as well as all other _common_ exports.
 
 ## Usage
 

@@ -6,7 +6,7 @@ All numbers are stored in big-endian using `DataView` methods for its [performan
 
 `sd.number@noeval` have an implementation for each of the following. It has a mapping to find the `sd.Serdes` for a given `kind` and `bitSize`. Using number will need to include all the below in the bundle.
 
-> `sd.something@module` will be located at `"sirdez/<module>"` when importing, as well as all other _general_ exports.
+> `sd.something@<module>` will be located at `"sirdez/<module>"` when importing, as well as all other _commmon_ exports.
 
 ::: warning
 There is no input validation. Passing bad values will result it to return `undefined`. Thus calling it will throw an error.
