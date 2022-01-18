@@ -45,7 +45,7 @@ export default defineConfig({
           "data_types/string",
           "data_types/struct",
           "data_types/array",
-          "data_types/record",
+          "data_types/map",
           "data_types/optional"
         ]
       }
