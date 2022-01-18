@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "main": "build/node.js",
   "module": "dist/sirdez.es.js",
+  "sideEffects": false,
   "exports": {
     ".": {
       "node": "./build/node.js",
