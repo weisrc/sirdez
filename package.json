@@ -29,10 +29,10 @@
     "build:deno": "denoify --out deno_dist",
     "build:node": "tsc",
     "build": "run-p build:*",
-    "docs:dev": "vuepress dev docs_src",
-    "docs": "vuepress build docs_src && cp -r docs/.vuepress/* docs && rm -r docs/.vuepress",
+    "docs:dev": "vuepress dev doc",
+    "docs": "vuepress build doc && cp -r docs/.vuepress/* docs && rm -r docs/.vuepress",
     "api": "typedoc",
-    "readme": "cp docs_src/README.md README.md",
+    "readme": "cp doc/README.md README.md",
     "build_and_docs": "run-p build docs api"
   },
   "devDependencies": {

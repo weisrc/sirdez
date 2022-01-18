@@ -13,7 +13,7 @@ yarn.lock
 .github
 src
 scripts
-docs_src
+doc
 test
 perf
 
