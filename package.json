@@ -1,6 +1,6 @@
 {
   "name": "sirdez",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "build/node.js",
   "module": "dist/sirdez.es.js",
   "exports": {
