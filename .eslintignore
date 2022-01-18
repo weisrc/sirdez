@@ -6,3 +6,7 @@ deno_dist
 
 # node
 node_modules
+
+# d.ts
+common.d.ts
+noeval.d.ts

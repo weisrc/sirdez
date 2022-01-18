@@ -24,7 +24,7 @@
     "verify": "run-p format lint test",
     "perf": "sh perf/run.sh",
     "badges": "ts-node scripts/badges",
-    "clean": "rm -rf dist deno_dist build && rm -rf docs",
+    "clean": "rm -rf dist deno_dist build docs",
     "build:web:common": "vite build",
     "build:web:noeval": "vite build --mode noeval",
     "build:web": "run-p build:web:*",
