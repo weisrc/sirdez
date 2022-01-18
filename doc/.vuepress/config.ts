@@ -46,7 +46,8 @@ export default defineConfig({
           "data_types/struct",
           "data_types/array",
           "data_types/map",
-          "data_types/optional"
+          "data_types/optional",
+          "data_types/bytes"
         ]
       }
     ]
