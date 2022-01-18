@@ -23,13 +23,14 @@ Which is **simple** and yet **performant**.
 
 - Performant
 - Easy to use
+- Full TypeScript support
 - Super extensible
 - 99% tree-shakable
 - Zero dependencies (small footprint)
-- Full Node, Deno and browser support
-- [Learn more about Sir Dez' design][design-url]
+- Runs in Node, Deno and browsers
+- [Learn more in Sir Dez' Design][design-url]
 
-**Perfomance comparison with other tools in Node (ops/sec)**
+**Performance Comparison with other tools in Node (ops/sec)**
 
 [![performance][perf-chart]][perf-url]
 
