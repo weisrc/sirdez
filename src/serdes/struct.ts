@@ -9,9 +9,9 @@ export const struct: StructFactory = (definition) => {
   const values = /*@__PURE__*/ Object.values(definition);
   return /*@__PURE__*/ new Function(
     "d",
-    `[${indexes.map((i) => "k" + i).join()}]`,
-    `[${indexes.map((i) => "s" + i).join()}]`,
-    `[${indexes.map((i) => "d" + i).join()}]`,
+    `[${indexes.map((i) => "k" + i)}]`,
+    `[${indexes.map((i) => "s" + i)}]`,
+    `[${indexes.map((i) => "d" + i)}]`,
     `return d((c,d)=>{${indexes
       .map((i) => `s${i}(c,d[${nameOf(keys[i])}])`)
       .join(";")}},(c)=>{const d=${
