@@ -42,6 +42,7 @@ export default defineConfig({
         children: [
           "data_types/boolean",
           "data_types/number",
+          "data_types/size",
           "data_types/string",
           "data_types/struct",
           "data_types/array",
