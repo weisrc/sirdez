@@ -40,7 +40,7 @@ Which is **simple** and yet **performant**.
 Expand for more details.
 
 <details markdodwn="1">
-  <summary>Node (Webpack, Babel, React, Svelte, Vue, Svelte...)</summary>
+  <summary>Node (with or without bundlers)</summary>
 
 #### In the terminal with NPM
 
@@ -112,7 +112,7 @@ const sd = await import("https://deno.land/x/sirdez/mod.ts");
 
 ## Usage
 
-#### Simple snippet of code
+#### Creating a simple SerDes.
 
 ```js
 const person = sd.use(
