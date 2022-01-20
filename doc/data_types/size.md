@@ -2,7 +2,7 @@
 
 Size allows to store integers in a relatively compact format compared to others under `sd.number` at the cost of performance.
 
-As its name sugest, it is best for storing the size of a payload, like `sd.string` or `sd.bytes`. It was implemented for extensibility and compatiblity with other specifications such as Apache Avro and Protocol Buffers.
+As its name sugests, it is best used for storing the size of a payload, like `sd.string` or `sd.bytes`. It was implemented for extensibility and compatiblity with other specifications such as Apache Avro and Google Protocol Buffers.
 
 ## Variants
 
