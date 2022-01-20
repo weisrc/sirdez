@@ -12,10 +12,6 @@
     "./noeval": {
       "node": "./build/node_noeval.js",
       "import": "./dist/sirdez.noeval.es.js"
-    },
-    "./common": {
-      "node": "./build/index.js",
-      "import": "./dist/sirdez.es.js"
     }
   },
   "scripts": {

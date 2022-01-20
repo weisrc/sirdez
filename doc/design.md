@@ -35,10 +35,6 @@ In Node environment (override):
 - `Buffer.prototype.<encoding>Write` for `sd.<encoding>#encode`
 - `Buffer.prototype.<encoding>Slice` for `sd.<encoding>#decode`
 
-::: warning
-It is possible that in some node version, the above functions are not available. If it is the case and upgrading to a newer version is not possible, consider importing `sirdez/common` instead.
-:::
-
 ## Performance
 
 Sir Dez aim to be as performant as possible in all environment. In fact, depending on the environment, different code will be used: when running in Node, Sir Dez will use Node's Buffer functions for encoding strings. This also explains the large performance gap for string intensive data types between Node and other environments such as the browser and Deno.
