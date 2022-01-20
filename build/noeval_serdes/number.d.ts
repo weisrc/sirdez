@@ -1,0 +1,12 @@
+import { NumberFactory, Serdes } from "../types";
+export declare const uint8: Serdes<number>;
+export declare const uint16: Serdes<number>;
+export declare const uint32: Serdes<number>;
+export declare const bigUint64: Serdes<bigint>;
+export declare const int8: Serdes<number>;
+export declare const int16: Serdes<number>;
+export declare const int32: Serdes<number>;
+export declare const bigInt64: Serdes<bigint>;
+export declare const float32: Serdes<number>;
+export declare const float64: Serdes<number>;
+export declare const number: NumberFactory;
