@@ -24,8 +24,8 @@ Sir Dez comes with built-in string encodings.
 
 - For compact and fast strings that require all unicode characters, use `sd.utf8js`.
 - For longer compact strings that require all unicode characters, use `sd.utf8`.
-- For fast encoding that require all unicode characters, use `sd.utf16`.
-- For compact and fast encoding which only need the first 255 characters, use `sd.ascii`.
+- For fast encoding that require all unicode characters, use `sd.ucs2` (utf16).
+- For compact and fast encoding which only need the first 255 characters, use `sd.latin1` (ascii).
 
 ## Headers
 
