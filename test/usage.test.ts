@@ -70,6 +70,12 @@ test("use will throw other errors", () => {
   ).toThrow(TypeError);
 });
 
-test("use fromBytes will throw RangeError if invalid input", () => {
+test("use fromBytes will throw RangeError if input too short", () => {
   expect(() => fromBytes(new Uint8Array([0]))).toThrow(RangeError);
+});
+
+test("use fromBytes will throw RangeError if input too long", () => {
+  expect(() => fromBytes(new Uint8Array([0, 0, 0]))).toThrow(
+    RangeError
+  );
 });

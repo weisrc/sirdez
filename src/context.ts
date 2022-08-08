@@ -42,12 +42,12 @@ export function contextDes<T>(
   if (length < 4096) {
     ctx.bytes.set(bytes);
     ctx.i = 0;
-    const data = des(ctx);
-    if (ctx.i > length) throw RangeError();
-    return data;
   } else {
-    return des(contextFromBytes(bytes));
+    ctx = contextFromBytes(bytes);
   }
+  const data = des(ctx);
+  if (ctx.i !== length) throw RangeError();
+  return data;
 }
 
 export function contextFromBytes(array: Uint8Array): Context {
