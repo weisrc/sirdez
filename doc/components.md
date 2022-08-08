@@ -56,3 +56,15 @@ Encodings allow to encode string related data. Sir Dez comes with built-in encod
 ```ts
 const { toBytes, fromBytes } = sd.use(sd.string(sd.utf8js, sd.uint8));
 ```
+
+## Invalid Length Message Error Handling
+
+The following statements summarizes how invalid length messages are handled:
+- Deserialize will throw RangeError for messages of invalid length
+- Deserialize will not process the extra bytes of a message that is too long
+- Deserialize internally successfully deserialize the message if it is too long, but will throw the error if the message is too long
+
+The error message it throws in case of an invalid length message are DataView out of bounds error and the following:
+```ts
+RangeError(`Expected to process ${length} bytes, processed ${ctx.i} bytes instead`);
+```
