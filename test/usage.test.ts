@@ -59,7 +59,7 @@ test("use faster decode", () => {
   expect(fromBytes(toBytes(data))).toEqual(data);
 });
 
-test("use instant", () => {
+test("use toUnsafeBytes", () => {
   const data = new Array(100).fill(0).map(randomPerson);
   expect(fromBytes(toUnsafeBytes(data))).toEqual(data);
 });
@@ -68,4 +68,8 @@ test("use will throw other errors", () => {
   expect(() =>
     fromBytes(toBytes(["not a person" as unknown as Person]))
   ).toThrow(TypeError);
+});
+
+test("use fromBytes will throw RangeError if invalid input", () => {
+  expect(() => fromBytes(new Uint8Array([0]))).toThrow(RangeError);
 });

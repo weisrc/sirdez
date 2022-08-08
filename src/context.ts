@@ -42,7 +42,9 @@ export function contextDes<T>(
   if (length < 4096) {
     ctx.bytes.set(bytes);
     ctx.i = 0;
-    return des(ctx);
+    const data = des(ctx);
+    if (ctx.i > length) throw RangeError();
+    return data;
   } else {
     return des(contextFromBytes(bytes));
   }
