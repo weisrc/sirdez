@@ -22,7 +22,7 @@ export default defineConfig({
     repo: "weisrc/sirdez",
     repoLabel: "GitHub",
     docsRepo: "weisrc/sirdez",
-    docsDir: "docs_src",
+    docsDir: "doc",
     docsBranch: "main",
     editLinks: true,
     editLinkText: "Edit on GitHub",
