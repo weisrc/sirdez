@@ -49,7 +49,7 @@ const { toBytes, fromBytes } = sd.use(vector3dSerdes);
 
 ## Encodings
 
-Encodings allow to encode string related data. Sir Dez comes with built-in encodings: `sd.utf8`, `sd.utf8js`, `sd.utf16`, `sd.ascii`.
+Encodings allow to encode string related data. Sir Dez comes with built-in encodings: `sd.utf8`, `sd.utf8js`, `sd.ucs2`, `sd.latin1`.
 
 > `sd.utf8` uses the native `TextEncoder` and `TextDecoder`. However, it somehow under performs for small strings, therefore `sd.utf8js` is recommended for small strings.
 
