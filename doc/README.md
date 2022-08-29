@@ -29,6 +29,7 @@ Which is **simple** and yet **performant**.
 - 99% tree-shakable
 - Zero dependencies (small footprint)
 - Runs in Node, Deno and browsers
+- No eval for Cloudflare (`import "sirdez/noeval"`)
 - [More details...][design-url]
 
 **Performance Comparison with other tools in Node (ops/sec)**
