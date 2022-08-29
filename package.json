@@ -32,7 +32,7 @@
     "docs:dev": "vuepress dev doc",
     "docs": "vuepress build doc && cp -r docs/.vuepress/* docs && rm -r docs/.vuepress",
     "api": "typedoc",
-    "readme": "cp doc/README.md README.md",
+    "readme": "cp README.md doc/README.md",
     "build_and_docs": "run-p build docs api"
   },
   "devDependencies": {
