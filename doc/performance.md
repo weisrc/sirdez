@@ -1,3 +1,5 @@
 # Performance
 
+<ClientOnly>
 <BenchmarkList/>
+</ClientOnly>
