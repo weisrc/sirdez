@@ -1,28 +1,21 @@
-<template></template>
+<template>
+  <div>
+    <benchmark-result v-for="name in names" :key="name"></benchmark-result>
+  </div>
+</template>
 <script>
-import {
-  Chart,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-} from "chart.js";
-
-Chart.register(
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-);
+import BenchmarkResult from "./BenchmarkResult.vue";
 
 export default {
-  name: "BenchmarkResults",
-  data: {
-    data
+  components: { BenchmarkResult },
+  name: "BenchmarkList",
+  async data() {
+    const names = await (
+      await fetch("https://weisrc.github.io/sirdez/perf/names.json")
+    ).json();
+    return {
+      names
+    };
   }
 };
 </script>

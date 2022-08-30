@@ -1,3 +1,3 @@
 # Performance
 
-<BenchmarkResult name="main"/>
+<BenchmarkList/>
