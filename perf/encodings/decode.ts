@@ -10,60 +10,32 @@ const ctx = createContext();
 
 function test(id: string, data: string) {
   const { length } = data;
-  suite("encodings", id, {
-    "utf8#encode"() {
-      ctx.i = 0;
-      utf8.encode(ctx, data);
-    },
-    "utf8#decode"() {
+  suite("decode", id, {
+    utf8() {
       ctx.i = 0;
       utf8.decode(ctx, length);
     },
-    "utf8js#encode"() {
-      ctx.i = 0;
-      utf8js.encode(ctx, data);
-    },
-    "utf8js#decode"() {
+    utf8js() {
       ctx.i = 0;
       utf8js.decode(ctx, length);
     },
-    "ucs2#encode"() {
-      ctx.i = 0;
-      ucs2.encode(ctx, data);
-    },
-    "ucs2#decode"() {
+    ucs2() {
       ctx.i = 0;
       ucs2.decode(ctx, length);
     },
-    "latin1#encode"() {
-      ctx.i = 0;
-      latin1.encode(ctx, data);
-    },
-    "latin1#decode"() {
+    latin1() {
       ctx.i = 0;
       latin1.decode(ctx, length);
     },
-    "utf8#encode@node"() {
-      ctx.i = 0;
-      nodeUtf8.encode(ctx, data);
-    },
-    "utf8#decode@node"() {
+    "utf8@node"() {
       ctx.i = 0;
       nodeUtf8.decode(ctx, length);
     },
-    "ucs2#encode@node"() {
-      ctx.i = 0;
-      nodeUcs2.encode(ctx, data);
-    },
-    "ucs2#decode@node"() {
+    "ucs2@node"() {
       ctx.i = 0;
       nodeUcs2.decode(ctx, length);
     },
-    "latin1#encode@node"() {
-      ctx.i = 0;
-      nodeLatin1.encode(ctx, data);
-    },
-    "latin1#decode@node"() {
+    "latin1@node"() {
       ctx.i = 0;
       nodeLatin1.decode(ctx, length);
     }
