@@ -1,5 +1,6 @@
 <template>
   <div ref="container">
+    <h3>{{ name }}</h3>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <canvas ref="canvas" />
   </div>
