@@ -1,6 +1,9 @@
 <template>
   <div>
-    <benchmark-result v-for="name in names" :key="name"></benchmark-result>
+    <BenchmarkResult
+      v-for="name in names"
+      :key="name"
+    ></BenchmarkResult>
   </div>
 </template>
 <script>
@@ -11,7 +14,7 @@ export default {
   name: "BenchmarkList",
   async data() {
     const names = await (
-      await fetch("https://weisrc.github.io/sirdez/perf/names.json")
+      await fetch("https://weisrc.github.io/sirdez/perf/index.json")
     ).json();
     return {
       names
