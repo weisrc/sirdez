@@ -175,7 +175,7 @@ Help and suggestions are welcomed!
 [report-url]: https://weisrc.github.io/sirdez/report
 [perf-badge]: https://img.shields.io/endpoint?url=https://weisrc.github.io/sirdez/badges/perf.json
 [perf-chart]: https://weisrc.github.io/sirdez/perf/main.png
-[perf-url]: TODO
+[perf-url]: https://weisrc.github.io/sirdez/performance
 [docs-badge]: https://img.shields.io/badge/docs-vuepress-41B883?logo=readthedocs
 [docs-url]: https://weisrc.github.io/sirdez
 [design-url]: https://weisrc.github.io/sirdez/design

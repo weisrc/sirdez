@@ -43,6 +43,7 @@
     "@typescript-eslint/parser": "^5.9.0",
     "avsc": "^5.7.3",
     "benchmark": "^2.1.4",
+    "chart.js": "^3.9.1",
     "denoify": "^0.10.6",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -56,7 +57,7 @@
     "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
     "typedoc": "^0.22.10",
-    "typescript": "^4.5.4",
+    "typescript": "^4.8.2",
     "vite": "^2.7.10",
     "vuepress": "^1.9.5",
     "vuepress-plugin-one-click-copy": "^1.0.6"
@@ -89,5 +90,6 @@
     "url": "https://github.com/weisrc/sirdez/issues"
   },
   "homepage": "https://github.com/weisrc/sirdez#readme",
-  "description": "Glorious Binary Serialization and Deserialization for TypeScript."
+  "description": "Glorious Binary Serialization and Deserialization for TypeScript.",
+  "dependencies": {}
 }

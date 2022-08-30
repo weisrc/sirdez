@@ -15,8 +15,14 @@ export default defineConfig({
   title: "Sir Dez",
   base: "/sirdez/",
   description,
-  head: [["link", { rel: "icon", href: logo("SD") }]],
-  plugins: [["vuepress-plugin-one-click-copy", { duration: 500 }]],
+  head: [
+    ["link", { rel: "icon", href: logo("SD") }],
+    ["script", { src: "https://cdn.jsdelivr.net/npm/chart.js" }]
+  ],
+  plugins: [
+    ["vuepress-plugin-one-click-copy", { duration: 500 }],
+    ["vuepress-plugin-typescript", {}]
+  ],
   themeConfig: {
     searchMaxSuggestions: 10,
     repo: "weisrc/sirdez",
@@ -37,6 +43,7 @@ export default defineConfig({
       "design",
       "components",
       "extending",
+      "performance",
       {
         title: "Data Types",
         children: [

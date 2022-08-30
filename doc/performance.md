@@ -1,0 +1,3 @@
+# Performance
+
+<BenchmarkResult name="main"/>

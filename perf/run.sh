@@ -1,9 +1,6 @@
 set -e
 
-yarn ts-node perf/main/general
-yarn ts-node perf/main/matrix
-yarn ts-node perf/main/messages
-yarn ts-node perf/main/users
+find perf/*/*.ts -exec yarn ts-node {} \;
 
 echo creating charts
-yarn ts-node perf/charts
+yarn ts-node --esm perf/bootstrap
