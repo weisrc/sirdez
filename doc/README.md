@@ -145,6 +145,17 @@ const bob: Person = {
 };
 ```
 
+## Roadmap
+
+- Support decorators for schema
+- `msgpack` extension mechanism using classes
+- Better support for protocol buffers
+- Avro-Sirdez schema transpiler
+
+## Known Issues
+
+- `msgpack` becomes very slow for large arrays (help wanted for optimizing it! 🙏)
+
 ## Resources
 
 - [Documentation][docs-url]
