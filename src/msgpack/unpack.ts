@@ -38,7 +38,7 @@ export function unpack(
     case 0xce:
       return uint32.des(ctx);
     case 0xcf:
-      return bigUint64.des(ctx);
+      return Number(bigUint64.des(ctx));
     case 0xd0:
       return int8.des(ctx);
     case 0xd1:
@@ -46,37 +46,21 @@ export function unpack(
     case 0xd2:
       return int32.des(ctx);
     case 0xd3:
-      return bigInt64.des(ctx);
+      return Number(bigInt64.des(ctx));
     case 0xd9:
-      return encoding.decode(ctx, ctx.view.getUint8(ctx.i++));
+      return encoding.decode(ctx, uint8.des(ctx));
     case 0xda:
-      return encoding.decode(ctx, ctx.view.getUint16(ctx.i++));
+      return encoding.decode(ctx, uint16.des(ctx));
     case 0xdb:
-      return encoding.decode(ctx, ctx.view.getUint32(ctx.i++));
+      return encoding.decode(ctx, uint32.des(ctx));
     case 0xdc:
-      return unpackArrayBody(
-        ctx,
-        ctx.view.getUint16(ctx.i++),
-        encoding
-      );
+      return unpackArrayBody(ctx, uint16.des(ctx), encoding);
     case 0xdd:
-      return unpackArrayBody(
-        ctx,
-        ctx.view.getUint32(ctx.i++),
-        encoding
-      );
+      return unpackArrayBody(ctx, uint32.des(ctx), encoding);
     case 0xde:
-      return unpackMapBody(
-        ctx,
-        ctx.view.getUint16(ctx.i++),
-        encoding
-      );
+      return unpackMapBody(ctx, uint16.des(ctx), encoding);
     case 0xdf:
-      return unpackMapBody(
-        ctx,
-        ctx.view.getUint32(ctx.i++),
-        encoding
-      );
+      return unpackMapBody(ctx, uint32.des(ctx), encoding);
   }
 
   if (byte < 0x80) return byte;

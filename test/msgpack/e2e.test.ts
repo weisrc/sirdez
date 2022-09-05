@@ -1,5 +1,6 @@
 import { use, utf8 } from "../../src";
 import { msgpack } from "../../src/msgpack";
+import { encode, decode } from "@msgpack/msgpack";
 
 const tests: Record<string, unknown> = {
   "empty string": "",
@@ -35,14 +36,49 @@ const tests: Record<string, unknown> = {
   "big floating point number": 2 ** 31 + 0.5,
   "negative big floating point number": -(2 ** 31 + 0.5),
   "nested object": { hello: { world: "!" } },
-  "nested array": ["hello", ["world", "!"]]
+  "nested array": ["hello", ["world", "!"]],
+  "1k array": new Array(1e3).fill(0),
+  "1k object": new Array(1e3).fill(0).reduce((acc, _, i) => {
+    acc[i] = i;
+    return acc;
+  }, {} as Record<string, number>),
+  "100k array": new Array(1e5).fill(0),
+  "100k object": new Array(1e5).fill(0).reduce((acc, _, i) => {
+    acc[i] = i;
+    return acc;
+  }, {} as Record<string, number>),
+  "200 string": "a".repeat(200),
+  "300 string": "a".repeat(300),
+  "100k string": "a".repeat(1e5),
+  "big int": 2 ** 32,
+  false: false,
+  true: true,
+  null: null,
+  "-10k number": -1e4,
+  "-100k number": -1e5,
+  "-big integer": -(2 ** 32)
 };
+
+const json = use(msgpack(utf8));
 
 for (const [name, data] of Object.entries(tests)) {
   test("msgpack e2e: " + name, () => {
-    const json = use(msgpack(utf8));
     const encoded = json.toBytes(data);
-    const decoded = json.fromBytes(encoded);
-    expect(decoded).toEqual(data);
+    const encoded2 = encode(data);
+    expect(encoded).toEqual(encoded2);
+    const decoded = json.fromBytes(encoded2);
+    const decoded2 = decode(encoded);
+    expect(decoded).toEqual(decoded2);
   });
 }
+
+const json32 = use(msgpack(utf8, true));
+
+test("msgpack e2e: float32", () => {
+  const encoded = json32.toBytes(1.234);
+  const encoded2 = encode(1.234, { forceFloat32: true });
+  expect(encoded).toEqual(encoded2);
+  const decoded = json32.fromBytes(encoded2);
+  const decoded2 = decode(encoded);
+  expect(decoded).toEqual(decoded2);
+});

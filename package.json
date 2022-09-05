@@ -36,6 +36,7 @@
     "build_and_docs": "run-p build docs api"
   },
   "devDependencies": {
+    "@msgpack/msgpack": "^2.8.0",
     "@types/benchmark": "^2.1.1",
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.7",
