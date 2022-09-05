@@ -1,6 +1,5 @@
-import { define } from "../define";
 import { uint16, uint32, uint8 } from "../noeval";
-import { Context } from "../types";
+import { Context, Serdes } from "../types";
 
 export function packSize(
   ctx: Context,
@@ -19,8 +18,8 @@ export function packSize(
   }
 }
 
-export const strSize = define<number>(
-  (ctx, size) => {
+export const strSize: Serdes<number> = {
+  ser(ctx, size) {
     if (size < 32) {
       uint8.ser(ctx, 0xa0 + size);
     } else if (size < 256) {
@@ -33,6 +32,5 @@ export const strSize = define<number>(
       uint8.ser(ctx, 0xdb);
       uint32.ser(ctx, size);
     }
-  },
-  () => 0
-);
+  }
+} as Serdes<number>;
