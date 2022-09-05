@@ -4,3 +4,4 @@ export * from "./node_encodings";
 export * from "./serdes";
 export * from "./types";
 export * from "./use";
+export * from "./msgpack";

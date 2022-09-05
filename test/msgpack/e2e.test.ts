@@ -1,6 +1,5 @@
-import { use, utf8 } from "../../src";
-import { msgpack } from "../../src/msgpack";
-import { encode, decode } from "@msgpack/msgpack";
+import { decode, encode } from "@msgpack/msgpack";
+import { msgpack, use, utf8 } from "../../src";
 
 const tests: Record<string, unknown> = {
   "empty string": "",
