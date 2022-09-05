@@ -22,7 +22,7 @@ export function unpackArrayBody(
   size: number,
   encoding: Encoding<string>
 ) {
-  const data = new Array<unknown>(size);
+  const data = Array<unknown>(size);
   for (let i = 0; i < size; i++) {
     data[i] = unpack(ctx, encoding);
   }

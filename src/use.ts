@@ -6,8 +6,11 @@ import {
   UsableSerdes
 } from ".";
 
-export function use<T>({ ser, des }: Serdes<T>): UsableSerdes<T> {
-  const ctx = createContext();
+export function use<T>(
+  { ser, des }: Serdes<T>,
+  size?: number
+): UsableSerdes<T> {
+  const ctx = createContext(size);
   return {
     ser,
     des,
