@@ -170,6 +170,14 @@ const bob: Person = {
 
 Help and suggestions are welcomed!
 
+## License
+
+Copyright 2022 Wei (weisrc).
+
+This software is under the MIT license.
+
+Please see [LICENSE][license-url] for more information.
+
 <!-- urls -->
 
 [serdes]: https://en.wikipedia.org/wiki/SerDes
@@ -193,3 +201,4 @@ Help and suggestions are welcomed!
 [design-url]: https://weisrc.github.io/sirdez/design
 [bundle-badge]: https://img.shields.io/bundlephobia/minzip/sirdez
 [bundle-url]: https://bundlephobia.com/package/sirdez
+[license-url]: https://github.com/weisrc/sirdez/blob/main/LICENSE
