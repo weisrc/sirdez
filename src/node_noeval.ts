@@ -6,9 +6,12 @@ export {
   array,
   boolean,
   bytes,
+  hydra,
   optional,
-  map as record,
-  string
+  map,
+  string,
+  rec
 } from "./serdes";
 export * from "./types";
 export * from "./use";
+export * from "./msgpack";

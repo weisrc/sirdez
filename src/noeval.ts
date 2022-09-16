@@ -8,9 +8,11 @@ export {
   array,
   boolean,
   bytes,
-  map as record,
+  hydra,
+  map,
   optional,
-  string
+  string,
+  rec
 } from "./serdes";
 export * from "./types";
 export * from "./use";

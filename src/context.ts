@@ -46,7 +46,10 @@ export function contextDes<T>(
     ctx = contextFromBytes(bytes);
   }
   const data = des(ctx);
-  if (ctx.i !== length) throw RangeError(`Expected to process ${length} bytes, processed ${ctx.i} bytes instead`);
+  if (ctx.i !== length)
+    throw RangeError(
+      `Expected to process ${length} bytes, processed ${ctx.i} bytes instead`
+    );
   return data;
 }
 
