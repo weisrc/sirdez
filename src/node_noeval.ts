@@ -6,7 +6,7 @@ export {
   array,
   boolean,
   bytes,
-  hydra,
+  clazz,
   optional,
   map,
   string,

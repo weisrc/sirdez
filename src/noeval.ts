@@ -8,7 +8,7 @@ export {
   array,
   boolean,
   bytes,
-  hydra,
+  clazz,
   map,
   optional,
   string,

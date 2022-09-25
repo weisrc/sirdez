@@ -1,7 +1,7 @@
 import {
   array,
   boolean,
-  hydra,
+  clazz,
   string,
   struct,
   uint8,
@@ -26,7 +26,8 @@ class Person {
   }
 }
 
-const personSd: Serdes<Person> = hydra(
+const personSd: Serdes<Person> = clazz(
+  Person,
   struct({
     name: string(utf8js, uint8),
     age: uint8,
@@ -35,8 +36,7 @@ const personSd: Serdes<Person> = hydra(
       rec(() => personSd),
       uint8
     )
-  }),
-  () => new Person()
+  })
 );
 
 const { toBytes, fromBytes } = use(personSd);
@@ -54,5 +54,7 @@ test("hydra person should be hydrated", () => {
   const bytes = toBytes(person);
   const hydrated = fromBytes(bytes);
   expect(hydrated.status()).toBe("John is 42 years old and is alive");
-  expect(hydrated.friendsStatus()).toEqual(["Jane is 40 years old and is alive"]);
+  expect(hydrated.friendsStatus()).toEqual([
+    "Jane is 40 years old and is alive"
+  ]);
 });
