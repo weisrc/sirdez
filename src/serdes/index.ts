@@ -9,3 +9,4 @@ export * from "./size";
 export * from "./string";
 export * from "./struct";
 export * from "./rec";
+export * from "./one-of";
