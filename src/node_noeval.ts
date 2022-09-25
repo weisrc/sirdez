@@ -10,7 +10,8 @@ export {
   optional,
   map,
   string,
-  rec
+  rec,
+  oneOf
 } from "./serdes";
 export * from "./types";
 export * from "./use";
