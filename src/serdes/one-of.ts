@@ -1,17 +1,5 @@
 import { define } from "../define";
-import { Serdes, StructDefinition } from "../types";
-
-type StringOnly<T> = T extends string ? T : never;
-
-type OneOfMap<T> = {
-  [K in StringOnly<keyof T>]: {
-    type: K;
-    value: T[K];
-  };
-};
-
-type ValueOf<T> = T[keyof T];
-type OneOf<T> = ValueOf<OneOfMap<T>>;
+import { OneOfFactory } from "../types";
 
 export class InvalidOneOfType extends Error {
   constructor(readonly type: number) {
@@ -19,18 +7,15 @@ export class InvalidOneOfType extends Error {
   }
 }
 
-export function oneOf<T extends Record<string, unknown>>(
-  headSd: Serdes<number>,
-  typeToSerdes: StructDefinition<T>
-) {
-  const types = Object.keys(typeToSerdes) as StringOnly<keyof T>[];
-
-  types.sort();
+export const oneOf: OneOfFactory = (headSd, typeToSerdes) => {
+  const types = Object.keys(
+    typeToSerdes
+  ) as (keyof typeof typeToSerdes)[];
 
   const typeToInt = mapKeysToIndexes(types);
   const intToType = swapKeysAndValues(typeToInt);
 
-  return define<OneOf<T>>(
+  return define(
     (ctx, data) => {
       const i = typeToInt[data.type];
       headSd.ser(ctx, i);
@@ -53,9 +38,13 @@ export function oneOf<T extends Record<string, unknown>>(
       return { type, value };
     }
   );
-}
+};
 
-function mapKeysToIndexes<T extends string>(keys: T[]): Record<T, number> {
+type Key = string | number | symbol;
+
+function mapKeysToIndexes<T extends Key>(
+  keys: T[]
+): Record<T, number> {
   const result: Record<T, number> = {} as Record<T, number>;
 
   for (let i = 0; i < keys.length; ++i) {
@@ -66,9 +55,9 @@ function mapKeysToIndexes<T extends string>(keys: T[]): Record<T, number> {
   return result;
 }
 
-type Key = string | number | symbol;
-
-function swapKeysAndValues<K extends Key, V extends Key>(obj: Record<K, V>): Record<V, K> {
+function swapKeysAndValues<K extends Key, V extends Key>(
+  obj: Record<K, V>
+): Record<V, K> {
   const result: Record<V, K> = {} as Record<V, K>;
 
   for (const k of Object.keys(obj) as K[]) {
