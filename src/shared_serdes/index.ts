@@ -7,4 +7,4 @@ export * from "./optional";
 export * from "./size";
 export * from "./string";
 export * from "./rec";
-export * from "./one-of";
+export * from "./one_of";

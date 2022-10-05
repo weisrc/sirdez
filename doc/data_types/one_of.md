@@ -27,6 +27,7 @@ const oneOf = sd.oneOf(sd.uint8, {
 
 will create `sd.Serdes<U>`, where `U` is a union type:
 
+<!-- prettier-ignore-start -->
 ```ts
 type U = {
   type: "a";
@@ -42,6 +43,7 @@ type U = {
   };
 };
 ```
+<!-- prettier-ignore-end -->
 
 And types "a", "b" and "foo" will be mapped to unique integer encoded
 by `sd.uint8`
