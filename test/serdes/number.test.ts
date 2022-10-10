@@ -1,5 +1,5 @@
 import { createContext, number, NumberFactory } from "../../src";
-import { number as noevalNumber } from "../../src/noeval";
+import { number as evalNumber } from "../../src/eval";
 
 const ctx = createContext();
 
@@ -75,4 +75,4 @@ function testNumber(number: NumberFactory, suffix = "") {
 }
 
 testNumber(number);
-testNumber(noevalNumber, "@noeval");
+testNumber(evalNumber, "@eval");

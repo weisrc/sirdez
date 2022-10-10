@@ -1,4 +1,4 @@
-import { uint8 } from "../noeval";
+import { uint8 } from "..";
 import { Context, Ser } from "../types";
 import { packArray } from "./array";
 import { packInt } from "./int";

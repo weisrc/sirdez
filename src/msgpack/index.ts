@@ -1,5 +1,5 @@
 import { define } from "../define";
-import { float32, float64, string } from "../noeval";
+import { float32, float64, string } from "..";
 // import { ClazzSerdes } from "../serdes";
 import { Encoding } from "../types";
 import { pack } from "./pack";
@@ -8,7 +8,7 @@ import { unpack } from "./unpack";
 
 export const msgpack = (
   encoding: Encoding<string>,
-  single = false,
+  single = false
   // ...exts: [number, ClazzSerdes<unknown>][]
 ) => {
   // const demap = new Map(exts);

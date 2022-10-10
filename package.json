@@ -9,9 +9,9 @@
       "node": "./build/node.js",
       "import": "./dist/sirdez.es.js"
     },
-    "./noeval": {
-      "node": "./build/node_noeval.js",
-      "import": "./dist/sirdez.noeval.es.js"
+    "./eval": {
+      "node": "./build/node_eval.js",
+      "import": "./dist/sirdez.eval.es.js"
     }
   },
   "scripts": {
@@ -24,7 +24,7 @@
     "badges": "ts-node scripts/badges",
     "clean": "rm -rf dist deno_dist build docs",
     "build:web:common": "vite build",
-    "build:web:noeval": "vite build --mode noeval",
+    "build:web:eval": "vite build --mode eval",
     "build:web": "run-p build:web:*",
     "build:deno": "denoify --out deno_dist",
     "build:node": "tsc",
