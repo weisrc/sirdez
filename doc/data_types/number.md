@@ -4,27 +4,28 @@ All numbers are stored in big-endian using `DataView` methods for its [performan
 
 ## Variants
 
-`sd.number@noeval` have an implementation for each of the following. It has a mapping to find the `sd.Serdes` for a given `kind` and `bitSize`. Using number will need to include all the below in the bundle.
-
-> `sd.something@<module>` will be located at `"sirdez/<module>"` when importing, as well as all other _commmon_ exports.
+`sd.number` have an implementation for each of the following. It has a mapping to find the `sd.Serdes` for a given `kind` and `bitSize`. Using number will need to include all the below in the bundle.
 
 ::: warning
 There is no input validation. Passing bad values will result it to return `undefined`. Thus calling it will throw an error.
 :::
 
-`sd.number` is code generating factory that can create the following. Instead of mapping to a `sd.Serdes`, it evokes `new Function` to create the `sd.Serdes`, hence the bundle size will be smaller.
+`sd.number@eval` is code generating factory that can create the following. Instead of mapping to a `sd.Serdes`, it evokes `new Function` to create the `sd.Serdes`, hence the bundle size will be smaller.
+
+> `sd.something@<module>` will be located at `"sirdez/<module>"` when importing, as well as all other _commmon_ exports.
 
 ::: warning
 There is no input validation. Passing bad values will result in either errors when invoking the returned `sd.Serdes` or while generating it, or unexpected behaviors. Please fully use the power of TypeScript to prevent this.
 :::
 
-For non-dynamic numbers, please use `sd.<kind><size>` if you are using a few, or `sd.eval<Kind><size>` if you are using most to reduce bundle size.
+For non-dynamic numbers, please use `sd.<kind><size>` if you are using a few, or `sd.<kind><size>@eval` 
+if you are using most to reduce bundle size.
 
 ## Mappings
 
-Both factories requires a `kind` and a `bitSize`.
+Both factories require a `kind` and a `bitSize` parameters.
 
-Truth table for `sd.number@noeval` and `sd.number@noeval`.
+Types table for `sd.number` and `sd.number@eval`.
 
 | kind    | bitSize | returns        |
 | ------- | ------- | -------------- |
@@ -39,7 +40,8 @@ Truth table for `sd.number@noeval` and `sd.number@noeval`.
 | float   | 32      | `sd.float32`   |
 | float   | 64      | `sd.float64`   |
 
-All number data types have been exported. So avoid using `sd.number@noeval` or `sd.number` for statically.
+All number data types have been exported. So avoid using `sd.number` or `sd.number@eval` 
+directly, as it creates unnecessary `sd.Serdes<number>` instances.
 
 ## Usage
 
@@ -57,4 +59,5 @@ const { toBytes, fromBytes } = sd.use(sd.number("uint", 8));
 
 ## Specifications
 
-All numbers are _directly_ serialized in big-endian at the location of pointer `sd.Context#i` to then increment the pointer by the byte size of the datatype.
+All numbers are _directly_ serialized in big-endian at the location of pointer `sd.Context#i`, which
+is then incremented by the byte size of the datatype.

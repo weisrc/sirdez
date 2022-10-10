@@ -29,7 +29,7 @@ Which is **simple** and yet **performant**.
 - 99% tree-shakable
 - Zero dependencies (small footprint)
 - Runs in Node, Deno and browsers
-- No eval with `import "sirdez/noeval"`
+- Opt-in usage of eval for better performance with `import "sirdez/eval"`
 - MessagePack for schemaless data
 - [More details...][design-url]
 
