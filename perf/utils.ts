@@ -33,4 +33,3 @@ export function suite(
   mkdirSync("docs/perf", { recursive: true });
   writeFileSync(`docs/perf/${file}.json`, JSON.stringify(out));
 }
-

@@ -10,19 +10,19 @@ const ctx = createContext();
 
 function test(id: string, data: string) {
   suite("encode", id, {
-    "utf8"() {
+    utf8() {
       ctx.i = 0;
       utf8.encode(ctx, data);
     },
-    "utf8js"() {
+    utf8js() {
       ctx.i = 0;
       utf8js.encode(ctx, data);
     },
-    "ucs2"() {
+    ucs2() {
       ctx.i = 0;
       ucs2.encode(ctx, data);
     },
-    "latin1"() {
+    latin1() {
       ctx.i = 0;
       latin1.encode(ctx, data);
     },

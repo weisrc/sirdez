@@ -1,4 +1,4 @@
-import { ClazzSerdes } from "../shared_serdes";
+import { ClazzSerdes } from "../common_serdes";
 
 interface Ext<T> extends ClazzSerdes<T> {
   id: number;

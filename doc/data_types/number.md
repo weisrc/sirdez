@@ -18,7 +18,7 @@ There is no input validation. Passing bad values will result it to return `undef
 There is no input validation. Passing bad values will result in either errors when invoking the returned `sd.Serdes` or while generating it, or unexpected behaviors. Please fully use the power of TypeScript to prevent this.
 :::
 
-For non-dynamic numbers, please use `sd.<kind><size>` if you are using a few, or `sd.<kind><size>@eval` 
+For non-dynamic numbers, please use `sd.<kind><size>` if you are using a few, or `sd.<kind><size>@eval`
 if you are using most to reduce bundle size.
 
 ## Mappings
@@ -40,7 +40,7 @@ Types table for `sd.number` and `sd.number@eval`.
 | float   | 32      | `sd.float32`   |
 | float   | 64      | `sd.float64`   |
 
-All number data types have been exported. So avoid using `sd.number` or `sd.number@eval` 
+All number data types have been exported. So avoid using `sd.number` or `sd.number@eval`
 directly, as it creates unnecessary `sd.Serdes<number>` instances.
 
 ## Usage

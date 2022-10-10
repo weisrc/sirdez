@@ -31,5 +31,5 @@ export const tuple: TupleFactory = (...definition) =>
   struct(definition);
 
 //(d, k1, k2, k3, ... kn, s1, s2, s3, ... sn, d1, d2, d3, ... dn) => {
-//  
+//
 //}
