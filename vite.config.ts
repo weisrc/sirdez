@@ -16,7 +16,7 @@ const create = (
 });
 
 export default defineConfig(({ mode }) =>
-  mode === "noeval"
-    ? create("src/noeval.ts", "sirdez.noeval")
-    : create("src/index.ts", "sirdez")
+  mode === "eval"
+    ? create("src/index.ts", "sirdez")
+    : create("src/eval.ts", "sirdez.eval")
 );

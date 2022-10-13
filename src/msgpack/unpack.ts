@@ -9,7 +9,8 @@ import {
   uint16,
   uint32,
   uint8
-} from "../noeval";
+} from "..";
+
 import { Context, Encoding } from "../types";
 import { unpackArrayBody } from "./array";
 import { unpackMapBody } from "./map";

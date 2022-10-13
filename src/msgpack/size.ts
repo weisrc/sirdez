@@ -1,4 +1,4 @@
-import { uint16, uint32, uint8 } from "../noeval";
+import { uint16, uint32, uint8 } from "..";
 import { Context, Serdes } from "../types";
 
 export function packSize(

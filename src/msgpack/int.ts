@@ -7,7 +7,8 @@ import {
   int32,
   int16,
   bigInt64
-} from "../noeval";
+} from "..";
+
 import { Ser } from "../types";
 
 export const packInt: Ser<number> = (ctx, data) => {

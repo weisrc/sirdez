@@ -1,12 +1,15 @@
-import { ClazzSerdes } from "../serdes";
+import { ClazzSerdes } from "../common_serdes";
 
 interface Ext<T> extends ClazzSerdes<T> {
   id: number;
 }
 
-export function fixext<T>(id: number, serdes: ClazzSerdes<T>): Ext<T> {
+export function fixext<T>(
+  id: number,
+  serdes: ClazzSerdes<T>
+): Ext<T> {
   return {
     id,
-    ...serdes,
+    ...serdes
   };
 }

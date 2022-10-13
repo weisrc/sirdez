@@ -11,9 +11,9 @@ import {
 } from "../../src";
 
 import {
-  struct as noevalStruct,
-  tuple as noevalTuple
-} from "../../src/noeval";
+  struct as evalStruct,
+  tuple as evalTuple
+} from "../../src/eval";
 
 function testStruct(struct: StructFactory, name: string) {
   const ctx = createContext();
@@ -56,5 +56,5 @@ function testTuple(tuple: TupleFactory, name: string) {
 testStruct(struct, "struct");
 testTuple(tuple, "tuple");
 
-testStruct(noevalStruct, "struct@noeval");
-testTuple(noevalTuple, "tuple@noeval");
+testStruct(evalStruct, "struct@eval");
+testTuple(evalTuple, "tuple@eval");
