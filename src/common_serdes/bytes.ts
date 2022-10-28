@@ -6,8 +6,9 @@ export const bytes: BytesFactory = (headSd) =>
     (ctx, data) => {
       const { byteLength } = data;
       headSd.ser(ctx, byteLength);
-      ctx.bytes.set(data, ctx.i);
+      const { i } = ctx;
       ctx.i += byteLength;
+      ctx.bytes.set(data, i);
     },
     (ctx) => {
       const byteLength = headSd.des(ctx);

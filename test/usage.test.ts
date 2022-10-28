@@ -7,7 +7,8 @@ import {
   uint16,
   uint32,
   uint8,
-  utf8js
+  utf8js,
+  bytes
 } from "../src";
 import { use } from "../src/use";
 import { text } from "./fixtures/text";
@@ -78,4 +79,14 @@ test("use fromBytes will throw RangeError if input too long", () => {
   expect(() => fromBytes(new Uint8Array([0, 0, 0]))).toThrow(
     RangeError
   );
+});
+
+test("bytes overflow should grow", () => {
+  const contextByteLength = 4096;
+  const headByteLength = 2;
+
+  const data = new Uint8Array(contextByteLength - headByteLength + 1);
+  const serdes = use(bytes(uint16));
+
+  serdes.toBytes(data);
 });

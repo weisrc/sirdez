@@ -27,7 +27,7 @@ export function contextSer<T>(
       ser(ctx, data);
       if (ctx.i < limit) return ctx.bytes;
     } catch (error) {
-      if (ctx.i < limit) throw error;
+      if (ctx.i < limit && !(error instanceof RangeError)) throw error;
     }
     growContext(ctx);
   }
