@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OneOf | Sir Dez</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    <link rel="icon" href="https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U0Q/x.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="description" content="Glorious Binary Serialization and Deserialization for TypeScript.">
+    
+    <link rel="preload" href="/sirdez/assets/css/0.styles.abae626f.css" as="style"><link rel="preload" href="/sirdez/assets/js/app.32eb2c38.js" as="script"><link rel="preload" href="/sirdez/assets/js/2.e0f79662.js" as="script"><link rel="preload" href="/sirdez/assets/js/16.699fd6df.js" as="script"><link rel="prefetch" href="/sirdez/assets/js/10.4323b26e.js"><link rel="prefetch" href="/sirdez/assets/js/11.422fd052.js"><link rel="prefetch" href="/sirdez/assets/js/12.c8957772.js"><link rel="prefetch" href="/sirdez/assets/js/13.a92e03ba.js"><link rel="prefetch" href="/sirdez/assets/js/14.e4a3d760.js"><link rel="prefetch" href="/sirdez/assets/js/15.c7a0cd10.js"><link rel="prefetch" href="/sirdez/assets/js/17.1c425452.js"><link rel="prefetch" href="/sirdez/assets/js/18.72e5f08e.js"><link rel="prefetch" href="/sirdez/assets/js/19.81bb7b95.js"><link rel="prefetch" href="/sirdez/assets/js/20.d317a610.js"><link rel="prefetch" href="/sirdez/assets/js/21.0b15b058.js"><link rel="prefetch" href="/sirdez/assets/js/22.1a50bc6b.js"><link rel="prefetch" href="/sirdez/assets/js/23.110c3f15.js"><link rel="prefetch" href="/sirdez/assets/js/3.5a207b53.js"><link rel="prefetch" href="/sirdez/assets/js/4.1f92addb.js"><link rel="prefetch" href="/sirdez/assets/js/5.e1cc7150.js"><link rel="prefetch" href="/sirdez/assets/js/6.8405b6f0.js"><link rel="prefetch" href="/sirdez/assets/js/7.9147021b.js"><link rel="prefetch" href="/sirdez/assets/js/8.c4f61068.js"><link rel="prefetch" href="/sirdez/assets/js/9.8a8f9dc7.js">
+    <link rel="stylesheet" href="/sirdez/assets/css/0.styles.abae626f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/sirdez/" class="home-link router-link-active"><img src="https://see.fontimg.com/api/renderfont4/Zd2J/eyJyIjoiZnMiLCJoIjoxMjAsImZnYyI6IiNEQzE0M0MiLCJ0IjoxfQ/U0Q/x.png" alt="Sir Dez" class="logo"> <span class="site-name can-hide">Sir Dez</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/sirdez/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/sirdez/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://weisrc.github.io/sirdez/api" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  API
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/weisrc/sirdez" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/sirdez/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/sirdez/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="https://weisrc.github.io/sirdez/api" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  API
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/weisrc/sirdez" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/sirdez/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/sirdez/design.html" class="sidebar-link">Design</a></li><li><a href="/sirdez/components.html" class="sidebar-link">Components</a></li><li><a href="/sirdez/extending.html" class="sidebar-link">Extending</a></li><li><a href="/sirdez/performance.html" class="sidebar-link">Performance</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Data Types</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sirdez/data_types/boolean.html" class="sidebar-link">Boolean</a></li><li><a href="/sirdez/data_types/number.html" class="sidebar-link">Number</a></li><li><a href="/sirdez/data_types/size.html" class="sidebar-link">Size</a></li><li><a href="/sirdez/data_types/string.html" class="sidebar-link">String</a></li><li><a href="/sirdez/data_types/struct.html" class="sidebar-link">Struct</a></li><li><a href="/sirdez/data_types/one_of.html" aria-current="page" class="active sidebar-link">OneOf</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sirdez/data_types/one_of.html#usage" class="sidebar-link">Usage</a></li><li class="sidebar-sub-header"><a href="/sirdez/data_types/one_of.html#specifications" class="sidebar-link">Specifications</a></li></ul></li><li><a href="/sirdez/data_types/array.html" class="sidebar-link">Array</a></li><li><a href="/sirdez/data_types/map.html" class="sidebar-link">Map</a></li><li><a href="/sirdez/data_types/optional.html" class="sidebar-link">Optional</a></li><li><a href="/sirdez/data_types/bytes.html" class="sidebar-link">Bytes</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="oneof"><a href="#oneof" class="header-anchor">#</a> OneOf</h1> <p>OneOf allows you to serialize and deserialize a value of a union type, that is,
+a value that can be of one of the multiple types. <code>sd.oneOf</code> takes
+a definition object whose keys are names of possible types of a value,
+and values are <code>sd.Serdes&lt;T&gt;</code> which are used to encode and decode
+values of that type.</p> <p><code>sd.oneOf</code> maps each type to unique integer and writes it at the
+beginning of the payload to differentiate between types. It's first
+parameter is <code>headSd</code>, which is <code>sd.Serdes&lt;number&gt;</code> used to encode the
+unique integer</p> <p>The following <code>sd.oneOf</code> call:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> oneOf <span class="token operator">=</span> sd<span class="token punctuation">.</span><span class="token function">oneOf</span><span class="token punctuation">(</span>sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span>
+  b<span class="token operator">:</span> sd<span class="token punctuation">.</span><span class="token function">array</span><span class="token punctuation">(</span>sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span> sd<span class="token punctuation">.</span>uint8<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  foo<span class="token operator">:</span> sd<span class="token punctuation">.</span><span class="token function">struct</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    x<span class="token operator">:</span> sd<span class="token punctuation">.</span>float64<span class="token punctuation">,</span>
+    y<span class="token operator">:</span> sd<span class="token punctuation">.</span>float64
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>will create <code>sd.Serdes&lt;U&gt;</code>, where <code>U</code> is a union type:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">type</span> <span class="token class-name"><span class="token constant">U</span></span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">;</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">;</span>
+  value<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">&quot;foo&quot;</span><span class="token punctuation">;</span>
+  value<span class="token operator">:</span> <span class="token punctuation">{</span>
+    x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div> <p>And types &quot;a&quot;, &quot;b&quot; and &quot;foo&quot; will be mapped to unique integer encoded
+by <code>sd.uint8</code></p> <h2 id="usage"><a href="#usage" class="header-anchor">#</a> Usage</h2> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">const</span> oneOf <span class="token operator">=</span> sd<span class="token punctuation">.</span><span class="token function">oneOf</span><span class="token punctuation">(</span>sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  a<span class="token operator">:</span> sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span>
+  b<span class="token operator">:</span> sd<span class="token punctuation">.</span><span class="token function">array</span><span class="token punctuation">(</span>sd<span class="token punctuation">.</span>uint8<span class="token punctuation">,</span> sd<span class="token punctuation">.</span>uint8<span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  foo<span class="token operator">:</span> sd<span class="token punctuation">.</span><span class="token function">struct</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    x<span class="token operator">:</span> sd<span class="token punctuation">.</span>float64<span class="token punctuation">,</span>
+    y<span class="token operator">:</span> sd<span class="token punctuation">.</span>float64
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> toBytes<span class="token punctuation">,</span> fromBytes <span class="token punctuation">}</span> <span class="token operator">=</span> sd<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>oneOf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> obj<span class="token operator">:</span> sd<span class="token punctuation">.</span>GetType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> oneOf<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">&quot;foo&quot;</span><span class="token punctuation">,</span>
+  value<span class="token operator">:</span> <span class="token punctuation">{</span>
+    x<span class="token operator">:</span> <span class="token number">42</span><span class="token punctuation">,</span>
+    y<span class="token operator">:</span> <span class="token number">42</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> bytes <span class="token operator">=</span> <span class="token function">toBytes</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">fromBytes</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>result<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;a&quot;</span><span class="token operator">:</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> result<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//number</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;b&quot;</span><span class="token operator">:</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token keyword">case</span> <span class="token string">&quot;foo&quot;</span><span class="token operator">:</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">x = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span>value<span class="token punctuation">.</span>x<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, y = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span>value<span class="token punctuation">.</span>y<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="specifications"><a href="#specifications" class="header-anchor">#</a> Specifications</h2> <p><code>sd.oneOf</code> first serializes integer which is used to differentiate
+different types, and then serializes a value of that type using the
+corresponding <code>sd.Serdes&lt;T&gt;</code> in the definition object</p> <p>Values of the integer are mapped to the properties of the definition
+object (that is, possible types of a value) starting from <code>0</code>, in order in which
+the properties appear on the object. So, in the example above values are mapped
+to the properties (types) like this:</p> <div class="language- extra-class"><pre class="language-text"><code>0 -&gt; &quot;a&quot;
+1 -&gt; &quot;b&quot;
+2 -&gt; &quot;foo&quot;
+</code></pre></div><p>The payload will be in the one of the following forms:</p> <div class="language- extra-class"><pre class="language-text"><code>[headSd 0][a value (uint8)]
+[headSd 1][b number of items (uint8)][...b items (uint8)]
+[headSd 2][c.x (float64)][c.y (float64)]
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/weisrc/sirdez/edit/main/doc/data_types/one_of.md" target="_blank" rel="noopener noreferrer">Edit on GitHub</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sirdez/data_types/struct.html" class="prev">
+        Struct
+      </a></span> <span class="next"><a href="/sirdez/data_types/array.html">
+        Array
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/sirdez/assets/js/app.32eb2c38.js" defer></script><script src="/sirdez/assets/js/2.e0f79662.js" defer></script><script src="/sirdez/assets/js/16.699fd6df.js" defer></script>
+  </body>
+</html>
